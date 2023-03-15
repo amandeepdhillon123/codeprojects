@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>University Website -Design</title>
+</head>
+
+<body>
+
+    <!-- header section  -->
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"> <img src="images/logo.png" alt="logo"> </a>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="about.html">About</a></li>
+                    <li> <a href="course.html">Course</a></li>
+                    <li> <a href="blog.html">Blog</a></li>
+                    <li> <a href="contact.html">Contact</a></li>
+
+
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <h1>Contact Us</h1>
+
+
+    </section>
+
+    <!--  ---------------contact us--------------  -->
+
+    <section class="location">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1781619.1120631157!2d76.0389249!3d29.2904069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390db00b8670400b%3A0x732eaab4aaa6c143!2sHaryana!5e0!3m2!1sen!2sin!4v1678897721379!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="Contact-us">
+
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span>
+                        <h5>
+                            XYZ road, ABC Building
+                        </h5>
+                        <p>Haryana Delhi</p>
+                    </span>
+                </div>
+
+
+
+                <div>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        <h5>
+                            + 1221546455642
+                        </h5>
+                        <p>monday to Saturday , 10Am to 6Pm</p>
+                    </span>
+                </div>
+
+
+
+
+                <div>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                        <h5>
+                            abc@gmail.com
+                        </h5>
+                        <p>Email Us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="">
+                    <input type="text" placeholder="Enter Your name" required>
+                    <input type="email" placeholder="Enter Your email address" required>
+                    <input type="text" placeholder="Enter Your subject" required>
+                 <textarea rows="8" placeholder="Message"></textarea>
+                 <button type="submit" class="hero-btn red-btn">Send Message</button>
+                
+                </form>
+        </div>
+        </div>
+
+        
+    </section>
+
+
+
+
+
+    <!-- add javscript for toggle menu  -->
+    <script>
+        var navLinks = document.getElementById("navlinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+
+
+
+    <!--     ----------footer---------- -->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam quasi voluptatibus quam cum <br> temporibus,
+            excepturi mollitia quidem aliquam et recusandae illum nisi dolorum velit, aperiam optio, tempora esse qui
+            omnis!</p>
+
+
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+
+        </div>
+        <p> Made by <i class="fa-solid fa-heart"></i> by Amandeep Dhiilon</p>
+    </section>
+
+</body>
+
+</html>
