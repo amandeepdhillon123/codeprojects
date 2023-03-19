@@ -15,7 +15,7 @@ app.get('',(req,resp) =>{
 
 app.get('/profile',(req,resp) =>{
 
-    resp.render(`profile`)
+     resp.render(`profile`)
 })
 
 app.listen(2152)
