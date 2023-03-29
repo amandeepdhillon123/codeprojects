@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // object literal
+       var obj1 = {
+         name:"amandeep",
+         surname:"dhillon",
+         class:26,
+         vpo:"dahola",
+
+         bro:function(){
+            return this.name +" " +this.surname ;
+         }
+       }
+
+       console.log(obj1);
+
+       console.log(obj1.bro())
+
+
+    //     if u have multiple function then u will use constructor functionn 
+   // constructor function 
+
+   function User( firstName,lastName,email,age)
+   {
+    this.firstName = firstName;
+    this.lastName=lastName;
+    this.email=email;
+    this.age=age;
+
+   }
+
+   let user1 =new User("Aman","dhillon","aman@gmail.com",29);
+   let user2 =new User("Aman","dhillon","aman@gmail.com",29);
+   console.log(user1);
+   console.log(user2);
+
+
+   // object.create method  prototype
+
+
+   var obj3 = {
+         name:"amandeep",
+         surname:"dhillon",
+         class:26,
+         vpo:"dahola",
+
+         bro:function(){
+            return this.name +" " +this.surname ;
+         }
+       }
+
+       let user3 =Object.create(obj3);
+
+       console.log(user3)
+
+
+    //    using es6 class for object 
+
+       class User4{
+         constructor( firstName,lastName,email,age)
+         {
+            this.firstName = firstName;
+            this.lastName=lastName;
+            this.email=email;
+            this.age=age;
+         }
+          getFirstName(){
+            return this.firstName;
+          }
+          getLirstName(){
+            return this.lastName;
+          }
+       }
+
+       let user5= new User4("Aman","dhillon","aman@gmail.com",129)
+
+       console.log(user5)
+
+    </script>
+</body>
+
+</html>
