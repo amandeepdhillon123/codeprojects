@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+#container{
+       border: 1px solid red;
+       width: 100vw;
+       height: 100vw;
+       /* background-color: black; */
+       text-align: center;
+}
+
+#container figure {
+
+    border: 1px solid red;
+    height: 550px;
+    box-sizing: border-box;
+   text-align: center;
+  
+ 
+  
+  
+
+}
+#container figure img {
+    border: 1px solid;
+    width: 400px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+    border-radius: 10px;
+   
+   
+}
+
+#container figure figcaption {
+      color: black;
+      font-size: 30px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+      width: 400px;
+      margin: auto;
+}
+.span {
+    /* margin-top: 50px; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+    width: 400px;
+    margin: auto;
+   padding: 20px;
+}
+.span span:nth-child(3) {
+    padding-left: 20px;
+    text-decoration: line-through;
+}
+.span span:nth-child(2) {
+    padding-left: 20px;
+    color: green;
+    /* text-decoration: line-through; */
+}
