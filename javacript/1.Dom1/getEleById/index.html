@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1Tag"> I am h1 tag</h1>
+
+    <button onClick="myFun()" id="btn">click to change h1 tag</button>
+    <h1 id="head">0</h1>
+    <button onClick="myFune()" id="btn1">like</button>
+      
+    <p id="pTag"> I am p tag</p>
+    <div id="divTag"> <h1>I am div tag</h1> </div>
+</body>
+
+</html>
+<script>
+    let count=0;
+    let h1 = document.getElementById("h1Tag");
+    let h2 = document.getElementById("head");
+
+    let btn=document.getElementById("btn");
+    let btn1=document.getElementById("btn1");
+
+    function myFun(){
+
+        h1.innerText=" ram"
+    }
+    function myFune(){
+        // h2.innerText= count;
+        count++;
+        h2.innerText= count;
+
+
+}
+    
+
+    // console.log(h1)
+
+    // console.log(h1.textContent) 
+
+    h1.innerText=`hello h1 tag`
+    h1.style.color="red";
+
+
+    let p = document.getElementById("pTag");
+
+    p.innerText=`hello para tag`
+
+    p.style.background="red";
+    p.style.color="red";
+
+
+    // console.log(p);
+    // console.log(p.textContent)
+
+    let div = document.getElementById("divTag");
+    div.innerText=`hello  div tag`
+
+    // console.log(div);
+    // console.log(div.innerHTML)
+
+
+</script>
