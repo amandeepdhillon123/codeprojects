@@ -1,0 +1,48 @@
+
+#container{
+    border: 1px solid red;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+    display: block;
+    box-sizing: border-box;
+}
+#container .p1{
+    
+    margin: 0;
+    border: 1px solid red;
+    /* display: inline-block; */
+    /* text-align: right; */
+   float: right;
+   
+   
+}
+  #container .p2{
+    /* text-align: left; */
+    border: 1px solid red;
+    display: inline-block;
+    margin: 0;
+}
+ #container .p3{
+     border: 1px solid red;
+    text-align: center;
+    display: block;
+
+    margin-top: 45%;
+   
+}
+ #container .p4{
+    border: 1px solid red;
+    
+    float: left;
+  margin-top: 200px;
+    
+}   
+#container .p5{
+    border: 1px solid red;
+    
+      float: right;
+    margin-top: 200px;
+    
+}
