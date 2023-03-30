@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="firstname">Hello</h1>
+    <div id="fstname">Govt</div>
+    <p id="frstname">School</p>
+    <br>
+    <button onClick="setFirstName()">firstName</button>
+    <button onClick="setLastName()">LastName</button>
+    <button onClick="setFullName()">full Name</button>
+    <button onClick=" resetDefaults()">Reast default</button>
+
+</body>
+</html>
+
+<script>
+
+    function setFirstName(){
+        let h1 = document.getElementById("firstname")
+        h1.innerText= "Amandeep"
+    }
+    
+    function setLastName(){
+        let div = document.getElementById("fstname")
+        div.innerText= "Dhillon";
+    }
+    
+    function setFullName(){
+        let p = document.getElementById("frstname")
+        p.innerText= "Amandeep Dhillon";
+    }
+    function resetDefaults(){
+        let p = document.getElementById("frstname")
+        let div = document.getElementById("fstname")
+        let h1 = document.getElementById("firstname")
+
+        p.innerText="";
+        div.innerText="";
+        h1.innerText="";
+      
+    }
+    
+    
+   
+</script>
