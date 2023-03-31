@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button>Click Me</button>
+</body>
+</html>
+<script>
+
+    document.querySelector("button").addEventListener("click",myFun)
+
+    function myFun(){
+        console.log("amandeep")
+    }
+
+    document.querySelector("button").addEventListener("mouseenter",enterFun)
+
+    function enterFun(){
+        document.querySelector("button").style.color="green";
+    }
+
+    document.querySelector("button").addEventListener("mouseleave",leaveFun)
+
+    function leaveFun(){
+        document.querySelector("button").style.color="red"
+    }
+
+    document.querySelector("button").addEventListener("dblclick",doubleClick)
+
+function doubleClick(){
+    document.querySelector("button").innerText="Do not double click"
+}
+</script>
