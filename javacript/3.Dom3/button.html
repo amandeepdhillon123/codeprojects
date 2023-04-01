@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+ let div=document.createElement('div');
+
+ let btn1=document.createElement('button');
+ btn1.innerText="button1"
+ btn1.style.backgroundColor="blue"
+ btn1.style.color="white"
+
+ let btn2=document.createElement('button');
+ btn2.innerText="button2"
+ btn2.style.backgroundColor="grey"
+ btn2.style.color="white"
+
+ let btn3=document.createElement('button');
+ btn3.innerText="button3"
+ btn3.style.backgroundColor="green"
+ btn3.style.color="white"
+
+ let btn4=document.createElement('button');
+ btn4.innerText="button4"
+ btn4.style.backgroundColor="yellow"
+ btn4.style.color="black"
+
+
+
+
+ div.append(btn1,btn2,btn3,btn4)
+   
+ 
+
+ document.querySelector("body").append(div)
+</script>
