@@ -18,10 +18,35 @@ var mobile= brand.map(function(ele) {
 console.log(mobile[0])
 
 
+// var num=[2,3,4,5,6]
+
+// let even=num.map(function(ele) {
+//     return ele%2==0
+// })
+
+// console.log(even)
+
+
+// filter 
+
+
 var num=[2,3,4,5,6]
 
-let even=num.map(function(ele) {
+let even=num.filter(function(ele) {
     return ele%2==0
 })
 
 console.log(even)
+
+
+// reduce 
+
+var number=[2,3,4,5,6];
+
+// var acc=0;
+let resu=number.reduce(function(acc,ele){
+    return acc+ele
+},0)
+ 
+
+console.log(resu)
