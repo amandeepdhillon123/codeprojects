@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.js">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid red;
+            border-collapse: collapse;
+            width: 500px;
+            margin: auto;
+        }
+
+        tr {
+            border: 1px solid green;
+        }
+
+        td {
+            border: 1px solid green;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="" id="form">
+            <input type="text" name="" id="name" placeholder="write your name" />
+            <input type="number" name="" id="math" placeholder="math number" />
+            <input type="number" name="" id="science" placeholder="scicnec number" />
+            <input type="number" name="" id="english" placeholder="english number" />
+            <input type="submit" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Math</td>
+                    <td>Science</td>
+                    <td>English</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+<!-- <script>
+    var data = [
+        { name: "aman", math: "50", science: "80", english: "26" },
+
+        { name: "rohit", math: "52", science: "82", english: "28" },
+        { name: "aman", math: "54", science: "84", english: "36" },
+     
+    ];
+ 
+    document.querySelector("#myForm").addEventListener("submit", form);
+    displayTable(data);
+    function form(event) {
+       
+        event.preventDefault();
+       
+       
+
+        var name = document.querySelector("#name").value;
+        var math = document.querySelector("#math").value;
+        var science = document.querySelector("#science").value;
+        var english = document.querySelector("#english").value;
+        // console.log(name, math, science, english);
+
+        var obj = {
+            name: name,
+            math: math,
+            science: science,
+            english: english,
+        };
+
+        data.push(obj)
+        console.log(data)
+        displayTable(data);
+        console.log(displayTable(data))
+       
+
+       
+    }
+
+    function displayTable(data) {
+        document.querySelector("tbody").innerText=""
+        data.map(function (elem, index, array) {
+           
+            var row = document.createElement("tr");
+            var col4 = document.createElement("td");
+            col4.innerText = elem.name;
+
+            var col1 = document.createElement("td");
+            col1.innerText = elem.math;
+            var col2 = document.createElement("td");
+            col2.innerText = elem.science;
+            var col3 = document.createElement("td");
+            col3.innerText = elem.english;
+            var total = Number(elem.math) + Number(elem.science) + Number(elem.english);
+            var col5 = document.createElement("td");
+            col5.innerText = total;
+
+            row.append(col4, col1, col2, col3, col5);
+          
+            document.querySelector("tbody").append(row);
+        //    var day= document.querySelector("tbody").append(row)
+        //    console.log(day)
+           
+        });
+    } -->
+
+
+<!-- </script> -->
