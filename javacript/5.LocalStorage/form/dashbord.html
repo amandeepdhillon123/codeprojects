@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        .image{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="image" placeholder="put your image">
+        <input type="text" id="name" placeholder="write your name">
+        <input type="number" id="number" placeholder=" number">
+       <input type="submit" >
+   
+    </form>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    document.querySelector('form').addEventListener('submit',myFun)
+       
+    let studentData=[]
+    function myFun(){
+        event.preventDefault();
+        // console.log("amandeep")
+        let image=document.querySelector('#image').value;
+        let name =document.querySelector('#name').value;
+        let number =document.querySelector('#number').value;
+        let obj ={
+            image:image,
+            name:name,
+            number:number,
+        }
+
+        studentData.push(obj);
+
+        console.log(studentData)
+
+        displyData(studentData);
+    }
+
+    function displyData(studentData) {
+    //  imp concept 
+        document.querySelector("#container").innerText=""
+        studentData.forEach((ele) => {
+ 
+            // console.log(ele)
+             let div= document.createElement('div')
+             let image=document.createElement('img')
+             image.src=ele.image;
+             image.setAttribute("class","image")
+            let name=document.createElement('p');
+            name.innerText=ele.name;
+            let number=document.createElement('p');
+            number.innerText=ele.number;
+
+            div.append(image,name,number)
+
+
+            document.querySelector("#container").append(div)
+
+             
+
+            
+        })
+        
+    }
+</script>
