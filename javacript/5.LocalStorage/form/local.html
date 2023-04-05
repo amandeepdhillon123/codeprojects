@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    // String
+
+    localStorage.setItem("name","amandeep")
+
+    // let name1=localStorage.getItem("name")
+    
+    // let name1=JSON.parse(localStorage.getItem("name")) 
+
+    // console.log(name1)
+
+    // number 
+    localStorage.setItem("number", 1542)
+    
+    let name2=localStorage.getItem("number")
+    console.log(name2)
+
+    // array
+
+    let array=["aman","rahuk"]
+
+    localStorage.setItem("arra",JSON.stringify(array) )
+    
+
+    // object 
+
+    let obj={
+        name:"aman",
+        email:"ama@11212",
+        num:2165564
+    }
+    localStorage.setItem("obj",JSON.stringify(obj))
+    let name4=JSON.parse(localStorage.getItem("obj")) 
+    console.log(name4)
+
+</script>
