@@ -3,8 +3,21 @@
 //   // 2. when data will not there   give null output in console
 // }
 
+
 document.querySelector("#form").addEventListener('submit',myFun)
-let array=[];
+// let array;
+
+//    if(localStorage.getItem("data")== null)
+//    {
+//       array = []
+//    }
+//    else
+//    {
+//       array=JSON.parse(localStorage.getItem("data"));
+//    }
+
+   let array= JSON.parse(localStorage.getItem("data")) || [] ;
+console.log(array)
 function myFun(){
     event.preventDefault();
     // console.log("amandeep")let name= document.querySelector("#name")
@@ -27,7 +40,7 @@ function myFun(){
 
  localStorage.setItem("data",JSON.stringify(array))
 
- window.location.reload();
+//  window.location.reload();
 
 
 
