@@ -3,55 +3,55 @@ let mensData = [
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             {
                 img:"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
                 name:"rahit",
-                price:"$234",
+                price:"234",
                 strikedoffprice:"$20"
             },
             
   ]; 
 
-
+let obj= JSON.parse(localStorage.getItem("cartData")) || [];
   mensData.map((ele) =>{
 
     let div=document.createElement("div");
@@ -77,10 +77,27 @@ let mensData = [
 
     div2.append(price,strikedoffprice)
 
-  div.append(img,name,div2)
+    let button=document.createElement("button")
+     button.innerText="Add to cart"
+
+     button.addEventListener("click",function() {
+
+          addToCart(ele)
+     })
+
+  div.append(img,name,div2,button)
 
   document.querySelector(".container").append(div)
 
 
 
   })
+
+  function addToCart(ele){
+    // console.log(ele);
+    obj.push(ele);
+    console.log(obj)
+
+    localStorage.setItem("cartData",JSON.stringify(obj))
+
+  }
