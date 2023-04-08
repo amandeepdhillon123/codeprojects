@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>LogIn page</h1>
+
+<div>
+        <input required type="email" placeholder="email" id="name">
+        <input type="password" placeholder="password" id="password">
+        <button>output</button>
+    </div>
+</body>
+</html>
+<script>
+
+    let output =JSON.parse(localStorage.getItem("signUp"))
+    // console.log(output)
+
+    document.querySelector("div").addEventListener("click",myFun)
+
+    function myFun(){
+
+        let email=document.querySelector("#name").value;
+        let pass=document.querySelector("#password").value;
+
+        for( let i=0; i<output.length; i++)
+        {
+           if(output[i].email == email &&  output[i].username == pass )
+           {
+            alert("login Successful")
+            window.location.reload();
+            break;
+           }
+           else{
+               alert("please fill valid input")
+               break;
+           }
+        }
+    }
+
+   
+    
+
+    
+</script>
