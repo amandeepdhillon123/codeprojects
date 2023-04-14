@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="">
         <input type="text" id="name" placeholder="write your name">
         <input type="number" id="number" placeholder=" number">
-       <input type="submit" >
-   
+        <input type="submit">
+
     </form>
     <div id="container"></div>
 </body>
+
 </html>
 <script>
-    document.querySelector('form').addEventListener('submit',myFun)
-       
-    let studentData=[]
-    function myFun(){
+    document.querySelector('form').addEventListener('submit', myFun)
+
+    let studentData = []
+    function myFun() {
         event.preventDefault();
         // console.log("amandeep")
-        let name =document.querySelector('#name').value;
-        let number =document.querySelector('#number').value;
-        let obj ={
-            name:name,
-            number:number,
+        let name = document.querySelector('#name').value;
+        let number = document.querySelector('#number').value;
+        let obj = {
+            name: name,
+            number: number,
         }
 
         studentData.push(obj);
@@ -38,26 +41,26 @@
     }
 
     function displyData(studentData) {
-    //  imp concept 
-        document.querySelector("#container").innerText=""
+        //  imp concept 
+        document.querySelector("#container").innerText = ""
         studentData.forEach((ele) => {
- 
-            // console.log(ele)
-             let div= document.createElement('div')
-            let name=document.createElement('p');
-            name.innerText=ele.name;
-            let number=document.createElement('p');
-            number.innerText=ele.number;
 
-            div.append(name,number)
+            // console.log(ele)
+            let div = document.createElement('div')
+            let name = document.createElement('p');
+            name.innerText = ele.name;
+            let number = document.createElement('p');
+            number.innerText = ele.number;
+
+            div.append(name, number)
 
 
             document.querySelector("#container").append(div)
 
-             
 
-            
+
+
         })
-        
+
     }
 </script>
