@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <form  onsubmit="storeProducts(event)"   id="products">
+            <input type="text" id="name" />
+            <input type="text" id="price" />
+            <input type="text" id="brand" />
+             <input type="submit"/>
+      </form>
+</body>
+</html>
+<script>
+    /*
+    let obj= {
+        name:"john",
+
+        sayHi : function (){
+            console.log(this)
+        },
+    }
+
+    obj.sayHi(); 
+     
+    */
+//    function retrun objec
+
+    // function NikeProducts(n,p) {
+
+    //     let obj ={};
+
+    //     obj.name=n;
+    //     obj.price=p;
+
+    //     return obj;
+    // }
+
+    // let p1 = NikeProducts("shoes",200)
+
+    // console.log(p1)
+
+
+
+
+
+//    constructor function retrun object
+
+    //  function NikeProducts(n,p) {
+    //      this.name=n  // this creates an object 
+    //      this.price=p
+    //  }
+
+    //  let p1 = new NikeProducts('shoes',200) // new give the return value
+      
+    //  console.log(p1)
+
+
+
+    // get data form 
+   let arr=[]
+   
+    function storeProducts(){
+        event.preventDefault();
+        // console.log("amandeep")
+
+        let form = document.getElementById('products');
+        let name =form.name.value;
+        let price = form.price.value;
+        let brand = form.brand.value;
+
+        // console.log(name,price,brand)
+
+        let p1= new Products(name,price,brand)
+        arr.push(p1)
+
+        console.log(arr)
+
+    }
+
+    function Products(n,p,b){
+
+        this.name=n;
+        this.price=p;
+        this.brand=b;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
