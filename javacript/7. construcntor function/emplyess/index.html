@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <form id="form" onsubmit="myForm(event)">
+
+        <input type="text" placeholder="Employees image"  id="img" >
+        <input type="text" placeholder="Employees name"  id="name">
+        <input type="number"   placeholder="Employees number"    id="number">
+        <input type="text" placeholder="city name"  id="city">
+        <input type="submit">
+       </form>
+       <div id="container">
+
+       </div>
+</body>
+</html>
+<script>
+
+    let array= JSON.parse(localStorage.getItem('data')) || []
+    function myForm(){
+    event.preventDefault();
+   
+   let form= document.querySelector('#form');
+   let img = form.img.value;
+   let name= form.name.value;
+   let number= form.number.value;
+   let city= form.city.value;
+   console.log(name,number,city)
+
+   let obj1= new Obj(img,name,number,city)
+
+   array.push(obj1);
+
+   console.log(array)
+
+
+   localStorage.setItem('data',JSON.stringify(array))
+
+   window.location.href="data.html"
+}
+
+function Obj(img,n,num,city){
+    this.image =img;
+    this.name=n;
+    this.number=num;
+    this.city=city;
+
+
+}
+   
+</script>
