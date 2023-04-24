@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- Js  -->
+</body>
+</html>
+<script>  
+            //  object literals 
+
+    //    let reactangel={
+    //     length:2,
+    //     breadth:4,
+    //     draw: function(){
+    //         console.log("i am method ")
+    //     }
+    //   }
+    //   console.log(reactangel)
+
+    //  factory function 
+
+//     function factory(len,bre){
+         
+//         let reactangle={
+//         length:len,
+//         breadth:bre,
+//         draw: function(){
+//             console.log("i am method ")
+//         }
+   
+//     }
+
+
+//     return reactangle;
+
+// }
+
+// let obj1=factory(100,200);
+// let obj2=factory(200,300);
+// let obj3=factory(300,400);
+// obj3.city="pune"
+// console.log(obj1)
+// console.log(obj2)
+// console.log(obj3)
+
+
+
+
+    //  constructor function 
+
+    // function Obj(len,bre){
+    //     this.lenght= len,
+    //     this.breadth= bre
+
+    // }
+
+    // let obj1= new Obj(100,200)
+
+    // obj1.city= "pune"; // add property
+
+    // delete obj1.city; // delete property
+
+
+    // console.log(obj1)
+    //  creating comstructor 
+
+//     let react = new Function('len','bre',` 
+//     this.lenght= len,
+//   this.breadth= bre`)
+
+//   let re1= new react( 100, 200)
+//   console.log(re1)
+
+
+
+// call by valye reference 
+
+//   call by value  not  change in original 
+//  let a = 10;
+//    b= a;
+//    a++;
+
+//    console.log(a)
+//    console.log(b)
+//    change in original address 
+//    let A={
+//        value:10}
+
+//        let B=A;
+//        A.value++;
+//        console.log(A.value)
+//        console.log(B.value)
+
+
+
+// key value pair 
+
+  
+// let obj= {
+
+// length:2,
+//   breadth : 4,
+
+// }
+
+// for( let key in obj )
+// {
+//     console.log(key,obj[key])
+ 
+// }
+
+
+// clonning 
+//  by iteration method 
+
+//   let obj= {
+//     name:"amandeep",
+//     surname:"dhillon"
+//   }
+//   let dest={};
+
+
+// for(let key in obj)
+// {
+//   dest[key]=obj[key];
+// }
+
+// console.log(dest)
+
+// by assign method 
+
+
+// let obj= {
+//     name:"amandeep",
+//     surname:"dhillon"
+//   }
+
+
+//   let dest =Object.assign({},obj)
+
+
+
+// console.log(dest)
+
+//  by spread operator 
+
+
+let obj= {
+    name:"amandeep",
+    surname:"dhillon"
+  }
+
+
+   let dest ={...obj}
+   console.log(dest)
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
