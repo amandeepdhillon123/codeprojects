@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+       
+    
+
+// function sum()
+// {
+//       console.log(arguments)
+
+//       let total = 0;
+
+//       for(let value of arguments)
+//       {
+//         total =total + value;
+
+        
+//       }
+
+//     //   return a + b;
+
+//     return total;
+// }
+
+// let ans= sum(1,2,3,4,)
+
+// console.log(ans)
+
+
+// rest opeator 
+
+// function sum(num,...args){
+//           console.log(args)
+// }
+
+// sum(1,2,3,4,5)
+
+// default parameter 
+
+// function sum(a,b=5,c=6)
+
+// {
+//     return a*b*c
+// }
+
+// console.log(sum(2))
+
+
+
+//   getter setter
+
+//  let person ={
+//     name:"aman",
+//     sur:"dhillon",
+
+//     get fullName(){
+//         return ` ${person.name} ${person.sur}`
+//     },
+
+//     set fullName(value)
+//   {      if( typeof value !== String)
+//     {
+//             throw new Error("dfjhshfdjashf")
+//     }
+//          let parts = value.split(' ');
+
+//          this.name=parts[0];
+//          this.sur=parts[1];
+//     }
+//  }
+
+
+//  console.log(person.fullName)
+
+
+
+//  person.fullName="deep sing";
+
+
+
+//  
+
+
+// try{
+//     // person.fullName="deep sing";
+//     person.fullName= true;
+
+//     // console.log(person.fullName)
+// }
+
+// catch(e) {
+ 
+
+//     // console.log("bhai error aa gya hai ")
+
+//     // alert(e)
+
+//     console.log(e)
+
+//
+
+
+  let arr=[1,2,3,4,5]
+
+//   let total =0;
+
+//    for(let value of arr)
+//    {
+//        total = total + Number(value)
+//    }
+
+//    console.log(total)
+
+
+let sum =arr.reduce((acc,ele) =>{
+      return  acc+ele
+},0)
+
+console.log(sum)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
