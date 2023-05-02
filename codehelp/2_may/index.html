@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // factor function 
+
+        // function createReactangle(a,b){
+
+        //     let obj = {
+        //         name: a,
+        //         surName: b,
+
+        //         draw (){
+        //             console.log("hello ji")
+        //         }
+        //     }
+
+        //     return obj;
+        // }
+  
+        // let obj1= createReactangle("amandeep","dhillon")
+        // let obj2= createReactangle("aman","dhillon")
+        // let obj3= createReactangle("am","dhillon")
+
+        // console.log(obj1)
+        // console.log(obj2)
+        // console.log(obj3)
+
+
+        // construnctor function 
+
+
+        // function Introduction(len,bre){
+
+        //     this.length= len,
+        //     this.breadth =bre,
+        //     this.draw=  function(){
+        //         console.log("drawing")
+        //     }
+        // }
+
+
+        // let obj1= new Introduction( 5, 6)
+     
+
+        
+        // let obj2 = new Function('length','breadth', `
+        //    this.length =length,
+        //     this.breadth =breadth,
+        //     this.draw = function(){
+        //         console.log("drawing")
+        //     }`)
+    
+        //     let obj3 = new obj2( 2,3)
+        //     console.log(obj3)
+
+
+        // let a=10;
+
+        // function inc(a)
+        // {
+        //       a++;
+
+        //     //   console.log(a)
+        // }
+
+        // inc(a);
+
+        // console.log(a)
+
+
+        let obj ={
+            name:"amandeep",
+            surName:"dhillon"
+        }
+
+        // for(let key in obj)
+        // {
+        //     console.log(key,":",obj[key])
+        // }
+
+
+        // for of loop in objects
+
+        // for( let key of Object.keys(obj))
+        // {
+        //     console.log(key,":",obj[key])
+        // }
+
+        for( let ram of Object.entries(obj))
+        {
+            console.log(ram)
+        }
+
+
+
+
+        // for of loop in array 
+        // let arra=[1,2,3,4,5]
+
+        // for( let ram of arra)
+        // {
+        //     console.log(ram)
+        // }
+
+
+        // checking properties
+
+        'name' in obj ? console.log("present") : console.log("absent")
+      
+
+        // object clonning
+
+        // iteration 
+
+        let src ={
+            name:"amandeep"
+        }
+
+        // let dest ={};
+    //  ieration method 
+        // for(let key in src)
+        // {
+        //     dest[key] = src[key]
+        // }
+
+        // console.log(dest)
+
+
+        // assign method 
+
+
+        // let dest =Object.assign({},src)
+        // console.log(dest)
+
+
+        // spread operator method 
+
+        let dest = {...src}
+
+        console.log(dest)
+
+    </script>
+</body>
+</html>
