@@ -36,8 +36,8 @@ let bedrooom= {
 
 // bind
 
-let x =kitchen.cookFood.bind(living_room,"chtni")
-  x();
+// let x =kitchen.cookFood.bind(living_room,"chtni")
+//   x();
 
 let thor ={
      superpower:'hammer'
