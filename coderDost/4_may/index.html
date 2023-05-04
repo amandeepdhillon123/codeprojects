@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //1.------> function 
+
+        // function courseName(){
+
+        //     console.log("amandeep dhillom")
+        // }
+
+        // //------->2.function call 
+
+        // courseName();
+
+
+        //------>3.reusability 
+        // courseName();
+        // courseName();  courseName();  courseName();  courseName();
+    
+    
+    //  4. function expression
+
+    //  anonymous function 
+    //  function declare like variable 
+    // let name = function(){
+
+    //     console.log("delhi")
+    // }
+
+    // name();
+
+
+    
+    
+    // 5. arguements, parameters  
+
+
+//     let name = function(a){  // parameters
+    
+//          console.log(a)
+
+
+//     arguemetns is value of parameter
+//     }
+
+//  console.log(name("ram"))  // arguements 
+
+
+
+
+
+
+//  6.  dafault value parameter
+
+// let ram = function(a="ram",b="ka name"){
+
+//     console.log(a,b)
+// }
+
+// console.log(ram("ram"))
+
+
+//  7. passing function as an arguements(higher order function example)
+
+
+// let upperCase= function(str)
+// {
+//     return str.toUpperCase()
+// }
+
+
+// let lowerCase= function(str)
+// {
+//     return str.toLowerCase();
+// }
+
+// let transformer = function(str,fun)
+// {
+//     return fun(str)
+// }
+
+// let fun= transformer("amandeep", lowerCase)
+// console.log(fun)
+
+
+
+// 2nd example 
+
+// function returning another function 
+
+//   let compliment = function (msg) {
+
+//     return function(name) {
+//         console.log(`${msg} ${name}`)
+//     }
+//   }
+//     // 2nd method 
+//   let fun1 =compliment("you are good coder")
+
+//   console.log(fun1("ram"))
+
+
+
+// Immediately invokde function Expression 
+
+// excuted only once 
+
+
+
+
+// (function(name){
+//     console.log("amandeep dhiillomn",name)
+// })("amandeep Dhillon")
+
+
+// setTimeOut  setTimeinterval 
+
+
+
+// setTimeout
+
+// 1st method 
+
+    // function greeting(name){
+       
+    //     console.log(`hello ${name}`)
+    // }
+
+    // setTimeout(greeting,2000,"amandeep")
+
+    // 2nd method 
+
+    // setTimeout( function greeting(name){
+
+    //     console.log(`hello ${name}`)
+    // },2000,"amandeep")
+
+
+//   3rd method  call back function 
+//     setTimeout( (name) =>{
+
+// console.log(`${name} amandeep`)
+// },2000,"hello")
+
+
+// 
+
+
+// setInterval((name) => {
+//     console.log(`hello ${name}`)  
+// }, 2000, "amandeep");
+
+
+
+// hoisting 
+
+    name="amandeep"
+
+    console.log(name)
+  var  name;
+  
+
+  test();
+
+  function test(){
+   console.log("amandeep Dhillon")
+  }
+
+
+
+
+ 
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
