@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    //  1. problem function 
+
+    // Name();
+    // function Name(){
+
+    //     console.log("amandeep")
+    // }
+
+
+    //  2.function assignmwent 
+  
+    
+
+//     var  name=function Name(){
+
+// console.log("amandeep")
+// }
+
+// name();
+
+
+//   anonymobus function
+
+
+// let name = function(){
+//     console.log("amandeep")
+// }
+
+
+// name()
+
+
+//  arguement
+
+
+
+// let name =function(a,b){
+
+//     console.log(a,b)
+
+//     console.log(arguments)
+//   let total = 0;
+
+  
+//  for(let value of arguments)
+ 
+
+//  {
+//     // console.log(value)
+
+//     total= total+ value
+
+    
+//  }
+
+//  console.log(total)
+// }
+
+// name(1,2,3,4,5)
+
+
+
+// rest operator 
+
+
+// function sum(value,num,...args)
+// {
+//     console.log(value,num,args)
+// }
+//  sum(1,2,3,4,5)
+
+
+
+// getter and setter 
+
+
+let person={
+    fname:"aman",
+    lname:"dhillon",
+
+    get fullName()
+    {
+        return `${person.fname} ${person.lname}`
+    },
+
+    set fullName(value)
+    {
+
+        if(typeof value !=String)
+        {
+            throw new Error("hello ji my name is amandeep")
+        }
+       let part=value.split(' ');
+
+       this.fname= part[0];
+       this.lname=part[1]
+    }
+}
+
+try{
+    person.fullName=true
+}
+catch(e)
+{
+    alert(e)
+}
+person.fullName ="rahul kumar"
+console.log(person.fullName)
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
