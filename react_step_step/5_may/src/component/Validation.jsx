@@ -16,7 +16,7 @@ function Logic(){
             alert("type correct values") 
         }
         else{
-            alert(" sbhi ache ahai ")
+            alert("     sbhi ache ahai ")
         }
         e.preventDefault();
     // console.log(user,pass)
