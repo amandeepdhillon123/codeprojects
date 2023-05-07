@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-      <form  onsubmit="storeProducts(event)"   id="products">
+      <form    id="products">
             <input type="text" id="name" />
             <input type="text" id="price" />
             <input type="text" id="brand" />
@@ -62,34 +62,46 @@
 
 
     // get data form 
-   let arr=[]
+//    let arr=[]
    
-    function storeProducts(){
-        event.preventDefault();
-        // console.log("amandeep")
+//     function storeProducts(){
+//         event.preventDefault();
+//         // console.log("amandeep")
 
-        let form = document.getElementById('products');
-        let name =form.name.value;
-        let price = form.price.value;
-        let brand = form.brand.value;
+//         let form = document.getElementById('products');
+//         let name =form.name.value;
+//         let price = form.price.value;
+//         let brand = form.brand.value;
 
-        // console.log(name,price,brand)
+//         // console.log(name,price,brand)
 
-        let p1= new Products(name,price,brand)
-        arr.push(p1)
+//         let p1= new Products(name,price,brand)
+//         arr.push(p1)
 
-        console.log(arr)
+//         console.log(arr)
 
-    }
+//     }
 
-    function Products(n,p,b){
+//     function Products(n,p,b){
 
-        this.name=n;
-        this.price=p;
-        this.brand=b;
-    }
+//         this.name=n;
+//         this.price=p;
+//         this.brand=b;
+//     }
 
 
+
+document.querySelector('#products').addEventListener('submit',myFun)
+
+function myFun(e){
+    e.preventDefault();
+
+   let form= document.querySelector('#products');
+
+   let email= form.name.value;
+
+   console.log(email)
+}
 
 
 
