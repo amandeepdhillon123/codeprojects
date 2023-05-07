@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+// object literal 
+// var obj ={
+//     name:"amandeep"
+// }
+
+// console.log(obj.name)
+
+  
+
+// var person ={
+//     name:"john",
+//     myNmae: function(){
+//         console.log(person.name)
+//     }
+// }
+
+// person.myNmae();
+
+
+
+// var person ={
+//     name:"john",
+//     myNmae: function(){
+//         console.log(this.name)
+//     }
+// }
+
+// person.myNmae();
+
+
+// obj literal 
+
+
+// let Introduction ={
+
+//     name:"amandeep",
+//     surName:"dhillon",
+
+//     address: function() {
+//         console.log("amandeep dhillon")
+//     }
+// }
+
+// console.log(Introduction.address()) 
+
+// factor function
+
+// function Ram(a,b){
+
+//     let kaam={};
+//     kaam.name=a;
+//     kaam.surname=b;
+
+//     return kaam;
+// }
+
+// let obj1=Ram("amandeep","dhillon")
+
+// console.log(obj1)
+
+
+// function Ram(a,b){
+
+//     this.name=a;
+//     this.surname=b;
+// }
+
+// let obj1= new Ram("ram","ram")
+// let obj2= new Ram("ram","ram")
+// let obj3= new Ram("ram","ram")
+
+
+
+// console.log(obj1)
+// console.log(obj2)
+// console.log(obj3)
+
+
+
+
+// call /appy bind method 
+
+// let person = {
+//     name:"rahul",
+
+    
+ 
+  
+// }
+
+// function myName(m,c) {
+//     this.age=m
+//     this.city=c
+//    }
+
+//    myName.call(person,21,"pune")
+
+// myName.apply(person,[21,"pune"])
+
+
+// var x= myName.bind(person,21,"pune")
+
+// x()
+let kitchen = {
+    name:'kitchen',
+    purpose:'cook',
+
+    cookFood: function (order){
+        console.log(`serving ${order} in ${this.name}` )
+    }
+};
+let living_room = {
+    name:'living_room',
+    purpose:'rest',
+
+    // cookFood: function (order){
+    //     console.log(`serving ${order} in ${this.name}` )
+    // }
+};
+let bedroom= {
+    name:'bedrooom',
+    purpose:'sleep',
+    //  cookFood: function (order){
+    //     console.log(`serving ${order} in ${this.name}` )
+    // }
+
+
+};
+
+// console.log(kitchen.cookFood("pasta"))
+// console.log(bedroom.cookFood("pasta"))
+// console.log(living_room.cookFood("pasta"))
+
+// kitchen.cookFood.call(bedroom,"samosa")
+
+
+// kitchen.cookFood.apply(bedroom,[21,"pune"])
+
+var x= kitchen.cookFood.bind(bedroom,21,"pune")
+
+x()
+
+
+
+
+
+
+</script>

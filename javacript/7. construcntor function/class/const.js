@@ -32,13 +32,13 @@ function myName(m,c) {
 
 
 
-// myName.call(person,21,"pune")
+myName.call(person,21,"pune")
 
 // myName.apply(person,[21,"pune"])
 
 
-var x= myName.bind(person,21,"pune")
+// var x= myName.bind(person,21,"pune")
 
-x()
+// x()
  
 console.log(person)
