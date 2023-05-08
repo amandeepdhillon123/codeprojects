@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const cat ={
+        legs:4,
+        tail:true,
+        furs:true,
+        claws:"sharp"
+    }
+
+    // const lion ={
+    //     legs:4,
+    //     tail:true,
+    //     furs:true,
+    //     claws:"sharp",
+    //     speed:"60kph",
+    //     color:'orange'
+
+    // };
+
+    // const tiger ={
+    //     legs:4,
+    //     tail:true,
+    //     furs:true,
+    //     claws:"sharp",
+    //     speed:"90kph",
+    //     color:'yellow'
+    // }
+
+
+    // efficient way 
+
+    const lion = Object.create(cat);//child
+         lion.speed="60kbh" // father 
+    const liger = Object.create(lion);  // grand father
+
+    console.log(liger)
+
+    const tiger = Object.create(cat);
+    //  console.log(tiger);
+    // console.log(lion);
+    // console.log(tiger.legs);
+    //   console.log(lion.legs)
+
+     
+
+
+</script>

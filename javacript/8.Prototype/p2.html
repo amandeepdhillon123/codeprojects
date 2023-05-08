@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    Object.prototype.myAppData="my name is manadeep"
+
+     
+
+    let user ={
+
+
+        getFullName: function(){
+            return this.name + " " + this.last
+        },
+
+        getAge:function(){
+            let age= new Date().getFullYear() - this.birth
+            return age
+        }
+
+    }
+
+    let student =  {
+        name:'aman',
+        last:'dhillon',
+        birth:1992,
+
+     
+    }
+
+    let teacher =  {
+        name:'am',
+        last:'dhon',
+        birth: 1991,
+        getAge:user.getAge
+
+       
+    }
+
+    // console.log(teacher)
+
+   teacher.__proto__= user;
+   student.__proto__= user;
+
+    console.log(student)
+//     console.log(teacher.getAge())
+</script>

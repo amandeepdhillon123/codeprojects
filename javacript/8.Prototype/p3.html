@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+
+//   console.log("amandeep")
+
+  let a= {
+    name:"amandeep",
+    surName:"dhillon"
+  }
+
+  console.log(a)
+
+  let p={
+    run:()=>{
+        alert("hello prototype")
+    }
+  }
+
+  p.__proto__={
+    nam:"ram"
+  }
+
+  a.__proto__ = p;
+
+  a.run();
+
+  console.log(a.nam)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+</body>
+</html>
