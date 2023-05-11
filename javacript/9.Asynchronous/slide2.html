@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .ram{
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+  <button onclick="start()">Start Slide show</button>
+
+     
+  <button  onclick="stop()">Stop Slide show</button>
+  <div id="images">
+
+  </div>
+</body>
+</html>
+<script>
+
+    let id;
+    
+    let image_div =document.getElementById("images")
+    
+    let i=0;
+  
+  function start(){
+    
+  
+    let image_arr=JSON.parse(localStorage.getItem("images"))
+     
+      let img =document.createElement('img');
+    
+      img.setAttribute("class","ram")
+     
+    
+       id = setInterval(function(){
+
+         if(i === image_arr.length)
+         {
+            i=0;
+         }
+         image_div.innerHTML=null;
+       
+
+        //  imp line 
+       
+
+        // console.log(image_arr[i])
+
+        img.src= image_arr[i]
+
+        image_div.append(img)
+
+        i++;
+
+      },2000)
+  }
+
+
+   
+  function stop(){
+
+
+  clearInterval(id)
+ 
+}
+    
+</script>
