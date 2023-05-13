@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+     
+
+     //promise 
+ 
+     //1.fullfilled(success)   resolve
+     // 2. rejected(failure)  rejected
+    // 3.pending
+
+
+
+    // promise in programming 
+    
+    //  buffering
+    // uploading /downloading
+    // transaction
+
+    
+    // call back function 
+
+    // step 1
+
+//     let url ="https://www.amaandeepDhillon.com";
+
+//     function download(url){
+
+//    console.log(`Downloading ${url}`)
+//     }
+
+//     function process(url){
+
+//     console.log(`Process ${url}`)
+//  }
+ 
+//         download(url);
+         
+//         process(url);
+
+
+// step 2
+
+
+  
+//     let url ="https://www.amaandeepDhillon.com";
+
+//     function download(url){
+
+//         setTimeout(()=>{
+          
+//             console.log(`Downloading ${url}`) 
+//         },1000)
+  
+   
+//     }
+
+//     function process(url){
+
+//     console.log(`Process ${url}`)
+//  }
+ 
+//         download(url);
+         
+//         process(url);
+
+
+// step 3
+
+// let url ="https://www.amaandeepDhillon.com";
+
+//     function download(url,callback){
+
+//         setTimeout(()=>{
+          
+//             console.log(`Downloading ${url}`) 
+//             // process(url);
+
+//             callback(url)
+        
+//         },2000)
+  
+   
+//     }
+
+//     function process(url){
+
+//         console.log(`Process ${url}`)
+//  }
+ 
+//         download(url,process);
+         
+
+
+// step 4 
+
+// let url ="https://www.amaandeepDhillon.com";
+
+//     function download(url,callback){
+
+//         setTimeout(()=>{
+          
+//             console.log(`Downloading ${url}`) 
+//             // process(url);
+
+//             callback(url)
+        
+//         },2000)
+  
+    
+//     }
+
+//     function process(url){
+
+//         console.log(`Process ${url}`)
+//  }
+ 
+        // download(url,process);
+//         download(url, function process(url){
+
+// console.log(`Process ${url}`)
+// });
+       
+
+// step 5
+
+// fuction inside a function 
+
+
+// let url1 ="https://www.amaandeepDhillon1.com";
+// let url2 ="https://www.amaandeepDhillon2.com";
+// let url3 ="https://www.amaandeepDhillon3.com";
+
+//     function download(url,callback){
+
+//         setTimeout(()=>{
+          
+//             console.log(`Downloading ${url}`) 
+//             // process(url);
+
+//             callback(url)
+        
+//         },2000)
+  
+    
+//     }
+
+   
+ 
+//         // download(url,process);
+//         download(url1, function process(url1){
+
+//        console.log(`Process ${url1}`);
+
+
+//        download(url2, function process(url2){
+
+// console.log(`Process ${url2}`)
+
+
+// download(url3, function process(url3){
+
+// console.log(`Process ${url3}`)
+// });
+// });
+//     });
+
+//   
+
+
+
+// step 6  
+
+// function checkTransaction(){
+
+//     return true;
+// }
+
+//   const myPromise= new Promise((resolve,reject) =>{
+       
+//            let transaction_status= false;
+
+//            setTimeout(function(){
+            
+//             transaction_status=checkTransaction()
+//             if( transaction_status ===true)
+//             {
+//                 resolve('payment successful')
+//             }
+//             else{
+//                     reject('payment failed')
+//             } 
+
+
+//            },3000)
+//   })
+
+//   console.log(myPromise)
+
+
+
+
+
+
+
+ 
+
+
+
+
+     
+    
+
+
+
+</script>
