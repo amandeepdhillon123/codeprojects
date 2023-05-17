@@ -1,0 +1,15 @@
+.btn{
+   background-color: black;
+   border: 1px solid yell;
+   padding: 1em;
+   border-radius: 1em;
+ color:  green;
+ cursor: pointer;
+  width: 10%;
+}
+
+button:hover{
+
+    background-color: black;
+    color: white;
+}
