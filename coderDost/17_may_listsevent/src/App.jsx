@@ -39,7 +39,7 @@ function App() {
 
 // ]
   return (
-    <div className="App">
+    <div className="App" onClick={()=> console.log("amandeep")}>
  {
   obj.map(video=><Video
     key={video.id}
@@ -52,17 +52,30 @@ function App() {
     verified ={video.verified}
   
 >
-
+ <PlayButton  onPlay={()=>console.log("play",video.title)} 
+  onPause={()=>console.log("Pause",video.title)}>{video.title}</PlayButton> 
 
   </Video>)
  }
 
- <div style={{clear:'both'}}>
- <PlayButton  message="play-msg">Play</PlayButton>
- <PlayButton  message="pause-msg">Pause</PlayButton>
+ 
+ 
+
+<div style={{clear:'both'}}>
+ {/* <PlayButton  message="play-msg" onSmash={()=>console.log("play")}>Play</PlayButton> */}
+ {/* <PlayButton  message="pause-msg" onSmash={()=>console.log("pause")}>Pause</PlayButton> */}
+ 
+ 
+ 
+ 
+   {/* mutilple function one button */}
+ {/* <PlayButton  message="play-msg" onPlay={()=>console.log("play")}  onPause={()=>console.log("Pause")}>Play</PlayButton> */}
+ 
+  
+
+ 
+ 
  </div>
-
-
       
     </div>
   );
