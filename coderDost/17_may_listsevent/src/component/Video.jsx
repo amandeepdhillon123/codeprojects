@@ -1,6 +1,5 @@
-
-import './Video.css'
-function Video({id,title,channel,views,time,verified}){
+import "./Video.css";
+function Video({ id, title, channel, views, time, verified, children }) {
   // let verified = true;
 
   let channelJsx;
@@ -9,29 +8,31 @@ function Video({id,title,channel,views,time,verified}){
   // }
   // else{
   //   channelJsx =  <div className="channel">{channel}</div>
-  // }  
+  // }
 
- 
-   
-    return(
-        <>
-        <div className="container">
-       <div>
-     <img className="pic" src={`http://picsum.photos/id/${id}/160/90`} alt="" />
-       </div>
-      <div className="title">{title}</div>
+  return (
+    <>
+      <div className="container">
+        <div>
+          <img
+            className="pic"
+            src={`http://picsum.photos/id/${id}/160/90`}
+            alt=""
+          />
+        </div>
+        <div className="title">{title}</div>
 
-      {/* 1 */}
-       {/* <div className="channel">{channel} ✅</div> */}
-       
-         {/* 2 */}
-       {/* {
+        {/* 1 */}
+        {/* <div className="channel">{channel} ✅</div> */}
+
+        {/* 2 */}
+        {/* {
         channelJsx
        } */}
 
-       {/* 3 */}
+        {/* 3 */}
 
-{/* {
+        {/* {
     verified ?
 
     channelJsx =  <div className="channel">{channel} ✅</div>:
@@ -39,23 +40,28 @@ function Video({id,title,channel,views,time,verified}){
     channelJsx =  <div className="channel">{channel}</div>
   } */}
 
+        {/* 4th case  */}
 
-  {/* 4th case  */}
+        {/* <div className="channel">{channel}{ verified ? '✅' : null}</div> */}
 
-       {/* <div className="channel">{channel}{ verified ? '✅' : null}</div> */}
+        {/* 5th case short circuit  */}
 
+        <div className="channel">
+          {channel}
+          {verified && "✅"}
+        </div>
 
-{/* 5th case short circuit  */}
+        <div className="views">
+          {views} <span>.</span> {time} <br />
+        <div>
+         <div>{children}</div>
+        </div>
+        </div>
+      </div>
 
-  <div className="channel">{channel}{ verified && '✅' }</div>
-
-       
-       
-       <div className="views">{views} <span>.</span> {time}</div>
-       
-       </div>
-       </>
-    )
+      <div></div>
+    </>
+  );
 }
 
 export default Video;
