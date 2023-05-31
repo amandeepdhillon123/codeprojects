@@ -8,7 +8,7 @@ const bodyParser=require('body-parser')
 
 app.use(bodyParser.json())
 
-app.listen(3008,()=>{
+app.listen(3009,()=>{
     console.log("server started at port ")
 })
 
@@ -27,3 +27,16 @@ app.post('/api/cars',(req,resp) =>{
     resp.send("car submitted successfully")
 
 })
+
+const mongoose= require('mongoose')
+mongoose.connect('mongodb://127.0.0.1:27017/myDatabase',{
+
+useNewUrlParser:true,
+useUnifiedTopology:true
+})
+.then(()=>{
+    console.log("connection successful")
+})
+.catch((error) =>{
+    console.log("received an error")
+});
