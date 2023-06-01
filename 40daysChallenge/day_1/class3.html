@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+  
+<script>
+let data =[1,2,3,4,5];
+
+// let pos=4
+
+// for(let i=0; i<data.length; i++)
+// {
+//     console.log(data[i])
+
+//     if(data[i]==pos)
+//     {
+//         console.log("amandeep")
+//     }
+// }
+
+  let pos=3;
+  let newEl=78;
+for(let i= data.length-1; i>=pos; i--)
+        {
+        
+          data[i+1]=data[i]
+          if(i==pos)
+          {
+            data[i]=newEl
+          }
+            
+        }
+
+        console.log(data)
+</script>
