@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      
+</body>
+</html>
+<script>
+    //  object litral
+
+    // let obj={
+    //     name:"amandeep",
+    //     surName:"Dhillon"
+    // }
+
+    // console.log(obj.name)
+    // console.log(obj.surName)
+    // console.log(obj)
+
+//   mthod 
+    // let obj={
+    //     name:"amandeep",
+    //     surName:"Dhillon",
+
+    //     draw(){
+    //         console.log("method in object ")
+    //     }
+    // }
+
+    // obj.draw();
+
+
+    // factor function 
+
+    //  function factory(n,s){
+
+    //     return obj={
+    //         name:n,
+    //         surName:s
+    //     }
+    //  }
+
+    //  let obj1= factory("amandeep","Dhillon");
+    //  console.log(obj1)
+
+    //  obj1.color="red"
+
+
+    //  console.log(obj1)
+
+    // constructor function 
+
+    function Cos(n,s){
+        this.name=n;
+        this.surName=s;
+        this.draw=function(){
+            console.log("hello ji")
+        }
+    }
+
+    // let obj1= new Cos("amandeep","Dhillon")
+    // console.log(obj1)
+
+    // how to make inbilt constrictor function 
+
+
+    // let object= new Function('n','s',`
+    
+    // this.name=n;
+    //     this.surName=s;
+    //     this.draw=function(){
+    //         console.log("hello ji")}`)
+
+    // let main= new object("amandeep","amlik")
+
+    // console.log(main)
+
+//   primitive types 
+    // let a= 10;
+
+    // let b=a;
+    //   a++;
+
+    //   console.log(a);
+    //   console.log(b)
+
+    // let a ={value:10}
+
+    // let b =a;
+
+    // a.value++;
+
+    // console.log(a.value);
+
+    // console.log(b.value);
+
+
+//     let a = 10;
+
+//     function inc(a){
+
+//         a++;
+
+//         console.log("inside function =", a)
+//     }
+//     inc(a) ;
+
+//     console.log(a)
+
+  
+//  let b= {value:10};
+//  function inc(b){
+
+//      b.value++;
+
+//    console.log("inside function = ", b)
+// }
+//  inc(b)
+
+//  console.log(b.value)
+
+
+
+//   loopp in object 
+
+
+// let obj={
+//     length:2,
+//     breadth:4
+// }
+
+// for(let key in obj)
+// {
+//     console.log(key,"=",obj[key])
+// }
+
+// for(let key of Object.keys(obj)){
+//     // console.log(key,obj[key])
+// }
+
+// for(let key of Object.entries(obj)){
+
+//     console.log(key)
+  
+// }
+
+// if('length' in obj)
+// {
+//     console.log("present")
+// }
+
+// else{
+
+// console.log("absent")
+// }
+
+
+// object clonning 
+
+        let obj={
+            length:2,
+            breadth:4
+        }
+
+       
+      
+
+
+        // iteration method 
+          // let dest={}
+
+    // for(let key in obj){
+    //     dest[key]=obj[key]
+    // }
+
+    // console.log(dest)
+
+
+    // assign method 
+
+    // let dest= Object.assign({},obj,)
+
+    // console.log(dest)
+
+    // spread 
+
+
+    // let dest={...obj};
+
+    // console.log(dest)
+
+
+
+
+
+ 
+
+
+
+</script>
