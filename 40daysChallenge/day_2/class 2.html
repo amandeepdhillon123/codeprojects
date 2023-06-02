@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    // hoisting
+    //     name()
+
+    // function name(){
+
+    //     console.log("amandeep")
+    // }
+
+    // console.log(name)
+    // var name= "amandeep"
+
+
+    // fucntion assignment 
+
+    // let a =function name(){
+    //     console.log("amadneep")
+    // }
+
+    // console.log(a()) 
+
+
+    // anonymous function 
+
+    // let stand= function(){
+
+    //     console.log("a,mandeep")
+    // }
+
+    // stand();
+
+
+    // arguements 
+
+//   function sum(b,c){
+
+//   let a= b+c;
+
+//   console.log(a)
+
+//   console.log(arguments)
+//   let sum=0;
+//   for(key of arguments)
+//   {
+    
+
+//      sum=sum + key;
+
+    
+//   }
+// //   console.log(sum)
+//   }
+
+//   sum(4,5,7,8,9)
+
+// function sum(...args)
+// {
+//     console.log(args)
+// }
+
+// // sum(3,4,5)
+
+
+// getter and setter method 
+
+
+// let person= {
+//     name:"amadneep",
+//     surName:'dhillon',
+
+//     get fullName(){
+//         return `${person.name} ${person.surName}`
+//     },
+
+//     set fullName(value) {
+
+//         if(typeof value !== String)
+//         {
+//             throw new Error("jais")
+//         }
+//         let parts=value.split(' ')
+//         this.name= parts[0];
+
+//         this.surName=parts[1]
+//     }
+// }
+
+
+// person.fullName="rahul kumar";
+
+// console.log(person.fullName)
+
+
+// try {
+//     // console.log("amandeep")
+
+//     person.fullName=true;
+    
+// } catch (e) {
+
+//  alert("ajis")
+    
+// }
+
+
+
+// reducing an element 
+
+let arr= [1,2,3,4];
+
+let reduce= arr.reduce((acc,ele) =>{
+
+    return acc + ele 
+},0)
+
+console.log(reduce)
+  
+
+
+
+</script>
