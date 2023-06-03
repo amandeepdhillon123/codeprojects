@@ -1,11 +1,13 @@
 
   import Function from "./componenent/Function";
-
+   import Ram from './componenent/Class'
 function App(){
 
   return(
    <>
-        <Function/>
+        {/* <Function/> */}
+
+        <Ram/>
    </>
   )
 }
