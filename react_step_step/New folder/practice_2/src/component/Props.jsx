@@ -5,6 +5,12 @@ const Props = () => {
   
   const [nam,setName]=useState("amandeep")
 
+  function Ram(){
+
+    alert("jai shree ram ")
+
+  }
+
   return (
     <div>
 
@@ -16,6 +22,8 @@ const Props = () => {
   email="sfsfhsfjsfh"
 
   other={{ vpo:'sdshwfhw', city :'sdfhsfsdhfe'}}
+
+  Fun={Ram}
   
   
   
