@@ -9,7 +9,9 @@ import './App.css'
 
 // import Student from './component/Student'
 
-import Conditon from './component/Conditon'
+// import Conditon from './component/Conditon'
+ 
+ import FormValidation from './component/FormValidation'
 function App() {
 
 
@@ -23,7 +25,9 @@ function App() {
 
     {/* <Form/> */}
 
-    <Conditon/>
+    {/* <Conditon/> */}
+
+    <FormValidation/>
    </>
   )
 }
