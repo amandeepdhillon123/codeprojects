@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/d440dbf060.js" crossorigin="anonymous"></script>
+    <title>Share_modal_app</title>
+</head>
+<body> 
+     <!-- upper circle  -->
+        <div class="circle1"></div>
+
+        <!-- lower circle  -->
+        <div class="circle2"></div> 
+  <!-- wrapper  -->
+        <div class="wrapper">
+
+               <!-- secondary  wrapper  -->
+
+
+            <div class="card-wrapper">
+
+                <!-- img container -->
+              <div>
+                <img src="https://w0.peakpx.com/wallpaper/639/974/HD-wallpaper-bhagat-singh-bhagatsingh-dom-domfighter-domwarrior-warrior.jpg" alt="user">
+               
+              </div>
+                 <!-- heading -->
+              <div class="user-name">
+                <h2>शहीद भगत सिंह</h2>
+              </div>
+                    <!--  description -->
+              <div class="designation">
+                   <h3>भारतीय स्वतंत्रता सेनानी</h3>
+              </div>
+                <!--bottom container  -->
+              <div class="bottom-group">
+
+                <!-- share button  -->
+               <button onclick="openModal()" class="btn-share btn-card">
+               <i class="fa-solid fa-share"></i>
+                 <div>share my profile</div>
+                </onclick=>
+             <!-- follow me button -->
+                <button class="btn-follow btn-card">Follow me</button>
+              </div>
+            </div>
+        </div>
+
+
+        <!-- modal component  -->
+
+        <div class="modal">
+                    <!--  heading in modal -->
+            <div class="modal-header">
+              <h1>Share My Profile</h1>
+              <div>
+                <i onclick="closeModal()" class="fa-solid fa-xmark close"></i>
+              </div>
+            </div>
+
+
+            <div>
+                <h3>share this via</h3>
+                <div class="icon-container">
+                    <a href="#" class="icon" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="icon" id="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                      </a>
+                      <a href="#" class="icon" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                      <a href="#" class="icon" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                      <a href="#" class="icon" id="telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                      </a>
+                    </div>   
+                </div>
+            </div>
+
+
+            <!-- overlay -->
+
+            <div class="overlay" onclick="closeModel()">
+
+            </div>
+    
+</body>
+</html>
+ <script src="script.js"></script>
