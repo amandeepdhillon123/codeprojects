@@ -11,7 +11,9 @@ import './App.css'
 
 // import Unmount from './component/Unmount'
 //  import Effect from './component/Effect'
-import Eff from './component/Eff'
+  import Array from './component/Array'
+
+// import Efff from './component/Efff'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -30,7 +32,11 @@ function App() {
 
      {/* <Effect/> */}
 
-     <Eff/>
+     {/* <Eff/> */}
+
+     {/* <Efff/> */}
+
+     <Array/>
    </>
   )
 }
