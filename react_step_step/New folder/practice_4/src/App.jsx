@@ -6,8 +6,10 @@ import './App.css'
 //  import Construct from './component/constructor'
 //  import Render from './component/Render'
 //  import Didmount from './component/Didmount'
-import Sholudmount from './component/Sholudmount'
+// import Sholudmount from './component/Sholudmount'
 // import Didupdate from './component/Didupdate'
+
+import Unmount from './component/Unmount'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -20,7 +22,9 @@ function App() {
 
      {/* <Didupdate/> */}
 
-     <Sholudmount/>
+     {/* <Sholudmount/> */}
+
+     <Unmount/>
    </>
   )
 }
