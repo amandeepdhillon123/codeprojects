@@ -9,7 +9,9 @@ import './App.css'
 // import Sholudmount from './component/Sholudmount'
 // import Didupdate from './component/Didupdate'
 
-import Unmount from './component/Unmount'
+// import Unmount from './component/Unmount'
+ import Effect from './component/Effect'
+
 function App() {
   const[sur,surName]=useState("am")
 
@@ -24,7 +26,9 @@ function App() {
 
      {/* <Sholudmount/> */}
 
-     <Unmount/>
+     {/* <Unmount/> */}
+
+     <Effect/>
    </>
   )
 }
