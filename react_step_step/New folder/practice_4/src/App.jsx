@@ -10,8 +10,8 @@ import './App.css'
 // import Didupdate from './component/Didupdate'
 
 // import Unmount from './component/Unmount'
- import Effect from './component/Effect'
-
+//  import Effect from './component/Effect'
+import Eff from './component/Eff'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -28,7 +28,9 @@ function App() {
 
      {/* <Unmount/> */}
 
-     <Effect/>
+     {/* <Effect/> */}
+
+     <Eff/>
    </>
   )
 }
