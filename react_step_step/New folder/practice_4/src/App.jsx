@@ -5,7 +5,8 @@ import './App.css'
 
 //  import Construct from './component/constructor'
 //  import Render from './component/Render'
- import Didmount from './component/Didmount'
+//  import Didmount from './component/Didmount'
+import Didupdate from './component/Didupdate'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -14,7 +15,9 @@ function App() {
    {/* <Construct surName="dhillon"/> */}
      {/* <Render logic= {sur}/> */}
 
-     <Didmount/>
+     {/* <Didmount/> */}
+
+     <Didupdate/>
    </>
   )
 }
