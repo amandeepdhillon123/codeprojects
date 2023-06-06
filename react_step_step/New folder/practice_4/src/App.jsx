@@ -4,14 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 //  import Construct from './component/constructor'
- import Render from './component/Render'
+//  import Render from './component/Render'
+ import Didmount from './component/Didmount'
 function App() {
   const[sur,surName]=useState("am")
 
   return (
    <>
    {/* <Construct surName="dhillon"/> */}
-     <Render logic= {sur}/>
+     {/* <Render logic= {sur}/> */}
+
+     <Didmount/>
    </>
   )
 }
