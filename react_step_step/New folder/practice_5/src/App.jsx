@@ -5,7 +5,8 @@ import './App.css'
 // import Nested from './component/Nested'
 // import Reuse from './component/Reuse'
 
-import Fragment from './component/Fragment'
+// import Fragment from './component/Fragment'
+import Parent from './component/Parent'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -15,7 +16,10 @@ function App() {
 
 {/* <Reuse/> */}
 
-<Fragment/>
+{/* <Fragment/> */}
+
+  <Parent/>
+
   </>
   )
 }
