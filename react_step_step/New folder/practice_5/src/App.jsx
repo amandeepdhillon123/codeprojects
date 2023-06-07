@@ -6,7 +6,9 @@ import './App.css'
 // import Reuse from './component/Reuse'
 
 // import Fragment from './component/Fragment'
-import Parent from './component/Parent'
+// import Parent from './component/Parent'
+// import PC from './component/PC'
+// import Memo from './component/Memo'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -18,8 +20,13 @@ function App() {
 
 {/* <Fragment/> */}
 
-  <Parent/>
+  {/* <Parent/> */}
+   {/* <PC/> */}
+   {/* <Memo/> */}
 
+   <h1>amandeep</h1>
+
+   <App/>
   </>
   )
 }
