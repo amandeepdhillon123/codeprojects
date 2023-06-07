@@ -3,7 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 // import Nested from './component/Nested'
-import Reuse from './component/Reuse'
+// import Reuse from './component/Reuse'
+
+import Fragment from './component/Fragment'
 function App() {
   const[sur,surName]=useState("am")
 
@@ -11,7 +13,9 @@ function App() {
   <>
 {/* <Nested/> */}
 
-<Reuse/>
+{/* <Reuse/> */}
+
+<Fragment/>
   </>
   )
 }
