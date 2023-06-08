@@ -42,3 +42,22 @@
 // }
 // // Output: 1 2
 // 
+
+//     <div class="myClass">Element 1</div>
+//     <div class="myClass">Element 2</div>
+//     <div class="myClass">Element 3</div>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+// 
+//  
+//  // Using querySelector() - returns the first element
+//  var element = document.querySelector('.myClass');
+//  console.log(element.textContent); 
+//  // Output: Element 1
+//  // Using querySelectorAll() - returns all the elements
+//  var elements = document.querySelectorAll('.myClass');
+//  elements.forEach(function(element) {
+//    console.log(element.textContent);
+//  });
+//  // Output: Element 1, Element 2, Element 3
