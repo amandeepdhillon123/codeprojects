@@ -70,3 +70,10 @@
 // // as HTML and renders it accordingly
 // var element1 = document.getElementById("myElement2");
 // element1.innerHTML = "<strong>Happy</strong>";
+
+
+ // cloneNode() - copy the existing element with all attributes
+//  var existingElement = document.getElementById('parentElement');
+//  var clonedElement = existingElement.cloneNode(true);
+//  clonedElement.textContent = 'Cloned element';
+//  document.body.appendChild(clonedElement);
