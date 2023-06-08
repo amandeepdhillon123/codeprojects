@@ -9,3 +9,36 @@
 // var childElement = document.querySelector('.childElement');
 // parentElement.removeChild(childElement);
 // 
+
+
+// <!DOCTYPE html>
+// <html>
+//   <head>
+//     <title>DOM Methods</title>   
+//   </head>
+//   <body>    
+//     <div id="myDiv" class="myClass">1</div>
+//     <div class="myClass">2</div>
+//     <p class="myClass">3</p>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+// //getElementById - select a single element 
+// const elementById = document.getElementById("myDiv");
+// console.log(elementById.innerHTML);
+// // Output: 1
+// //getElementsByClassName - select multiple elements that 
+//                         //share the same class name
+// const elements = document.getElementsByClassName("myClass");
+// for (let i = 0; i < elements.length; i++) {
+//   console.log(elements[i].textContent);
+// }
+// // Output: 1 2 3
+// //getElementsByTagName - select multiple elements based 
+//                       //on their tag name
+// const elementsTag = document.getElementsByTagName("div");
+// for (let i = 0; i < elementsTag.length; i++) {
+//   console.log(elementsTag[i].textContent);
+// }
+// // Output: 1 2
+// 
