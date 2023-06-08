@@ -61,3 +61,12 @@
 //    console.log(element.textContent);
 //  });
 //  // Output: Element 1, Element 2, Element 3
+
+
+// textContent property used to assign plain text to element
+// var element1 = document.getElementById("myElement1");
+// element1.textContent = "<strong>Happy</strong>"; 
+// // innerHTML property, the browser interprets the content
+// // as HTML and renders it accordingly
+// var element1 = document.getElementById("myElement2");
+// element1.innerHTML = "<strong>Happy</strong>";
