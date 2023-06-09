@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+ import Home from "../Pages/Home";
+ import About from "../Pages/About";
 function First() {
   return (
     <div>
@@ -21,21 +23,5 @@ function First() {
   );
 }
 
-function Home() {
-  return (
-    <>
-      <h1>Home Page</h1>
-      <p>This is Home PAge of website</p>
-    </>
-  );
-}
 
-function About() {
-  return (
-    <>
-      <h1>About Page</h1>
-      <p>This is About PAge of website</p>
-    </>
-  );
-}
 export default First;
