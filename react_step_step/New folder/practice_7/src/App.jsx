@@ -1,9 +1,10 @@
 
 import React from 'react'
-import Dynamic from './assets/component/Dynamic'
+// import Dynamic from './assets/component/Dynamic'
 // import Sec from './assets/component/Sec'
 // import First from './assets/component/First'
  import './App.css'
+ import Api from './assets/component/Api'
  const App = () => {
    return (
      <div>
@@ -11,7 +12,8 @@ import Dynamic from './assets/component/Dynamic'
   
   {/* <First/> */}
   {/* <Sec/> */}
-   <Dynamic/>
+   {/* <Dynamic/> */}
+   <Api/>
      </div>
     
    )
