@@ -1,7 +1,7 @@
 
 import React from 'react'
-
-import Sec from './assets/component/Sec'
+import Dynamic from './assets/component/Dynamic'
+// import Sec from './assets/component/Sec'
 // import First from './assets/component/First'
  import './App.css'
  const App = () => {
@@ -10,8 +10,8 @@ import Sec from './assets/component/Sec'
 
   
   {/* <First/> */}
-  <Sec/>
-
+  {/* <Sec/> */}
+   <Dynamic/>
      </div>
     
    )
