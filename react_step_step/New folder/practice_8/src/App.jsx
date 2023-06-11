@@ -5,7 +5,8 @@ import './App.css'
 // import Function from './component/Function'
 // import Props from './component/Props'
 // import Clas from './component/Clas'
-import Input from './component/Input'
+// import Input from './component/Input'
+import Toglle from './component/Toglle'
 function App() {
   return (
     <div>
@@ -17,9 +18,9 @@ function App() {
      {/* <Clas/> */}
     {/* <Props/> */}
 
-    <Input/>
+    {/* <Input/> */}
      
-      
+    <Toglle/>    
     </div>
   )
 }
