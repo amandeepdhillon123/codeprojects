@@ -8,8 +8,8 @@ import './App.css'
 // import Input from './component/Input'
 // import Toglle from './component/Toglle'
 //  import Form from './component/Form'
-import Render from './component/Render'
-
+// import Render from './component/Render'
+ import Validation from './component/Validation'
 function App() {
   return (
     <div>
@@ -27,7 +27,11 @@ function App() {
 
      {/* <Form/> */}
 
-     <Render/>
+     {/* <Render/> */}
+
+     <Validation/>
+
+     
 
     </div>
   )
