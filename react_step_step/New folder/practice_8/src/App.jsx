@@ -4,8 +4,8 @@ import './App.css'
 // import Click from './component/Click'
 // import Function from './component/Function'
 // import Props from './component/Props'
-import Clas from './component/Clas'
-
+// import Clas from './component/Clas'
+import Input from './component/Input'
 function App() {
   return (
     <div>
@@ -14,11 +14,10 @@ function App() {
      {/* <Function/> */}
      {/* <Classs/> */}
 
-     <Clas/>
+     {/* <Clas/> */}
+    {/* <Props/> */}
 
-
-
- {/* <Props/> */}
+    <Input/>
      
       
     </div>
