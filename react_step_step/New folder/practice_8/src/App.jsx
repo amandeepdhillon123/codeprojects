@@ -6,7 +6,8 @@ import './App.css'
 // import Props from './component/Props'
 // import Clas from './component/Clas'
 // import Input from './component/Input'
-import Toglle from './component/Toglle'
+// import Toglle from './component/Toglle'
+ import Form from './component/Form'
 function App() {
   return (
     <div>
@@ -20,7 +21,10 @@ function App() {
 
     {/* <Input/> */}
      
-    <Toglle/>    
+    {/* <Toglle/>     */}
+    
+     <Form/>
+
     </div>
   )
 }
