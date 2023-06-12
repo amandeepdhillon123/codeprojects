@@ -9,7 +9,7 @@ export class Construct extends Component {
       <>
    {/* <button>update</button> */}
 
-     <Render name="mandeep"/>
+      <Render name="mandeep"/>
       </>
     )
   }
