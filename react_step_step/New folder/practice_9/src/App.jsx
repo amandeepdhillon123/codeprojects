@@ -4,8 +4,8 @@ import React from 'react'
  import './App.css'
  import Construct from './component/Construct'
 //  import DidMount from './component/DidMount'
-  import DidUpdate from './component/DidUpdate'
-
+  // import DidUpdate from './component/DidUpdate'
+  import Should from './component/Should'
 const App = () => {
    return (
      <div>
@@ -13,7 +13,9 @@ const App = () => {
    {/* <Construct/> */}
 
    {/* <DidMount/> */}
-     <DidUpdate/>
+     {/* <DidUpdate/> */}
+
+     <Should/>
      </div>
     
    )
