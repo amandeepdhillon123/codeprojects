@@ -5,8 +5,10 @@ import React from 'react'
  import Construct from './component/Construct'
 //  import DidMount from './component/DidMount'
   // import DidUpdate from './component/DidUpdate'
-  import Should from './component/Should'
-const App = () => {
+  // import Should from './component/Should'
+ import Will from './component/Will'
+
+  const App = () => {
    return (
      <div>
 
@@ -15,7 +17,9 @@ const App = () => {
    {/* <DidMount/> */}
      {/* <DidUpdate/> */}
 
-     <Should/>
+     {/* <Should/> */}
+
+     <Will/>
      </div>
     
    )
