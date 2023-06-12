@@ -22,7 +22,8 @@ body{
 .title{
   font-size: 3rem;
   margin:6vh;
-  border: 7px dashed rgb(1,17,160);
+  border: 7px solid green ;
+  /* rgb(1,17,160) */
   border-radius: 20px;
   padding:1vh 5vw;
 }
@@ -74,7 +75,9 @@ body{
 }
 
 .btn-red{
-  margin-top:18px;
+      margin-top: 18px;
+      margin-left: 30px;
+  
   padding: 10px 80px;
   border: 1px solid #b4161b;
   cursor: pointer;
@@ -82,6 +85,8 @@ body{
   font-size: 18px;
   font-weight: bold;
   background-color: #b4161b21;
+  /* margin: auto; */
+ 
 }
 
 .btn-red:hover{
