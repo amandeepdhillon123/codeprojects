@@ -1,18 +1,24 @@
-import Card from "./Card";
-let Tours = ({ tours, removeTour }) => {
-  // console.log(props)
-  return (
-    <div className="container">
-      <div>
-        <h2 className="title">Plan with Us</h2>
-      </div>
-      <div className="cards">
-        {tours.map((tour) => {
-          return <Card {...tour} removeTour={removeTour}></Card>;
-        })}
-      </div>
-    </div>
-  );
-};
 
-export default Tours;
+
+import React from 'react'
+import Card from './Card'
+function Tours({tours, removeTour}) {
+  return (
+    <div className='container'>
+       <div>
+          <h2 className="title">भारत दर्शन</h2>
+       </div>
+
+       <div className='cards'>
+      {
+        tours.map((item)=>{
+          return <Card {...item}  removeTour={removeTour}></Card>
+        })
+      }
+       </div>
+    
+    </div>
+  )
+}
+
+export default Tours
