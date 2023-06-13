@@ -4,7 +4,10 @@ import './App.css'
 // import Toglle from './component/Toglle'
 
 // import Form from './component/Form'
-import Val from './component/Val'
+// import Val from './component/Val'
+// import Cons from './component/Cons'
+
+import Will from './component/Will'
 function App() {
   return (
     <>
@@ -14,7 +17,10 @@ function App() {
 
      {/* <Form/> */}
 
-     <Val/>
+     {/* <Val/> */}
+
+     {/* <Cons/> */}
+     <Will/>
     </>
   )
 }
