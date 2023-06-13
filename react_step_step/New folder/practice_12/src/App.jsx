@@ -5,7 +5,8 @@ import Frag from './component/Frag'
 // import Nested from './component/Nested'
 // import Reuse from './component/Reuse'
 //  import Lift from './component/Lift'
- import Pure from './component/Pure'
+//  import Pure from './component/Pure'
+ import Memo from './component/Memo'
 function App() {
   return (
     <>
@@ -18,7 +19,8 @@ function App() {
 
      {/* <Lift/> */}
 
-     <Pure/>
+     {/* <Pure/> */}
+     <Memo/> 
 
     </>
   )
