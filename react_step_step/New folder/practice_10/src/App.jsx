@@ -1,10 +1,11 @@
 import React from 'react'
 import './App.css'
-import Effect from './component/Effect'
+// import Effect from './component/Effect'
+import Effec1 from './component/Effec1'
 function App() {
   return (
     <>
-      <Effect/>
+      <Effec1/>
     </>
   )
 }
