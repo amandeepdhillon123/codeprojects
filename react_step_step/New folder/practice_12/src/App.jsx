@@ -4,6 +4,8 @@ import Frag from './component/Frag'
 // import List from './component/List'
 // import Nested from './component/Nested'
 // import Reuse from './component/Reuse'
+ import Lift from './component/Lift'
+
 function App() {
   return (
     <>
@@ -12,7 +14,10 @@ function App() {
      {/* <Nested/> */}
 
      {/* <Reuse/> */}
-     <Frag/>
+     {/* <Frag/> */}
+
+     <Lift/>
+
     </>
   )
 }
