@@ -3,7 +3,8 @@ import './App.css'
 // import Input from './component/Input'
 // import Toglle from './component/Toglle'
 
-import Form from './component/Form'
+// import Form from './component/Form'
+import Val from './component/Val'
 function App() {
   return (
     <>
@@ -11,7 +12,9 @@ function App() {
 
      {/* <Toglle/> */}
 
-     <Form/>
+     {/* <Form/> */}
+
+     <Val/>
     </>
   )
 }
