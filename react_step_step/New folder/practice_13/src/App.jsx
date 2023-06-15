@@ -4,7 +4,8 @@ import './App.css'
 // import Pure from './component/Pure'
 // import Ref1 from './component/Ref1'
 // import Memo from './component/Memo'
-import Forward1 from './component/forward1'
+// import Forward1 from './component/forward1'
+import Control from './component/Control'
 function App() {
   return (
     <>
@@ -15,8 +16,10 @@ function App() {
 
   {/* <Ref/> */}
   {/* <Ref1/> */}
-  
-     <Forward1/>
+
+     {/* <Forward1/> */}
+
+     <Control/>
     
     
     
