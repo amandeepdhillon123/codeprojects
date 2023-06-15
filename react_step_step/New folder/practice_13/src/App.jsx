@@ -6,7 +6,8 @@ import './App.css'
 // import Memo from './component/Memo'
 // import Forward1 from './component/forward1'
 // import Control from './component/Control'
-import Un1 from './component/Un1'
+// import Un1 from './component/Un1'
+import Hoc from './component/Hoc'
 function App() {
   return (
     <>
@@ -21,9 +22,9 @@ function App() {
      {/* <Forward1/> */}
 
      {/* <Control/> */}
-     <Un1/>
+     {/* <Un1/> */}
     
-    
+     <Hoc/>
     
     </>
   
