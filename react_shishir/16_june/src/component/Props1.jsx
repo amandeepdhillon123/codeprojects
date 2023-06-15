@@ -3,7 +3,8 @@ import React from 'react'
 // import Funevent from './FUneven
 // import Form from './Form'
 //  import Form1 from './Form1'
- import Sum from './Sum'
+//  import Sum from './Sum'
+import Promis from './Promis'
 function Props1() {
   return (
     <div>
@@ -13,7 +14,8 @@ function Props1() {
         {/* <Funevent/> */}
 
         {/* <Form1/> */}
-        <Sum/>
+        {/* <Sum/> */}
+        <Promis/>
     </div>
   )
 }
