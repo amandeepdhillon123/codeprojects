@@ -5,7 +5,8 @@ import './App.css'
 // import Ref1 from './component/Ref1'
 // import Memo from './component/Memo'
 // import Forward1 from './component/forward1'
-import Control from './component/Control'
+// import Control from './component/Control'
+import Un1 from './component/Un1'
 function App() {
   return (
     <>
@@ -19,7 +20,8 @@ function App() {
 
      {/* <Forward1/> */}
 
-     <Control/>
+     {/* <Control/> */}
+     <Un1/>
     
     
     
