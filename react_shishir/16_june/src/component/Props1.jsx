@@ -1,7 +1,8 @@
 import React from 'react'
 //  import Pros2 from './Pros2'
 // import Funevent from './FUneven
-import Form from './Form'
+// import Form from './Form'
+ import Form1 from './Form1'
 function Props1() {
   return (
     <div>
@@ -10,7 +11,7 @@ function Props1() {
 
         {/* <Funevent/> */}
 
-        <Form/>
+        <Form1/>
     </div>
   )
 }
