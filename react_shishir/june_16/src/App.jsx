@@ -5,7 +5,8 @@ import viteLogo from '/vite.svg'
 // import Two from './component/Two'
 // import Three from './component/Three'
 // import Four from './component/Four'
- import Five from './component/Five'
+//  import Five from './component/Five'
+import Six from './component/Six'
 import './App.css'
 function App() {
 
@@ -17,7 +18,8 @@ return (
       {/* <Two/> */}
       {/* <Three/> */}
       {/* <Four/> */}
-        <Five/>
+        {/* <Five/> */}
+        <Six/>
 
       
    </>
