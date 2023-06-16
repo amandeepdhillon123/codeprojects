@@ -6,7 +6,10 @@ import viteLogo from '/vite.svg'
 // import Three from './component/Three'
 // import Four from './component/Four'
 //  import Five from './component/Five'
-import Six from './component/Six'
+// import Six from './component/Six'
+  
+import Seven from './component/Seven'
+  import { Routes,Route } from 'react-router-dom'
 import './App.css'
 function App() {
 
@@ -19,7 +22,12 @@ return (
       {/* <Three/> */}
       {/* <Four/> */}
         {/* <Five/> */}
-        <Six/>
+        {/* <Six/> */}
+
+           
+        <Routes>
+   <Route path="userview/:Id/:Fname/:Lname" element={<Seven/>}></Route>
+        </Routes>
 
       
    </>
