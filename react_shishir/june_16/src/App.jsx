@@ -10,7 +10,9 @@ import viteLogo from '/vite.svg'
   
 import Seven from './component/Seven'
   import { Routes,Route } from 'react-router-dom'
-import './App.css'
+  // import Eight from './component/Eight'
+
+  import './App.css'
 function App() {
 
 
@@ -28,6 +30,8 @@ return (
         <Routes>
    <Route path="userview/:Id/:Fname/:Lname" element={<Seven/>}></Route>
         </Routes>
+
+        {/* <Eight/> */}
 
       
    </>

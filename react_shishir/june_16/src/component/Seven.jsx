@@ -1,15 +1,18 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
+ 
 function Seven() {
-  const paramObj= useParams();
+//   const paramObj= useParams();
 
-  console.log(paramObj)
+const locationObj= useLocation();
+console.log(locationObj.pathname)
+
+//   console.log(paramObj)
   return (
     <div>
-        {paramObj.Id}
+        {/* {paramObj.Id}
         {paramObj.Fname}
-        {paramObj.Lname}
+        {paramObj.Lname} */}hello
     </div>
   )
 }
