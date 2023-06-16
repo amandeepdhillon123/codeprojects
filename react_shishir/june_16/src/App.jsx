@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import One from './component/One'
 import './App.css'
 function App() {
 
@@ -57,21 +58,21 @@ function App() {
 
   // show()
 
-    let add=(a,b)=>{
+    // let add=(a,b)=>{
 
-      const promiseObj= new Promise((resolve,reject)=>{
+    //   const promiseObj= new Promise((resolve,reject)=>{
           
-        if(a<0 || b<0)
-        {
-          reject("error")
-        }
-        else
-        resolve(a+b)
+    //     if(a<0 || b<0)
+    //     {
+    //       reject("error")
+    //     }
+    //     else
+    //     resolve(a+b)
 
-      })
+    //   })
 
-      return promiseObj
-    }
+    //   return promiseObj
+    // }
   //  console.log(add(2,3)) 
 
   // add(2,3).then((result)=>{
@@ -84,25 +85,26 @@ function App() {
   //   console.log(e)
   // })
 
-  async function show(){
-    try {
+//   async function show(){
+//     try {
 
-      let x= await add(2,3)
-      console.log(x)
+//       let x= await add(2,3)
+//       console.log(x)
       
-    } catch (error) {
-        console.log(error)
-    }   
-  }
+//     } catch (error) {
+//         console.log(error)
+//     }   
+//   }
 
-console.log(show())
+// console.log(show())
 
 
 
 
 return (
-   <>
-      <h1>asynch && await </h1>
+   <> 
+   <h1>hello ji  duniya</h1>
+      <One/>
    </>
   )
 }
