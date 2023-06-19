@@ -32,16 +32,29 @@ const ProductSchema = new mongoose.Schema({
 
 //  read data 
 
-const read = async() => {
+// const read = async() => {
     
-    let productModel= mongoose.model('products',ProductSchema);
+//     let productModel= mongoose.model('products',ProductSchema);
 
-    let data= await productModel.findOne();
+//     let data= await productModel.findOne();
+
+//     console.log(data)
+
+// }
+
+// read();
+
+// delete 
+
+  const del = async() =>{
+         
+    let productModel= mongoose.model('products',ProductSchema);
+    let data= await productModel.deleteOne({name:"radheShyam"});
 
     console.log(data)
-
+    
 }
 
-read();
+del()
 
 
