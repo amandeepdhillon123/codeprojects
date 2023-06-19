@@ -44,13 +44,28 @@
 
 // check data 
 
-  let check=  async ()=>{
+//   let check=  async ()=>{
 
-    let data =  await dbConnect();
+//     let data =  await dbConnect();
 
-    data= await data.findOne({name:"amandeep"})
+//     data= await data.findOne({name:"amandeep"})
 
-    console.log(data)
-  }
+//     console.log(data)
+//   }
 
-  check()
+//   check()
+
+
+
+// delete data 
+
+   const del = async()=>{
+
+      let data = await dbConnect();
+
+       data = await data.deleteOne({name:"amandeeep"})
+      console.log(data)
+
+   }
+
+   del();
