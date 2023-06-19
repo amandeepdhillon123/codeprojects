@@ -12,21 +12,36 @@ const ProductSchema = new mongoose.Schema({
 
 // update 
 
-const update = async()=>{
+// const update = async()=>{
      
-     const Product = mongoose.model('products',ProductSchema);
+//      const Product = mongoose.model('products',ProductSchema);
 
-     let data= await Product.updateOne(
-        {name:"mibile"},{$set :{name:"radheShyam"}})
+//      let data= await Product.updateOne(
+//         {name:"mibile"},{$set :{name:"radheShyam"}})
 
-console.log(data)
+// console.log(data)
 
-if(data.acknowledged)
-{
-    console.log("successful")
+// if(data.acknowledged)
+// {
+//     console.log("successful")
+// }
+// }
+
+// update();
+
+
+//  read data 
+
+const read = async() => {
+    
+    let productModel= mongoose.model('products',ProductSchema);
+
+    let data= await productModel.findOne();
+
+    console.log(data)
+
 }
-}
 
-update();
+read();
 
 
