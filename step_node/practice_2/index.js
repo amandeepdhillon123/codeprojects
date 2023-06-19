@@ -29,14 +29,28 @@
 
 //  uodata data in node js from db 
 
-let update =async()=>{
+// let update =async()=>{
 
-    let data= await dbConnect();
+//     let data= await dbConnect();
 
-    data = await data.updateOne({name:"rahul"},{$set:{name :"Kuldeep"}})
+//     data = await data.updateOne({name:"rahul"},{$set:{name :"Kuldeep"}})
+
+//     console.log(data)
+
+// }
+
+// update();
+
+
+// check data 
+
+  let check=  async ()=>{
+
+    let data =  await dbConnect();
+
+    data= await data.findOne({name:"amandeep"})
 
     console.log(data)
+  }
 
-}
-
-update();
+  check()
