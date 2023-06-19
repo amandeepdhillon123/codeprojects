@@ -13,6 +13,9 @@ app.get('', async(req,resp)=>{
     resp.send(data)
 })
 
+
+// add data 
+
 app.post('',async(req,resp)=>{
     //  resp.send({name:"jaatram"})
 
@@ -23,6 +26,19 @@ app.post('',async(req,resp)=>{
        data =  await data.insertOne(req.body);
 
        resp.send(data)
+})
+
+
+
+// update data 
+
+app.put("",async(req,resp)=>{
+
+    let data = await dbConnect();
+
+  data=  data.updateOne({"name":"peter"},{$set:{name:"sanju"}})
+   
+  resp.send(req.body)
 })
 
 
