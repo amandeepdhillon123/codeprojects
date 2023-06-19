@@ -15,12 +15,28 @@
  
 //  insertdata  from mongodb
 
-  let  insert = async ()=>{
+//   let  insert = async ()=>{
      
-    let data = await dbConnect();
-    // console.log(data)
-    data = await data.insertOne({name:"rohit", age:"67"})
-     console.log(data)
-  }
+//     let data = await dbConnect();
+//     // console.log(data)
+//     data = await data.insertOne({name:"rohit", age:"67"})
+//      console.log(data)
+//   }
 
-  insert();
+//   insert();
+
+
+
+//  uodata data in node js from db 
+
+let update =async()=>{
+
+    let data= await dbConnect();
+
+    data = await data.updateOne({name:"rahul"},{$set:{name :"Kuldeep"}})
+
+    console.log(data)
+
+}
+
+update();
