@@ -1,5 +1,5 @@
 import React from 'react'
- import {useState} from'react'
+ import {useState,useEffect} from'react'
 
   import {useNavigate} from "react-router-dom"
 function SignUp() {
@@ -8,6 +8,17 @@ function SignUp() {
     const[email,setEmail]=useState("")
 
     const navigate = useNavigate();
+    
+
+    useEffect(()=>{
+    
+      let auth = localStorage.getItem('user')
+      if(auth)
+      {
+      navigate('/')
+      }
+    })
+
 
 
     const collectData=async()=>{
@@ -25,6 +36,7 @@ function SignUp() {
          if(result)
 
          {
+          localStorage.setItem("user",JSON.stringify(result))
           navigate('/')
          }
     }

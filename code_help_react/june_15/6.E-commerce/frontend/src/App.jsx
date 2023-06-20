@@ -5,6 +5,7 @@ import './App.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import SignUp from './components/SignUp'
+import PrivateComponent from './components/PrivateComponent'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 function App() {
  
@@ -14,12 +15,14 @@ function App() {
       <Router>
       <Nav/>
    <Routes>
+      <Route Component={PrivateComponent}>
     <Route path='/' element={<h1>hello</h1>}></Route>
     <Route path='/add' element={<h1>hello add product</h1>}></Route>
     <Route path='/update' element={<h1>hello product component</h1>}></Route>
-    <Route path='/logout' element={<h1>hello update component</h1>}></Route>
+    <Route path='/logout' element={<h1>hellologout component</h1>}></Route>
     <Route path='/add' element={<h1>hello logout product</h1>}></Route>
     <Route path='/profile' element={<h1>hello profile compnent</h1>}></Route>
+    </Route>
     <Route path='/signup' Component={SignUp}></Route>
    </Routes>
       </Router>
