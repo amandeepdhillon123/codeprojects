@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import SignUp from './components/SignUp'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 function App() {
  
@@ -19,7 +20,7 @@ function App() {
     <Route path='/logout' element={<h1>hello update component</h1>}></Route>
     <Route path='/add' element={<h1>hello logout product</h1>}></Route>
     <Route path='/profile' element={<h1>hello profile compnent</h1>}></Route>
-
+    <Route path='/signup' Component={SignUp}></Route>
    </Routes>
       </Router>
 
