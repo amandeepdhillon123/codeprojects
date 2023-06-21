@@ -53,6 +53,7 @@ app.delete("/:id",async(req,resp)=>{
     let data =await dbConnect();
      data= await data.deleteOne({_id: new mongodb.ObjectId(req.params.id)})
 
+     
      resp.send(data)
 })
 
