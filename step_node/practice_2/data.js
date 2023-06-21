@@ -46,7 +46,10 @@ const ProductSchema = new mongoose.Schema({
 
 // delete 
 
-  const del = async() =>{
+  
+
+
+const del = async() =>{
          
     let productModel= mongoose.model('products',ProductSchema);
     let data= await productModel.deleteOne({name:"radheShyam"});
