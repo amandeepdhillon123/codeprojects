@@ -59,7 +59,7 @@
 
 // delete data 
 
-   const del = async()=>{
+   const del =    async()=>{
 
       let data = await dbConnect();
 
