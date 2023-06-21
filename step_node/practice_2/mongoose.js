@@ -52,7 +52,7 @@ const main = async()=>{
 // }
 main()
 
-const updata= async()=>{
+  const updata= async()=>{
       const ProductModel= mongoose.model('products',ProductSchema);
 
       let data =await ProductModel.updateOne({name:"mibile"},{$set:{name:"radhe"}})
