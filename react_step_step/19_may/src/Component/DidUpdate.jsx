@@ -18,7 +18,7 @@ export class DidUpdate extends Component {
     console.log("mount update",preState)
   }
   
-    render() {
+    render()   {
 
         console.log("render")
     return (
