@@ -11,6 +11,8 @@ export class DidMount extends Component {
     //  console.log("constructor")
 
   }
+
+  
      
   componentDidMount(){
     console.log("didmount")
