@@ -5,6 +5,7 @@ import { Component } from "react";
 class Life extends Component {
 
     constructor(){
+      
 
         super();
         console.log("jello")

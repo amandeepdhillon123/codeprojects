@@ -5,6 +5,8 @@ export class Rerender extends Component {
         super();
         this.state={
             email:'xyz@gmial.com'
+
+            
         }
     }
   render() {

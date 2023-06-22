@@ -4,7 +4,9 @@ import { useState } from 'react'
 
 const Validation = () => {
     const[user,setUser]=useState('')
+    
     const[password,setPassword]=useState('')
+    
     const[passErr,setPassErr] = useState(false)
     const[useErr,setUserErr] = useState(false)
 
