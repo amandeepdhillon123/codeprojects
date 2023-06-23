@@ -2,20 +2,24 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
-import { USTCL } from './component/USTCL'
+import PropF from './component/PropF'
+// import { USTCL } from './component/USTCL'
 // import USTATE from './component/USTATE'
 // import Event from './component/Event'
 // import JSX from './component/JSX'
 // import { Class } from './component/Class'
 // import Function from './component/Function'
 function App() {
+ 
 
+const [name,setName]=useState("amandeep")
 
   return (
     <>
-
-    <USTCL/>
+     <PropF name={name}  color="red"  />
+      <button onClick={()=> setName("Dhillon shab")}>update</button>
+    
+    {/* <USTCL/> */}
   {/* <Function/> */}
 
 {/* { Function()} */}
