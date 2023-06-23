@@ -2,7 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import PropF from './component/PropF'
+
+import Input from './component/Input'
+// import PropF from './component/PropF'
 // import { USTCL } from './component/USTCL'
 // import USTATE from './component/USTATE'
 // import Event from './component/Event'
@@ -12,12 +14,12 @@ import PropF from './component/PropF'
 function App() {
  
 
-const [name,setName]=useState("amandeep")
+// const [name,setName]=useState("amandeep")
 
   return (
     <>
-     <PropF name={name}  color="red"  />
-      <button onClick={()=> setName("Dhillon shab")}>update</button>
+  {/* //    <PropF name={name}  color="red"  /> */}
+  {/* //     <button onClick={()=> setName("Dhillon shab")}>update</button> */}
     
     {/* <USTCL/> */}
   {/* <Function/> */}
@@ -31,7 +33,9 @@ const [name,setName]=useState("amandeep")
 {/* <Event/> */}
 
 {/* <USTATE/> */}
-    </>
+
+  <Input/>
+     </>
   )
 }
 
