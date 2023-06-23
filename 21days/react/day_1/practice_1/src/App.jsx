@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Pass from './component/Pass'
 import Validation from './component/Validation'
 // import Toggle from './component/Toggle'
 // import Codition from './component/Codition'
@@ -17,9 +18,14 @@ import Validation from './component/Validation'
 function App(){
  // const [name,setName]=useState("amandeep")
  
+
+ function name(){
+  alert("hello ji")
+ }
   return (
     <>
-    <Validation/>
+    <Pass name={name}/>
+    {/* <Validation/> */}
     {/* <Toggle/> */}
   {/* //    <PropF name={name}  color="red"  /> */}
   {/* //     <button onClick={()=> setName("Dhillon shab")}>update</button> */}
