@@ -5,6 +5,8 @@ const data = require('./data')
 
 // console.log(http)
 
+
+
 http.createServer((req,resp) =>{
  resp.writeHead(200,{'content-Typet':'application\json'});
  resp.write(JSON.stringify(data));
