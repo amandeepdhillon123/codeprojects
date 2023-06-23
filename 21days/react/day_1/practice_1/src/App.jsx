@@ -2,8 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
-import Codition from './component/Codition'
+import Toggle from './component/Toggle'
+// import Codition from './component/Codition'
 
 // import Input from './component/Input'
 // import PropF from './component/PropF'
@@ -20,6 +20,8 @@ function App() {
 
   return (
     <>
+
+    <Toggle/>
   {/* //    <PropF name={name}  color="red"  /> */}
   {/* //     <button onClick={()=> setName("Dhillon shab")}>update</button> */}
     
@@ -37,7 +39,7 @@ function App() {
 {/* <USTATE/> */}
 
   {/* <Input/> */}
-  <Codition/>
+  {/* <Codition/> */}
      </>
   )
 }
