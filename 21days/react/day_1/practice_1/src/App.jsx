@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import JSX from './component/JSX'
+import Event from './component/Event'
+// import JSX from './component/JSX'
 // import { Class } from './component/Class'
 // import Function from './component/Function'
 function App() {
@@ -16,7 +17,9 @@ function App() {
 
 {/* <Class/> */}
 
-<JSX/>
+{/* <JSX/> */}
+
+<Event/>
     </>
   )
 }
