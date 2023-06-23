@@ -2,7 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import USTATE from './component/USTATE'
+
+import { USTCL } from './component/USTCL'
+// import USTATE from './component/USTATE'
 // import Event from './component/Event'
 // import JSX from './component/JSX'
 // import { Class } from './component/Class'
@@ -12,6 +14,8 @@ function App() {
 
   return (
     <>
+
+    <USTCL/>
   {/* <Function/> */}
 
 {/* { Function()} */}
@@ -22,7 +26,7 @@ function App() {
 
 {/* <Event/> */}
 
-<USTATE/>
+{/* <USTATE/> */}
     </>
   )
 }
