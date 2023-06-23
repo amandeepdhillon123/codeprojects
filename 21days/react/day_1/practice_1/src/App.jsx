@@ -3,7 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import Input from './component/Input'
+import Codition from './component/Codition'
+
+// import Input from './component/Input'
 // import PropF from './component/PropF'
 // import { USTCL } from './component/USTCL'
 // import USTATE from './component/USTATE'
@@ -34,7 +36,8 @@ function App() {
 
 {/* <USTATE/> */}
 
-  <Input/>
+  {/* <Input/> */}
+  <Codition/>
      </>
   )
 }
