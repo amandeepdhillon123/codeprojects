@@ -13,7 +13,7 @@ function App() {
    {/* <CLASS/> */}
    {/* <Didmount/> */}
 
-   <Render/>
+   <Render ram="shyamxcxcxzcxzczczx"/>
     </>
   )
 }
