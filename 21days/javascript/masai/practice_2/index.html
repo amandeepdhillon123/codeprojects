@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display:flex;
+            text-align: center;
+            align-items: center;
+            border: 1px solid red;
+            width: 90%;
+            height: 200px;
+            margin: auto;
+        }
+
+        #container div{
+
+          width: 100px;
+          height: 100px;
+          border: 1px solid black;
+          padding: 20px;
+          margin-left: 10px;
+          background: green;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+      <div id="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      </div>
+</body>
+</html>
+<script>
+    let item= document.querySelectorAll("#container>div");
+
+for( let i=0; i<item.length; i++)
+{
+    item[i].addEventListener("click",myFun)
+}
+
+function  myFun(event){
+
+    console.log(event.target.innerText)
+
+     event.target.style.backgroundColor="red"
+
+}
+</script>
