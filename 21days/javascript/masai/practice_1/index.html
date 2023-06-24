@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body id="body" style="background-color: red;">
+    
+    <!-- <h2 id="head">hello i am  head tag 1</h2>
+    <h1 id="head">hello iam  head tag 2</h1>
+    <h1 id="head">hello iam  head tag 3</h1>
+    <h1 id="head">hello iam  head tag 4</h1>
+
+    <button onClick="myFun()">click me</button> -->
+
+    <!-- Name:<input id="name" type="text" placeholder="Enter your name" > <br> <br>
+     Pass: <input id="pass" type="text" placeholder="Enter your password" value=""><br> <br>
+    <select  id="select">
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select><br> <br>
+    <button onClick="myFun()">submit</button> -->
+
+    <button onClick="myFun() , ram()"  id="btn">Darkmod</button>
+</body>
+</html>
+<script>
+
+  function ram(){
+    document.getElementById('body').style.backgroundColor="white"
+
+document.getElementById("btn").innerText="whitemode"
+  }
+ function myFun(){
+    document.getElementById('body').style.backgroundColor="black"
+
+    document.getElementById("btn").innerText="whitemode"
+ }
+    // console.log(document)
+    // console.log(document.body)
+    // console.log(document.title)
+
+
+    
+//     let head= document.getElementById("head");
+// console.log( head)
+
+//   function myFun(){
+//     alert("hello ji kive ho")
+
+
+
+//   }
+
+// let head= document.getElementById("head");
+//   head.innerText='heelo jiiiiii'
+
+// function myFun(){
+//     head.innerText="mein change ho gya";
+//     head.style.color="red"
+// }
+
+
+// let input= document.getElementById('name');
+// let pass= document.getElementById('pass');
+// let select= document.getElementById('select');
+
+// function myFun(){
+//     console.log(input.value+"      " +pass.value+"      " +select.value)
+// }
+
+
+
+
+
+
+</script>
