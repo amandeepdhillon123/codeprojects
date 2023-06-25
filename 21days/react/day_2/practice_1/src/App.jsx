@@ -9,13 +9,15 @@ import './App.css'
 // import CLASS from './component/CLASS'
 //  import Style from './component/Style'
 // import Array from './component/Array'
-  import Nested from './component/Nested'
-function App() {
+  // import Nested from './component/Nested'
+ import Fragment from './component/Fragment'
+  function App() {
 
 
   return (
     <>
-    <Nested/>
+    <Fragment/> 
+    {/* <Nested/> */}
     {/* <Array/> */}
     {/* <Style/> */}
     {/* <Effect/> */}
