@@ -7,13 +7,15 @@ import './App.css'
 //  import Render from './component/Render'
 // import Didmount from './component/Didmount'
 // import CLASS from './component/CLASS'
- import Style from './component/Style'
+//  import Style from './component/Style'
+import Array from './component/Array'
 function App() {
 
 
   return (
     <>
-    <Style/>
+    <Array/>
+    {/* <Style/> */}
     {/* <Effect/> */}
     {/* <One/> */}
    {/* <CLASS/> */}
