@@ -8,13 +8,15 @@ import './App.css'
 // import Didmount from './component/Didmount'
 // import CLASS from './component/CLASS'
 //  import Style from './component/Style'
-import Array from './component/Array'
+// import Array from './component/Array'
+  import Nested from './component/Nested'
 function App() {
 
 
   return (
     <>
-    <Array/>
+    <Nested/>
+    {/* <Array/> */}
     {/* <Style/> */}
     {/* <Effect/> */}
     {/* <One/> */}
