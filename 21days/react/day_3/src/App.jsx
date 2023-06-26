@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Uncontroll from './component/Uncontroll'
+import HOC from './component/HOC'
+// import Uncontroll from './component/Uncontroll'
 // import REC from './component/REC'
 // import ForwardRe from './component/ForwardRef'
 //  import Controlled from './component/Controlled'
@@ -15,7 +16,9 @@ function App() {
 
   return (
     <>
-    <Uncontroll/>
+    
+    <HOC/>
+    {/* <Uncontroll/> */}
     {/* <Controlled/> */}
     {/* <ForwardRe/> */}
 {/* <User1/> */}
