@@ -2,7 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import REC from './component/REC'
+// import REC from './component/REC'
+import ForwardRe from './component/ForwardRef'
 
 // import Ref from './component/Ref'
 // import Memo from './component/Memo'
@@ -13,12 +14,13 @@ function App() {
 
   return (
     <>
+    <ForwardRe/>
 {/* <User1/> */}
 
    {/* <Pure/> */}
    {/* <Memo/> */}
 
-<REC/>
+{/* <REC/> */}
 
     </>
   )
