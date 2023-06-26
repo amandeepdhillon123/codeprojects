@@ -3,8 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 // import REC from './component/REC'
-import ForwardRe from './component/ForwardRef'
-
+// import ForwardRe from './component/ForwardRef'
+ import Controlled from './component/Controlled'
 // import Ref from './component/Ref'
 // import Memo from './component/Memo'
 // import User1 from './component/User1'
@@ -14,7 +14,8 @@ function App() {
 
   return (
     <>
-    <ForwardRe/>
+    <Controlled/>
+    {/* <ForwardRe/> */}
 {/* <User1/> */}
 
    {/* <Pure/> */}
