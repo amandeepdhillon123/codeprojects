@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>higher order function</h1>
+</body>
+</html>
+<script>
+    let name=["aman","deep","ram"]
+     
+    name.forEach((item)=>{
+     console.log(item)
+    })
+
+    let sum = [1,2,3,4,5]
+//    let ram= name.map((item)=>{
+//         return item;
+//     })
+
+//     console.log(ram)
+
+    
+//    let ra= name.filter((item)=>{
+//         return item;
+//     })
+
+ let one= sum.map((item)=>{
+       return item > 3;
+ })
+
+ let two= sum.filter((item)=>{
+       return item > 3;
+
+
+ })
+
+ let three= sum.reduce((sec,item)=>{
+         return sec + item;
+ },0)
+
+ console.log(three)
+
+    console.log(two)
+
+
+</script>
