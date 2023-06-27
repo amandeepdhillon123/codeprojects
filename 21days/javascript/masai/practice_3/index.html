@@ -11,29 +11,41 @@
 </html>
  <script>
       
-    let btn = document.createElement('button');
-    btn.innerText="primary";
-    btn.style.color="red";
-    btn.style.backgroundColor="green";
-    document.querySelector("body").append(btn)
+    // let btn = document.createElement('button');
+    // btn.innerText="primary";
+    // btn.style.color="red";
+    // btn.style.backgroundColor="green";
+    // document.querySelector("body").append(btn)
 
-    let btn1 = document.createElement('button');
-    btn1.innerText="primary";
-    btn1.style.color="red";
-    btn1.style.backgroundColor="green";
-    document.querySelector("body").append(btn1)
+    // let btn1 = document.createElement('button');
+    // btn1.innerText="primary";
+    // btn1.style.color="red";
+    // btn1.style.backgroundColor="green";
+    // document.querySelector("body").append(btn1)
 
-    let btn2 = document.createElement('button');
-    btn2.innerText="primary";
-    btn2.style.color="red";
-    btn2.style.backgroundColor="green";
-    document.querySelector("body").append(btn2)
+    // let btn2 = document.createElement('button');
+    // btn2.innerText="primary";
+    // btn2.style.color="red";
+    // btn2.style.backgroundColor="green";
+    // document.querySelector("body").append(btn2)
 
-    let btn3 = document.createElement('button');
-    btn3.innerText="primary";
-    btn3.style.color="red";
-    btn3.style.backgroundColor="green";
-    document.querySelector("body").append(btn3)
+    // let btn3 = document.createElement('button');
+    // btn3.innerText="primary";
+    // btn3.style.color="red";
+    // btn3.style.backgroundColor="green";
+    // document.querySelector("body").append(btn3)
+
+    
+    const color=["red","green","black"]
+    const text=["primary","secondary","ternary"]
+
+    for(let i=0; i<3; i++)
+    {
+        let btn= document.createElement('button');
+         btn.innerText= text[i]
+         btn.style.color= color[i]
+        document.querySelector('body').append(btn)
+    }
 
     
 
