@@ -36,18 +36,29 @@
     // document.querySelector("body").append(btn3)
 
     
-    const color=["red","green","black"]
-    const text=["primary","secondary","ternary"]
+    // const color=["red","green","black"]
+    // const text=["primary","secondary","ternary"]
 
-    for(let i=0; i<3; i++)
-    {
+    // for(let i=0; i<3; i++)
+    // {
+    //     let btn= document.createElement('button');
+    //      btn.innerText= text[i]
+    //      btn.style.color= color[i]
+    //     document.querySelector('body').append(btn)
+    // }
+
+
+    let btnObj=[{text:"primary", color:"red"},
+    {text:"secondary", color:"green"},
+    {text:"ternary", color:"black"},]
+
+    btnObj.map((item)=>{
         let btn= document.createElement('button');
-         btn.innerText= text[i]
-         btn.style.color= color[i]
-        document.querySelector('body').append(btn)
-    }
-
-    
+        btn.innerText= item.text;
+         btn.style.color= item.color;
+         document.querySelector('body').append(btn)
+      
+    })
 
 
  </script>
