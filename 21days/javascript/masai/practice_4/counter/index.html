@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+          <h1 id="para">0</h1> 
+   <button id="inc"> increase</button>
+   <button id="dec"> decrease</button>
+   <button id="reset"> reset</button>
+</body>
+</html>
+ <script>
+       let count =0;
+     document.querySelector("#inc").addEventListener("click",myFun)
+
+     function myFun(){
+        count++;
+
+        document.querySelector("#para").innerText= count
+     }
+
+     document.querySelector("#dec").addEventListener("click",myFunn)
+     
+     function myFunn(){
+        count--;
+
+        document.querySelector("#para").innerText= count
+     }
+
+
+     document.querySelector("#reset").addEventListener("click",myFunnn)
+     
+     function myFunnn(){
+         count = 0;
+
+        document.querySelector("#para").innerText= count
+     }
+ </script>
