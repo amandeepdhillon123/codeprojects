@@ -9,9 +9,11 @@
 
     const user =({
         name:"amandee",
-        city :"jind"
+        city :"jind",
+        skill:["dancing","singing","plying"]
+
     })
     resp.render('home',{user})
  })
 
- app.listen(2301)
+ app.listen(2302)

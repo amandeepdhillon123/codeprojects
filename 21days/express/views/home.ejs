@@ -10,6 +10,11 @@
     <h1>
        <%= user.name %>
        <%= user.city %>
+       <ul>
+        <% user.skill.forEach((item)=>{ %>
+            <li> <%= item %>  </li>
+       <% }) %>
+       </ul>
     </h1>
 </body>
 </html>
