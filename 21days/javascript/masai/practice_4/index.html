@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+      <form action="">
+
+         Name: <input id="name" type="text" placeholder=""> <br> <br>
+         Pass: <input id="pass" type="text" placeholder=""> <br> <br>
+         Image: <input id="img" type="text" placeholder=""> <br> <br>
+        <input type="submit">
+
+      </form>
+      <div id="container"> </div>
+      
+
+</body>
+</html>
+<script>
+      
+      document.querySelector('form').addEventListener("submit",myFun)
+       
+      let studentData= [];
+      function myFun(e){
+       e.preventDefault();
+
+       let obj={
+        name: document.querySelector("#name").value,
+        pass: document.querySelector("#pass").value,
+        img : document.querySelector("#img").value
+       }
+       studentData.push(obj)
+    //    console.log(studentData)
+
+        displayData(studentData)
+
+      }
+
+
+      function displayData(studentData)
+      {
+        document.querySelector("#container").innerText="";
+            
+        studentData.forEach((ele) =>{
+
+            let div =document.createElement("div")
+            let head = document.createElement('h2')
+            head.innerText= ele.name;
+
+            let hea= document.createElement('h2')
+            hea.innerText= ele.pass;
+            let img= document.createElement('img')
+            img.src= ele.img;
+
+          div.append(head,hea,img)
+
+      document.querySelector("#container").append(div)
+        })
+    
+      }
+
+</script>
