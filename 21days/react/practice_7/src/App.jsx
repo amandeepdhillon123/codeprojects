@@ -4,13 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Input from './component/Input'
 import Toggle from './component/Toggle'
+import Form from './component/Form'
 function App() {
 
 
   return (
     <>
       {/* <Input/> */}
-      <Toggle/>
+      {/* <Toggle/> */}
+      <Form/>
     </>
   )
 }
