@@ -11,15 +11,37 @@
 //        data  = await data.find().toArray();
 
 //     resp.send(data)
-//     )
+//   })
 
-    app.post('/',async(req,resp) =>{
-    //   console.log(req.body)
-        // resp.send("done")
+    // app.post('/',async(req,resp) =>{
+    // //   console.log(req.body)
+    //     // resp.send("done")
+    //     let data = await dbConnect();
+    //      let result = await data.insertMany(req.body);
+    //      resp.send(result)
+    // })
+
+
+    app.put('/:brand',async(req,resp) =>{
+        //  console.log(req.body)
+
         let data = await dbConnect();
-         let result = await data.insertMany(req.body);
-         resp.send(result)
+       let result = await data.updateOne(
+        {
+            brand:req.params.brand
+        },
+        {
+            $set : req.body
+        }
+
+       );
+        resp.send(result)
+       
     })
+
+    
+
+
 
 
 
