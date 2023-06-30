@@ -32,13 +32,23 @@
 // insert();
 
 
-let updata = async ()=>{
+// let updata = async ()=>{
 
+//     let data = await dbConnect();
+
+//     data = await data.updateOne({name:"noki40"},
+//     {$set:{name:"nokia new"}})
+// }
+
+// updata();
+
+let del =async ()=>{
+       
     let data = await dbConnect();
 
-    data = await data.updateOne({name:"noki40"},
-    {$set:{name:"nokia new"}})
-}
+    data = await data.deleteOne({name:"nokia new"})
 
-updata();
+    
+}
+del()
 
