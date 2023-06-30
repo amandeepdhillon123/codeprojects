@@ -42,13 +42,13 @@
 
 // updata();
 
-let del =async ()=>{
+// let del =async ()=>{
        
-    let data = await dbConnect();
+//     let data = await dbConnect();
 
-    data = await data.deleteOne({name:"nokia new"})
+//     data = await data.deleteOne({name:"nokia new"})
 
     
-}
-del()
+// }
+// del()
 
