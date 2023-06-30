@@ -2,6 +2,7 @@
   const express = require('express');
 
   const app = express();
+  const mongodb= require('mongodb')
    app.use(express.json())
   const dbConnect= require('./base');
 //   read data 
@@ -22,22 +23,38 @@
     // })
 
 
-    app.put('/:brand',async(req,resp) =>{
-        //  console.log(req.body)
+    // app.put('/:brand',async(req,resp) =>{
+    //     //  console.log(req.body)
 
-        let data = await dbConnect();
-       let result = await data.updateOne(
-        {
-            brand:req.params.brand
-        },
-        {
-            $set : req.body
-        }
+    //     let data = await dbConnect();
+    //    let result = await data.updateOne(
+    //     {
+    //         brand:req.params.brand
+    //     },
+    //     {
+    //         $set : req.body
+    //     }
 
-       );
-        resp.send(result)
+    //    );
+    //     resp.send(result)
        
-    })
+    // })
+   
+     app.delete('/:id',async(req,resp) =>{
+
+        console.log(req.params.id)
+             
+        let data = await dbConnect();
+
+        const result = await data. deleteOne(
+            {
+             _id : new mongodb.ObjectId(req.params.id)
+            }
+        )
+        resp.send("done")
+     })
+
+
 
     
 
