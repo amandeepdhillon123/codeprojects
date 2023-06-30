@@ -15,19 +15,30 @@
 //   iunsert data 
 
   
-let insert = async ()=>{
+// let insert = async ()=>{
     
-      let data = await dbConnect();
+//       let data = await dbConnect();
 
-      data = await data.insertOne({
-        name:"noki40",
-        brand:"nokia",
-        price:23524,
-        category :"mobile"
-      })
+//       data = await data.insertOne({
+//         name:"noki40",
+//         brand:"nokia",
+//         price:23524,
+//         category :"mobile"
+//       })
 
-      console.log(data)
+//       console.log(data)
+// }
+
+// insert();
+
+
+let updata = async ()=>{
+
+    let data = await dbConnect();
+
+    data = await data.updateOne({name:"noki40"},
+    {$set:{name:"nokia new"}})
 }
 
-insert();
+updata();
 
