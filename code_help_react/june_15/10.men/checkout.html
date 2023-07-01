@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        <label for="">Cardnumber :</label>
+        <input type="number" placeholder="type your cardnumber" required><br><br>
+        <label for="">Cvv :</label>
+        <input type="number" placeholder="type your cvv" required><br><br>
+        <label for="">Expiry Date:</label>
+        <input type="date" placeholder="type your cardnumber" required><br><br>
+        <label for="">OTP :</label>
+        <input type="number" placeholder="type your OTP" required><br><br>
+    <input type="submit">
+    
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", myFun)
+
+    function myFun(event){
+        event.preventDefault();
+        
+    alert("successful")
+    window.location.href="men.html"
+
+
+    }
+</script>
