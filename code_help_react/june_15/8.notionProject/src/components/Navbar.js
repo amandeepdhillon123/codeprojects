@@ -80,7 +80,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/Logo.svg'
-function Navbar() {
+function Navbar(props) {
+    let isLoggedIn= props.isLoggedIn;
+    let setIsLoggedIn= props.setIsLoggedIn
   return (
 <div className='flex  justify-between item-center w-11/12 max-w-[1160px] py-4 mx-auto'>
       <Link to="/">
@@ -103,22 +105,22 @@ function Navbar() {
       <div className='flex item-center gap-x-4'>
 
       {/* className='flex items-center gap-x-4' */}
-        {
+        {  !isLoggedIn && 
          <Link to="/Login">
-         <button>Log in</button>
+         <button>Login</button>
          </Link>
         }
-         {
+         {   !isLoggedIn && 
          <Link to="/Signup">
-         <button>Sign up</button>
+         <button>Sign Up</button>
          </Link>
         }
-         {
+         { isLoggedIn && 
          <Link to="/">
          <button>Log Out</button>
          </Link>
         }
-         {
+         { isLoggedIn && 
          <Link to="/Dashboard">
          <button>Dashboard</button>
          </Link>

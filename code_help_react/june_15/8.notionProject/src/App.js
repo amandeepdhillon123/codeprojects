@@ -48,10 +48,13 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Home from './pages/Home'
  import Navbar from './components/Navbar'
+ import { useState } from 'react'
  function App() {
+
+  const[isLoggedIn,setIsLoggedIn] =useState(false)
    return (
      <div>
-         <Navbar/>
+         <Navbar  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
 
          <Routes>
           <Route path='/' element={<Home/>}></Route>
