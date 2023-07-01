@@ -94,11 +94,59 @@
 
 // export default LoginForm
 
-import React from 'react'
+import React, { useState } from 'react'
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 function LoginForm() {
+  const[formData,setFormData] =useState({
+    email:"",
+    password:""
+  })
+
+  const[showPassword,setShowPassword] = useState(false)
+
+  function changeHandler(e){
+    setFormData((prev) =>({
+      ...prev,[e.target.name]: e.target.value
+    }))
+  }
   return (
-    <div>LoginForm</div>
+    <form>
+        <label>
+           <p>Email Address<sup>*</sup></p>
+           <input 
+           required
+           name="email"
+           value={formData.email}
+           type="text"
+           onChange={changeHandler}
+           placeholder='Enter email address'
+           />
+        </label>
+
+        <label>
+           <p>Email Address<sup>*</sup></p>
+           <input 
+           required
+           name="password"
+           value={formData.password}
+           type={showPassword ? "text" : "password"}
+           onChange={changeHandler}
+           placeholder='Enter your password'
+           />
+           <span onClick={()=> setShowPassword((prev => !prev))}>
+               {
+                showPassword ? <AiOutlineEyeInvisible/> :<AiOutlineEye/>
+               }
+           </span>
+           <Link to="#">
+            <p>Forgot password</p>
+           </Link>
+        </label>
+        <button>
+            Sign in
+        </button>
+    </form>
   )
 }
 
