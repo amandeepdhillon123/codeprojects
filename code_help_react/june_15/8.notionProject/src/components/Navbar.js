@@ -80,6 +80,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/Logo.svg'
+import toast from "react-hot-toast"
+
 function Navbar(props) {
     let isLoggedIn= props.isLoggedIn;
     let setIsLoggedIn= props.setIsLoggedIn
@@ -107,7 +109,8 @@ function Navbar(props) {
       {/* className='flex items-center gap-x-4' */}
         {  !isLoggedIn && 
          <Link to="/Login">
-         <button>Login</button>
+         <button 
+         >Login</button>
          </Link>
         }
          {   !isLoggedIn && 
@@ -117,7 +120,10 @@ function Navbar(props) {
         }
          { isLoggedIn && 
          <Link to="/">
-         <button>Log Out</button>
+         <button onClick={()=>{setIsLoggedIn(false);
+            toast.success("logged Out");
+        }}
+         >Log Out</button>
          </Link>
         }
          { isLoggedIn && 

@@ -4,7 +4,6 @@
 // import LoginForm from './LoginForm'
 // import {FcGoogle} from "react-icons/fc"
 
-
 // const Template = ({title, desc1, desc2, image, formtype, setIsLoggedIn}) => {
 
 //     // console.log("ye rha mera form type");
@@ -14,7 +13,7 @@
 
 //         <div className='w-11/12 max-w-[450px]' >
 //             <h1
-//             className='text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem]' 
+//             className='text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem]'
 //             >
 //                 {title}
 //             </h1>
@@ -25,7 +24,7 @@
 //                 <span className='text-blue-100 italic'>{desc2}</span>
 //             </p>
 
-//             {formtype === "signup" ? 
+//             {formtype === "signup" ?
 //             (<SignupForm setIsLoggedIn={setIsLoggedIn}/>):
 //             (<LoginForm setIsLoggedIn={setIsLoggedIn}/>)}
 
@@ -58,7 +57,7 @@
 //                 height={490}
 //                 loading="lazy"
 //                 className='absolute -top-4 right-4'
-//                 />    
+//                 />
 //         </div>
 
 //     </div>
@@ -67,3 +66,53 @@
 
 // export default Template
 
+import React from "react";
+import SignupForm from "./SignupForm";
+import LoginForm from "./LoginForm";
+ import frameImage from '../assets/frame.png';
+function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
+  return (
+    <div>
+      <div>
+        <h1>{title}</h1>
+
+        <p>
+          <span>{desc1}</span>
+          <span>{desc2}</span>
+        </p>
+
+        {formtype === "signup" ? (
+          <SignupForm setIsLoggedIn={setIsLoggedIn} />
+        ) : (
+          <LoginForm setIsLoggedIn={setIsLoggedIn} />
+        )}
+
+        <div>
+          <div></div>
+          <p>OR</p>
+          <div></div>
+        </div>
+        <button>
+          <p>Sign Up with Google</p>
+        </button>
+      </div>
+       <div className='relative w-11/12 max-w-[450px] '>
+            <img src={frameImage} 
+                alt="Pattern"
+                width={558}
+                height={504}
+                loading="lazy"/>
+
+            <img src={image}
+                alt="Students"
+                width={558}
+                height={490}
+                loading="lazy"
+                className='absolute -top-4 right-4'
+                />
+        </div>
+    </div>
+  );
+}
+
+export default Template;
