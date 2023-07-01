@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    var Arr = JSON.parse(localStorage.getItem("jobData"))
+    // console.log(Arr);
+   var  complete=  JSON.parse(localStorage.getItem("completed")) || [];
+    Arr.map(function(elem){
+
+      var row=document.createElement("tr")
+      var col1=document.createElement("td")
+      col1.innerText=`${elem.name}`
+      var col2=document.createElement("td")
+      col2.innerText=`${elem.email}`
+      var col3=document.createElement("td")
+      col3.innerText=`${elem.role}`
+      var col4=document.createElement("td")
+      col4.innerText=`${elem.salary}`
+      var col5=document.createElement("button")
+      col5.innerText=` Mark as completed`
+      col5.style.marginTop="15px"
+      col5.style.marginLeft="25px"
+      col5.style.backgroundColor="red"
+
+      col5.addEventListener("click", function(){
+        markCOmplete(elem)
+        col5.style.backgroundColor="green"
+        // row.innerText=""
+      })
+
+      
+
+      // var col5=document.createElement("td")
+
+      row.append(col1,col2,col3,col4,col5)
+      // console.log(row)
+
+      document.querySelector("tbody").append(row)
+
+      
+
+    })
+
+    function markCOmplete(elem){
+      // console.log(elem)
+      complete.push(elem)
+      console.log(complete)
+      
+   localStorage.setItem("completed",JSON.stringify(complete))
+      // elem.innerText=""
+    }
+  </script>
+
+  
+</html>
