@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 20px;
+        }
+        .img{
+   height: 50px;
+   width: 100px;
+        }
+    </style>
+</head>
+<body>
+  <h1><a href="/cart.html">Add to Cart</a> </h1>
+    <h1>Mens</h1>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+   var mensData = [
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://th.bing.com/th/id/OIP.cJgHmlU9-SyDWsHLIHr49gHaEh?w=284&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: 1170,
+      strikedoffprice: "$2599",
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.OqnNOfHLxKiEc0kOyNmGPgHaE8&w=150&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    },
+    {
+      image_url:
+        "https://www.bing.com/th?id=OIP.ZIiB4VnUMZQIuPVR4SdosQHaHN&w=150&h=146&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2099,
+    },
+ 
+  ]; 
+  // when you refredhing 
+  var  cartData= JSON.parse(localStorage.getItem("cartData"))  || [];
+
+mensData.map(function(ele){
+
+    var box=document.createElement("div")
+
+    var nam=document.createElement("h4")
+    nam.innerText=ele.name;
+    var image=document.createElement("img")
+    image.src=ele.image_url
+    image.setAttribute("class","img")
+
+    var price=document.createElement("p")
+    price.innerText=ele.price;
+
+    var btn=document.createElement("button");
+    btn.innerText="Add to cart"
+    btn.addEventListener("click", function(){
+      addToCart(ele);
+    })
+
+    box.append(image,nam,price,btn)
+    document.querySelector("#container").append(box)
+
+    function addToCart(ele){
+      // console.log(ele);
+      cartData.push(ele)
+      localStorage.setItem("cart",JSON.stringify(cartData))
+      alert("item added to cart")
+    }
+
+});
+
+
+
+
+
+
+
+
+
+</script>

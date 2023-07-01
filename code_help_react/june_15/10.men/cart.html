@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+
+        .img {
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <h2><a href="/checkout.html">checkoutPage</a> </h2>
+    <div id="container">
+
+    </div>
+</body>
+
+</html>
+<script>
+    /*
+    // first method 
+  
+    // when you refredhing 
+    var cartData = JSON.parse(localStorage.getItem("cart"));
+//   console.log(cartData)
+
+ var total= cartData.reduce(function(sum,ele,index,array){
+
+    return sum+ Number(ele.price)
+ },0)
+ var length= cartData.length;
+//  console.log(length)
+//  console.log(total)
+
+//  document.querySelector("h1").innerText="Totl amount is"+" "+total;
+
+ document.querySelector("h1").innerText=`Totla amount is ${total} and total products are ${length}`
+ 
+    cartData.map(function (ele,index) {
+
+        var box = document.createElement("div")
+
+        var nam = document.createElement("h4")
+        nam.innerText = ele.name;
+        var image = document.createElement("img")
+        image.src = ele.image_url
+        image.setAttribute("class", "img")
+
+        var price = document.createElement("p")
+        price.innerText = ele.price;
+
+        var btn= document.createElement("button")
+        btn.innerText="Remove item"
+        btn.addEventListener("click", function(){
+            removeItem(ele,index)
+        })
+
+
+
+        box.append(image, nam, price,btn)
+        document.querySelector("#container").append(box)
+
+
+
+    });
+
+    function removeItem(ele,index){
+        // console.log(ele,index)
+
+        cartData.splice(index,1)
+        console.log(cartData)
+
+        localStorage.setItem("cart",JSON.stringify(cartData))
+        window.location.reload();
+    }
+
+
+
+
+
+
+
+//  var arr=[1,2,3,4]
+//  console.log(arr.splice(0,3))
+
+*/
+
+
+// seconde method 
+
+
+// when you refredhing 
+var cartData = JSON.parse(localStorage.getItem("cart"));
+//   console.log(cartData)
+displayData(cartData)
+
+ var total= cartData.reduce(function(sum,ele,index,array){
+
+    return sum+ Number(ele.price)
+ },0)
+ var length= cartData.length;
+//  console.log(length)
+//  console.log(total)
+
+//  document.querySelector("h1").innerText="Totl amount is"+" "+total;
+
+ document.querySelector("h1").innerText=`Totla amount is ${total} and total products are ${length}`
+ 
+    function displayData(cartData){
+        cartData.map(function (ele,index) {
+
+var box = document.createElement("div")
+
+var nam = document.createElement("h4")
+nam.innerText = ele.name;
+var image = document.createElement("img")
+image.src = ele.image_url
+image.setAttribute("class", "img")
+
+var price = document.createElement("p")
+price.innerText = ele.price;
+
+var btn= document.createElement("button")
+btn.innerText="Remove item"
+btn.addEventListener("click", function(){
+    removeItem(ele,index)
+})
+
+
+
+box.append(image, nam, price,btn)
+document.querySelector("#container").append(box)
+
+
+
+});
+    }
+
+    function removeItem(ele,index){
+        // console.log(ele,index)
+
+        cartData.splice(index,1)
+        console.log(cartData)
+
+        localStorage.setItem("cart",JSON.stringify(cartData))
+        window.location.reload();
+    }
+
+
+
+
+
+
+
+//  var arr=[1,2,3,4]
+//  console.log(arr.splice(0,3))
+
+</script>
