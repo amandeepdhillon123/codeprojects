@@ -8,14 +8,16 @@ import './App.css'
 // import Fun from './component/Fun'
 // import State from './component/State'
 // import Toggle from './component/Toggle'
-
-  import Render from './component/Render'
+  // import Render from './component/Render'
+  import Validation from './component/Validation'
+ 
 function App() {
 
 
   return (
     <>
-    <Render/>
+    <Validation/>
+    {/* <Render/> */}
    {/* <Event/> */}
    {/* <Fun/> */}
    {/* <State/> */}
