@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import style from '../custom.module.css'
 export class Render extends Component {
     constructor(){
         super();
@@ -38,8 +38,9 @@ export class Render extends Component {
     console.log("render life cycle method")
     return (
       <div>
-        <h1>{this.state.count}</h1>
-        <button onClick={()=>this.setState({count: this.state.count + 1})}>update</button>
+        <h1 className={style.success}>hello ji aap aksie ho</h1>
+        {/* <h1>{this.state.count}</h1>
+        <button onClick={()=>this.setState({count: this.state.count + 1})}>update</button> */}
       </div>
     )
   }
