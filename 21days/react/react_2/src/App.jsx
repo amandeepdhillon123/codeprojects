@@ -3,8 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 // import Ref1 from './component/Ref1'
-
-import Ref2 from './component/Ref2'
+  import Ref3 from './component/Ref3'
+// import Ref2 from './component/Ref2'
 // import Memo from './component/Memo'
 // import Fun1 from './component/fun1'
 // import Pure from './component/Pure'
@@ -12,13 +12,14 @@ import Ref2 from './component/Ref2'
 function App() {
 return (
     <>
+        <Ref3/>
         {/* <Array1/> */}
         {/* <Fun1/> */}
         {/* <Pure/> */}
         {/* <Memo/> */}
         {/* <Ref1/> */}
 
-        <Ref2/>
+        {/* <Ref2/> */}
     </>
   )
 }
