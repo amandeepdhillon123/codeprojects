@@ -2,7 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Ref1 from './component/Ref1'
+// import Ref1 from './component/Ref1'
+
+import Ref2 from './component/Ref2'
 // import Memo from './component/Memo'
 // import Fun1 from './component/fun1'
 // import Pure from './component/Pure'
@@ -14,7 +16,9 @@ return (
         {/* <Fun1/> */}
         {/* <Pure/> */}
         {/* <Memo/> */}
-        <Ref1/>
+        {/* <Ref1/> */}
+
+        <Ref2/>
     </>
   )
 }
