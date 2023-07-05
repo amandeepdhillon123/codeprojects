@@ -12,3 +12,5 @@
 
 var str1 = "Hello";
 var str2 = "World";
+
+str = str + ' Happy'; 
