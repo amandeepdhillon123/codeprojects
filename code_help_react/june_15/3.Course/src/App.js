@@ -50,46 +50,57 @@
 
 // -------------------------------------
 
-import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
+import React from 'react'
+import Navbar from'./components/Navbar'
 import Filter from './components/Filter'
 import Cards from './components/Cards'
+import { filterData ,apiUrl} from './data'
+ import { useEffect,useState } from 'react'
+import { toast } from 'react-toastify'
 import Spinner from './components/Spinner'
-import { toast } from "react-toastify";
-import {apiUrl ,filterData } from './data'
 function App() {
-     const[courses,setCourses]= useState(null)
-     const[loading,setLoading]=useState(true)
-     async function fetchData(){
-      setLoading(true)
-      try {
-           let response = await fetch(apiUrl)
-           let output= await response.json();
 
-           setCourses(output.data)
-      } 
-      catch (error) {
-          toast.error("network mein problem hai bhai")
-      }
-      setLoading(false)
+  const[courses,setCourses] = useState([])
+  const[loading,setLoading] = useState(true)
+  async function fetchData(){
+   setLoading(true)
+    try {
+
+      let response = await fetch(apiUrl);
+
+      let output = await response.json();
+
+      setCourses(output.data)
+      
+    } catch (error) {
+
+      toast.error("yrr error aa gya hai")
+      
     }
+    setLoading(false)
+  }
 
-    useEffect(()=>{
-      fetchData()
-    },[])
+  useEffect(()=>{
+       fetchData() 
+  },[])
 
+  console.log(courses)
   return (
     <div>
       <div>
         <Navbar/>
       </div>
       <div>
-        <Filter filterData={filterData}/>
-      </div>
-      <div>
-        {
-          loading ? (<Spinner/>) : (<Cards courses={courses}/>)
-        }
+        <div>
+      <Filter filterData={filterData}/>
+        </div>
+        <div>
+
+          {
+            loading ? <Spinner/> : <Cards courses={courses}/>
+          }
+        
+        </div>
       </div>
     </div>
   )

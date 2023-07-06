@@ -39,28 +39,44 @@
 
 import React from 'react'
 import Card from './Card';
+
 function Cards(props) {
-
-  const courses= props.courses;
+  let courses = props.courses;
   // console.log(courses)
-
+  
   function getCourses(){
-    let allCourses=[];
-    Object.values(courses).forEach((array) =>{
-      array.forEach(coursesData => {
-        allCourses.push(coursesData)
-      })
-    })
- 
-    return allCourses;
+      let allCourses=[];
+
+        Object.values(courses).forEach((array)=>{
+          array.forEach((course)=>{
+             allCourses.push(course);
+           
+            })
+        })
+
+        // return allCourses
+        // console.log(allCourses)
+
+        
+      
   }
+
+  // getCourses()
+
+  
   return (
     <div>
-      {
-        getCourses().map((course)=>{
-           <Card key={course.id} course={course}/>
-        })
-      }
+       {/* {
+        getCourses().map((course)=> 
+          
+        <Card course={course}
+        key={course.id}
+        
+        
+        />
+        
+        )
+       } */}
     </div>
   )
 }

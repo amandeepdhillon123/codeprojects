@@ -33,34 +33,24 @@
 
 // export default Filter
 
+
+
 import React from 'react'
 
 function Filter(props) {
-
-  let filterData=props.filterData
-   
-  console.log(filterData)
+  let filterData= props.filterData
   return (
     <div>
-       {
-        filterData.map((item)=>
-            <button key={item.id}>{item.title}</button>
+      {
+        filterData.map((data)=>
+            <button key={data.id}>{data.title}</button>
         )
-       }
+      }
     </div>
   )
 }
 
 export default Filter
-
-
-
-
-
-
-
-
-
 
 
 

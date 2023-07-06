@@ -63,35 +63,18 @@
 // export default Card
 
 
+
+
+
 import React from 'react'
-import {FcLike} from 'react-icons/fc'
-function Card(props) {
-  let course= props.course;
-  console.log(course)
+
+function Card() {
   return (
-    <div>
-      <div>
-         <img src={course.image.url}/>
-      </div>
-      <div>
-        <button>
-           <FcLike/>
-        </button>
-      </div>
-      <div>
-          <p>{course.title}</p>
-          <p>{course.description}</p>
-      </div>
-    </div>
+    <div>Card</div>
   )
 }
 
 export default Card
-
-
-
-
-
 
 
 
