@@ -1,9 +1,19 @@
-import React from 'react'
+import {ADD_TO_CART}  from "../Constants"
 
-function Action() {
-  return (
-    <div>Action</div>
-  )
+
+export const AddToCart = ()=>{
+
+  return {
+    type:ADD_TO_CART,
+    data:data
+  }
 }
 
-export default Action
+
+// export const removeToCart = ()=>{
+
+//   return {
+//     type:"Remove_TO_CART",
+//     data:data
+//   }
+// }
