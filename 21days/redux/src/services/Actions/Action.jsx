@@ -1,7 +1,7 @@
 import {ADD_TO_CART}  from "../Constants"
 
 
-export const addToCart = ()=>{
+export const AddToCart = ()=>{
 
   return {
     type:ADD_TO_CART,
@@ -10,10 +10,10 @@ export const addToCart = ()=>{
 }
 
 
-export const removeToCart = ()=>{
+// export const removeToCart = ()=>{
 
-  return {
-    type:"Remove_TO_CART",
-    data:data
-  }
-}
+//   return {
+//     type:"Remove_TO_CART",
+//     data:data
+//   }
+// }
