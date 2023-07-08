@@ -8,7 +8,7 @@ MongoClient(url);
 
 async function getData(){
 
-    let result = await client.connect();
+    let result = await  client.connect();
 
     let db = result.db('e-commerce');
 
