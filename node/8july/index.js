@@ -14,7 +14,7 @@ async function getData(){
 
     let collection =db.collection('products');
 
-    let response =await collection.find({}).toArray();
+    let response =await  collection.find({}).toArray();
 
     console.log(response)
 }
