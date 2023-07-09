@@ -203,6 +203,7 @@ function App() {
 
       <br/>
       <input
+      
         type="radio"
         id="pushEmail"
         name="pushNotifications"
