@@ -1,5 +1,5 @@
 
-const rating= document.getElementsByClassName('rating')[0]
+const rating=   document.getElementsByClassName('rating')[0]
 
 const block= document.getElementsByClassName('block')
 
