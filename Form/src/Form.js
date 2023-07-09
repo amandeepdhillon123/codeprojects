@@ -2,7 +2,9 @@ import React from 'react'
 
 function Form() {
   return (
-    <div>Form</div>
+    <div>
+      <h1>hello iam amndeep</h1>
+    </div>
   )
 }
 
