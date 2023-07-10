@@ -2,8 +2,8 @@
 document.getElementById("form").addEventListener('submit',myFun)
 
 function form(event){
-    event.preventDefault();
+     event.preventDefault();
 
-    console.log("amandeep");
+    console.log(" amandeep");
 }
    
