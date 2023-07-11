@@ -3,15 +3,27 @@ let dbConnect = require('./data')
 
 
 
+//   read data 
+
+// let main = async ()=>{
+
+//     let data = await dbConnect();
+
+//     data = await data.find().toArray()
+//     console.log(data)
+// }
+
+// main();
+
+// insert data 
 
 
-let main = async ()=>{
+let insert = async() => {
+        let data = await dbConnect();
 
-    let data = await dbConnect();
+        data = await data.insertOne({name:"amandeep_4",brand:"nokia",price:"100000"})
 
-    data = await data.find().toArray()
-    console.log(data)
+        console.log(data)
 }
-
-main();
+insert()
 
