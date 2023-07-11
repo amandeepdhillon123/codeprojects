@@ -40,15 +40,15 @@ let dbConnect = require('./data')
 // update()
 
 
-let del = async() => {
-        let data = await dbConnect();
+// let del = async() => {
+//         let data = await dbConnect();
 
-        data = await data.deleteOne({name:"amandeep_3"})
+//         data = await data.deleteOne({name:"amandeep_3"})
 
-        console.log(data)
-}
+//         console.log(data)
+// }
 
-del();
+// del();
 
 
 
