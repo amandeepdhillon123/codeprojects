@@ -30,14 +30,25 @@ let dbConnect = require('./data')
 
 //  update data 
 
-let update = async() => {
+// let update = async() => {
+//         let data = await dbConnect();
+
+//         data = await data.updateOne({name:"amandeep_4"},{$set:{name:"Dhillon"}})
+
+//         console.log(data)
+// }
+// update()
+
+
+let del = async() => {
         let data = await dbConnect();
 
-        data = await data.updateOne({name:"amandeep_4"},{$set:{name:"Dhillon"}})
+        data = await data.deleteOne({name:"amandeep_3"})
 
         console.log(data)
 }
-update()
+
+del();
 
 
 
