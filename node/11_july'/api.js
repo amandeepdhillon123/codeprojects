@@ -5,7 +5,7 @@ const dbConnect = require('./data');
 const app = express();
   app.use(express.json())
 
-app.listen(2252,()=>{
+app.listen(2255,()=>{
     console.log("resy")
 })
 
@@ -25,14 +25,29 @@ app.listen(2252,()=>{
 
 
 
-app.post("/",async(req,resp)=>{
+// app.post("/",async(req,resp)=>{
+
+//    let data = await dbConnect();
+
+//    data =await data.insertOne(req.body)
+
+
+//    resp.send(send ,"done")
+   
+
+
+// })
+
+
+
+app.put("/",async(req,resp)=>{
 
    let data = await dbConnect();
 
-   data =await data.insertOne(req.body)
+   data =await data.updateOne({name:"rohan"},{$set:req.body})
 
 
-   resp.send(send ,"done")
+   resp.send("done")
    
 
 
