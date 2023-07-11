@@ -1,11 +1,11 @@
 const express = require('express');
 const dbConnect = require('./data');
-
+const mongodb = require('mongodb')
 
 const app = express();
   app.use(express.json())
 
-app.listen(2255,()=>{
+app.listen(2252,()=>{
     console.log("resy")
 })
 
@@ -40,18 +40,34 @@ app.listen(2255,()=>{
 
 
 
-app.put("/",async(req,resp)=>{
+// app.put("/",async(req,resp)=>{
+
+//    let data = await dbConnect();
+
+//    data =await data.updateOne({name:"rohan"},{$set:req.body})
+
+
+//    resp.send("done")
+   
+
+
+// })
+
+
+app.delete("/:id",async(req,resp)=>{
 
    let data = await dbConnect();
 
-   data =await data.updateOne({name:"rohan"},{$set:req.body})
+   data =await data.deleteOne({_id:new mongodb.ObjectId(req.params.id)})
 
 
-   resp.send("done")
+   resp.send(data)
    
 
 
 })
+
+
 
 
 
