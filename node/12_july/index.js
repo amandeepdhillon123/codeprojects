@@ -27,17 +27,29 @@ mongoose.connect('mongodb://127.0.0.1:27017/e-commerce')
         price:Number
     })
 
-    const update = async ()=>{
+    // const update = async ()=>{
 
-        const Product =mongoose.model("products",productSchema)
+    //     const Product =mongoose.model("products",productSchema)
 
-        let data =await Product.updateOne(
-            {name:"amandeep_5"},
-            {$set:{name:"Deep"}}
+    //     let data =await Product.updateOne(
+    //         {name:"amandeep_5"},
+    //         {$set:{name:"Deep"}}
             
-            )
+    //         )
 
-            console.log(data)
-    }
+    //         console.log(data)
+    // }
 
-    update()
+    // update()
+
+    // find data 
+
+    // const find = async()=>{
+    //     const Product =mongoose.model('products',productSchema)
+
+    //     const data = await Product.findOne({name:"Deep"})
+
+    //     console.log(data)
+    // }
+
+    // find()
