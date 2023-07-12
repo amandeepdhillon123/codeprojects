@@ -34,10 +34,20 @@ app.listen(2124,()=>{
 // })
 
 
-app.delete('/delete/:_id',async(req,resp)=>{
+// app.delete('/delete/:_id',async(req,resp)=>{
+//           console.log(req.params)
+
+//           let data = await products.deleteOne(req.params)
+
+//           resp.send(data)
+// })
+
+
+app.put('/update/:_id',async(req,resp)=>{
           console.log(req.params)
 
-          let data = await products.deleteOne(req.params)
+          let data = await products.updateOne(req.params,{$set:{name:"dnaju"}})
 
           resp.send(data)
 })
+
