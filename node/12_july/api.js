@@ -8,18 +8,27 @@ const app = express();
 
 app.use(express.json())
  
-app.listen(2123,()=>{
+app.listen(2124,()=>{
     console.log("server successful")
 })
 
- app.post('/create',async(req,resp)=>{
-    //    console.log(req.body)
-    // resp.send("done")
-    let data = new products(req.body);
-    let result = await data.save()
+//  app.post('/create',async(req,resp)=>{
+//     //    console.log(req.body)
+//     // resp.send("done")
+//     let data = new products(req.body);
+//     let result = await data.save()
 
-    console.log(result)
+//     console.log(result)
 
-    resp.send(result)
+//     resp.send(result)
     
+// })
+
+// get data 
+
+app.get('/list',async(req,resp)=>{
+     
+    let data = await products.find()
+
+    resp.send(data)
 })
