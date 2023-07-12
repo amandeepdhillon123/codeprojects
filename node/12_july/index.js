@@ -53,3 +53,14 @@ mongoose.connect('mongodb://127.0.0.1:27017/e-commerce')
     // }
 
     // find()
+
+
+    const del = async()=>{
+
+        const product = mongoose.model('products',productSchema);
+
+        const data = await product.deleteOne({name:"Deep"})
+
+        console.log("successful")
+    }
+    del()
