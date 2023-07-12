@@ -26,9 +26,18 @@ app.listen(2124,()=>{
 
 // get data 
 
-app.get('/list',async(req,resp)=>{
+// app.get('/list',async(req,resp)=>{
      
-    let data = await products.find()
+//     let data = await products.find()
 
-    resp.send(data)
+//     resp.send(data)
+// })
+
+
+app.delete('/delete/:_id',async(req,resp)=>{
+          console.log(req.params)
+
+          let data = await products.deleteOne(req.params)
+
+          resp.send(data)
 })
