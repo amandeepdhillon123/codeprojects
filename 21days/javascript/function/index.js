@@ -22,9 +22,19 @@
 //     console.log(r)
 // })("hello")
 
-function greeting(a){
-    console.log(`${a} Dhillon`)
-}
+// function greeting(a){
+//     console.log(`${a} Dhillon`)
+// }
 
 // setTimeout(greeting,5000,"amandeep")
 // setInterval(greeting,2000,"amandeep")
+
+   
+// test()
+//  function test(){
+//     console.log("amandeep")
+//  }
+  nam = "amandeep"
+console.log(nam)
+var nam  ;
+ 
