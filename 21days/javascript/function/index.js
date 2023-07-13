@@ -1,5 +1,15 @@
-let fun = function(a){
-    console.log(a)
-}
+// let fun = function(a="kroshan"){
+//     console.log(a)
+// }
 
-fun("ram")
+// fun()
+
+// let main = function() {
+//      return "amandeep"
+// }
+// console.log(main())
+
+
+let main =()=> console.log("amandeep")
+
+main();
