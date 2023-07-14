@@ -27,11 +27,13 @@
  #container .p3{
      border: 1px solid red;
     text-align: center;
-    display: block;
+    display:  block;
 
     margin-top: 45%;
    
 }
+
+
  #container .p4{
     border: 1px solid red;
     
