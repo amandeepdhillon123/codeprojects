@@ -14,7 +14,7 @@ function Home() {
   return (
 <main>
   <h1> hello i am Home page</h1>
-<Link href={"/about"}>Go to link Page</Link> <br /> <br />
+<Link href={"/about/aboutStudent"}>Go to link Page</Link> <br /> <br />
 <Link href={"/help"}>Go to link Page</Link> <br /> <br />
 
 {/* <button onClick={()=>router.push("/about")}>Go to About Page</button> */}
