@@ -1,34 +1,31 @@
 
-// import styles from './page.module.css'
 
-// export default function Home() {
-//   return (
-//     <main className={styles.main}>
-//       <p>home</p>
-//       <User name ="ram"/>
-//       <User name ="shyaam"/>
-//       <User name ="dfcdhgam"/>
-//     </main>
-//   )
-// }
+"use client"
+import { useRouter } from 'next/navigation';
 
-//  const User =(props)=>{
 
-//   return(
-//     <div>
-//       <p>hello ji {props.name}</p>
-//     </div>
-//   )
-// }
-
-import React from 'react'
-
+import Link from 'next/link';
 function Home() {
+  const router = useRouter();
+
+  const navigate =(name)=>{
+      router.push(name)
+  }
   return (
 <main>
-  <h1> hello i am home page</h1>
-</main>
+  <h1> hello i am Home page</h1>
+<Link href={"/about"}>Go to link Page</Link> <br /> <br />
+<Link href={"/help"}>Go to link Page</Link> <br /> <br />
+
+{/* <button onClick={()=>router.push("/about")}>Go to About Page</button> */}
+{/* <button onClick={()=>router.push("/help")}>Go to Help Page</button> */}
+
+<button onClick={navigate("/about")}>Go to About Page</button>
+<button onClick={navigate("/help")}>Go to About Page</button>
+</main> 
+
+
   )
 }
 
-export default Home
+export default Home;
