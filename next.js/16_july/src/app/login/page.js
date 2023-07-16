@@ -7,7 +7,9 @@ const Login = ()=>{
         <>
          <h1>login page</h1>
         <Link href={"/"}>Home page</Link> <br /> <br />
-        <button onClick={()=>router.push("/")}>Home</button>
+        <button onClick={()=>router.push("/")}>Home</button> <br /> <br />
+        <button onClick={()=>router.push("/login/studentLogin")}>Go to StudentLogin</button> <br /> <br />
+        <button onClick={()=>router.push("/login/teacherLogin")}>Go to TeacherLogin </button>
         </>
        
     )

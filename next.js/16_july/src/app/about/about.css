@@ -1,0 +1,13 @@
+.about-menu{
+    display: flex;
+}
+.about-menu li  {
+    margin-left: 25px;
+    list-style-type: none;
+   
+   
+}
+.about-menu li a{
+    text-decoration: none;
+}
+
