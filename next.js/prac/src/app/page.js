@@ -13,7 +13,9 @@ export default function Home() {
      <h1>hello next.js Duniya</h1>
 
      <button onClick={()=>navigate("/login")}>login Page</button> <br /> <br />
-     <button onClick={()=>navigate("/about")}>About Page</button>
+     <button onClick={()=>navigate("/about")}>About Page</button> <br /> <br />
+     <button onClick={()=>navigate("/student")}>student</button>
+   
     </div>
   )
 }
