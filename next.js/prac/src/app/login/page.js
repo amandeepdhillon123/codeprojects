@@ -13,6 +13,9 @@ const Login = () => {
         
 
         <button onClick={()=>router.push("/")}>Home</button>
+        
+        <button onClick={()=>router.push("/login/studentLogin")}>student login</button>
+        <button onClick={()=>router.push("/login/teacherLogin")}>teacher login </button>
     </div>
   )
 }

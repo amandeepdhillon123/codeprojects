@@ -14,6 +14,8 @@ const About = () => {
         
 
         <button onClick={()=>router.push("/")}>Home</button>
+        <button onClick={()=>router.push("/about/aboutCollege")}>Aboutcolege</button>
+        <button onClick={()=>router.push("/about/aboutStudent")}>About student </button>
       </div>
     )
   }
