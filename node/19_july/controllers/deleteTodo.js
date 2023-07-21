@@ -34,7 +34,7 @@ exports.del = async(req,resp)=>{
 
     const{id}= req.params;
 
-     await Todo.findByIdAndDelete(id)
+     await  Todo.findByIdAndDelete(id)
 
              resp.json({
             success:true,
