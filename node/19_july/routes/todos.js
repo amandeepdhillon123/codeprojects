@@ -26,6 +26,7 @@ const router= express.Router();
 const {createTodo} = require("../controllers/createTodo")
 const {getTodo ,getTodoById} = require("../controllers/getTodo")
 const {updateTodo}= require("../controllers/updateTodo")
+const {del}=require("../controllers/deleteTodo")
 
 // api router 
 
@@ -33,5 +34,6 @@ router.post("/createTodo",createTodo);
 router.get("/getTodo",getTodo);
 router.get("/getTodos/:id",getTodoById);
 router.put("/update/:id",updateTodo)
+router.delete("/del/:id",del)
 
 module.exports = router;
