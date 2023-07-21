@@ -89,3 +89,37 @@ exports.getTodo = async(req,resp)=>
         
     }
 }
+
+exports.getTodoById = async(req,resp)=>{
+
+   try {
+    const id= req.params.id;
+
+    const todos = await Todo.findById({_id:id})
+
+    if(!todos)
+    {
+        return resp.status(404).json({
+            success:false,
+            message:"no data find of this given id"
+        })
+    }
+    else
+    {
+        return resp.status(200).json({
+            success:true,
+            data:todos,
+            message:`${id} fetched data sucessful`
+        })
+    }
+    
+   } catch (error) {
+       console.log(error);
+       resp.status(500).json({
+        success:false,
+        error:error.message,
+        message:"koni mila bhai",
+
+       })
+   }
+}
