@@ -33,30 +33,60 @@
 // })
 
 
-const express = require("express");
+// const express = require("express");
 
-const app = express()
+// const app = express()
+
+// require("dotenv").config();
+
+// const PORT = process.env.Port || 3000;
+// app.use(express.json())
+
+// const routes = require("./routes/todos")
+
+// app.use("/api/v1",routes);
+
+// app.listen(PORT ,()=>{
+//     console.log("port number successful")
+// })
+
+// const dbConnect=require('./config/database')
+// dbConnect();
+
+
+
+// app.get("/",(req,resp)=>{
+//     resp.send("<h1>hello Dosto</h1>")
+// })
+
+
+const express= require("express");
+
+const app =express();
+
+app.use(express.json())
 
 require("dotenv").config();
 
-const PORT = process.env.Port || 3000;
-app.use(express.json())
+const Port = process.env.Port || 3000;
 
-const routes = require("./routes/todos")
+const router = require("./routes/todos");
 
-app.use("/api/v1",routes);
+app.use("/api/v1",router)
 
-app.listen(PORT ,()=>{
-    console.log("port number successful")
-})
+const dbConnect= require("./config/database")
 
-const dbConnect=require('./config/database')
 dbConnect();
 
-
+app.listen(Port,()=>{
+ console.log("port successful running")
+})
 
 app.get("/",(req,resp)=>{
-    resp.send("<h1>hello Dosto</h1>")
+    resp.send("hello ji kaise ho aap sbhi")
 })
+
+
+
 
 
