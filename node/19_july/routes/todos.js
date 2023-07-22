@@ -45,11 +45,14 @@ const router= express.Router();
 // controller
 
 const{createTodo}=require("../controllers/createTodo")
+const{getTodo,getTodoByid}= require("../controllers/getTodo")
 
 
 // mapping controller
 
 router.post('/createTodo', createTodo)
+router.get("/getTodo",getTodo)
+router.get("/getTodos/:id",getTodoByid)
 
 module.exports = router;
 
