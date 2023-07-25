@@ -36,9 +36,9 @@ app.use(express.json())
 
 const Port = process.env.PORT || 3000 
 
-const routes = require("./routes/todos")
+const router = require("./routes/todos")
 
-app.use("/app/v1",routes)
+app.use("/app/v1",router)
 
 const dbConnect = require("./config/database")
 dbConnect();
