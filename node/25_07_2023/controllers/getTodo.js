@@ -47,3 +47,24 @@
 //         })
 //     }
 // }
+
+
+const Todo = require("../models/Todo.js")
+
+exports.getTodo = async(req,resp)=>{
+    try {
+        const response = await Todo.find({})
+        resp.status(200).json({
+            success:true,
+            message:"successful",
+            data:response,
+        })
+    } catch (error) {
+        console.log(error)
+        resp.status(500).json({
+            success:false,
+            message:"Inernal server error",
+            error:error.message
+        })
+    }
+}

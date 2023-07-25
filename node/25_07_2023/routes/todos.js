@@ -30,12 +30,15 @@ const router = express.Router();
 // controller 
 
 const {createTodo} = require("../controllers/createTodo");
+const{getTodo} =require("../controllers/getTodo")
+
 
 
 
 // routes 
 
 router.post("/createTodo",createTodo)
+router.get("/getTodo",getTodo)
 
 
 module.exports= router
