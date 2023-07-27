@@ -93,17 +93,19 @@ function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
           <div></div>
         </div>
         <button>
-          <p>Sign Up with Google</p>
+          <p>Sign  Up with Google</p>
         </button>
       </div>
-       <div className='relative w-11/12 max-w-[450px] '>
-            <img src={frameImage} 
+       <div className=' relative  w-11/12 max-w-[450px] '>
+            <img
+            //  src={frameImage} 
                 alt="Pattern"
                 width={558}
                 height={504}
                 loading="lazy"/>
 
-            <img src={image}
+            <img 
+            // src={image}
                 alt="Students"
                 width={558}
                 height={490}

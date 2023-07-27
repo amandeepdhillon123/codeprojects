@@ -58,8 +58,8 @@ import Home from './pages/Home'
 
          <Routes>
           <Route path='/' element={<Home/>}></Route>
-          <Route path='/Login' element={<Login/>}></Route>
-          <Route path='/signup' element={<Signup/>}></Route>
+          <Route path='/Login' element={<Login setIsLoggedIn={setIsLoggedIn}/>}></Route>
+          <Route path='/signup' element={<Signup setIsLoggedIn={setIsLoggedIn}/>}></Route>
           <Route path='/dashboard' element={<Dashboard/>}></Route>
          </Routes>
 
