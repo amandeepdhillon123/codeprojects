@@ -99,7 +99,8 @@ function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
        <div className=' relative  w-11/12 max-w-[450px] '>
             <img
             //  src={frameImage} 
-                alt="Pattern"
+                
+            alt="Pattern"
                 width={558}
                 height={504}
                 loading="lazy"/>
