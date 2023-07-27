@@ -3,7 +3,6 @@
 // import {toast} from "react-hot-toast"
 // import { useNavigate } from 'react-router-dom';
 
-
 // const SignupForm = ({setIsLoggedIn}) => {
 //     const navigate = useNavigate();
 
@@ -55,7 +54,6 @@
 
 //     }
 
-
 //   return (
 //     <div>
 //         {/* student-Instructor tab */}
@@ -63,7 +61,7 @@
 //         className='flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max'>
 
 //             <button
-//             className={`${accountType === "student" 
+//             className={`${accountType === "student"
 //             ?
 //               "bg-richblack-900 text-richblack-5"
 //             :"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
@@ -72,7 +70,7 @@
 //             </button>
 
 //             <button
-//             className={`${accountType === "instructor" 
+//             className={`${accountType === "instructor"
 //             ?
 //               "bg-richblack-900 text-richblack-5"
 //             :"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
@@ -125,7 +123,6 @@
 //                     />
 //             </label>
 //             </div>
-            
 
 //             {/* createPassword and Confirm Password */}
 //             <div className='w-full flex gap-x-4 mt-[20px]'>
@@ -141,11 +138,11 @@
 //                         className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
 //                     />
 //                     <span
-//                      className='absolute right-3 top-[38px] cursor-pointer' 
+//                      className='absolute right-3 top-[38px] cursor-pointer'
 //                     onClick={() => setShowPassword((prev) => !prev)}>
-//                         {showPassword ? 
+//                         {showPassword ?
 
-//                         (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : 
+//                         (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) :
 
 //                         (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
 //                     </span>
@@ -162,12 +159,12 @@
 //                         value={formData.confirmPassword}
 //                         className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
 //                     />
-//                     <span 
+//                     <span
 //                      className='absolute right-3 top-[38px] cursor-pointer'
 //                     onClick={() => setShowConfirmPassword((prev) => !prev)}>
 //                         {showConfirmPassword ?
 
-//                          (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : 
+//                          (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) :
 
 //                          (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
 //                     </span>
@@ -184,12 +181,122 @@
 
 // export default SignupForm
 
-import React from 'react'
-
+import React from "react";
+import { useState } from "react";
+import {toast} from "react-hot-toast"
+import { Link } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 function SignupForm() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  function changeHandler(e) {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  }
   return (
-    <div>SignupForm</div>
-  )
+    <div>
+      <div>
+        <button>Student</button>
+        <button>Instructor</button>
+      </div>
+      <form>
+        <div>
+          <label>
+            <p>First Name</p>
+            <input
+              required
+              type={showPassword ? "text" : "password"}
+              name="firstName"
+              onChange={changeHandler}
+              placeholder="Enter First Name"
+              value={formData.firstName}
+            />
+          </label>
+
+          <label>
+            <p>Last name</p>
+            <input
+              required
+              type={showPassword ? "text" : "password"}
+              name="lastName"
+              onChange={changeHandler}
+              placeholder="Enter Lat Name"
+              value={formData.lastName}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <p>
+              Email Address<sup>*</sup>
+            </p>
+            <input
+              required
+              type="email"
+              name="email"
+              onChange={changeHandler}
+              placeholder="Enter Email Address "
+              value={formData.email}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <p>
+              Create Password<sup>*</sup>
+            </p>
+            <input
+              required
+              type={showPassword ? "text" : "password"}
+              name="password"
+              onChange={changeHandler}
+              placeholder="Enter Password"
+              value={formData.password}
+            />
+            <span onClick={() => setShowPassword((prev) => !prev)}>
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
+          </label>
+
+          {/* <label>
+            <p>
+              Confirm Password<sup>*</sup>
+            </p>
+            <input
+              required
+              type={showConfirmPassword ? "text" : "password"}
+              name="confirmPassword"
+              onChange={changeHandler}
+              placeholder="Confirm Password"
+              value={formData.confirmPassword}
+            />
+            <span onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              {showConfirmPassword ? (
+                <AiOutlineEyeInvisible />
+              ) : (
+                <AiOutlineEye />
+              )}
+            </span>
+          </label> */}
+        </div>
+    
+
+         <button>
+             Create Account
+         </button>
+      </form>
+    </div>
+  );
 }
 
-export default SignupForm
+export default SignupForm;
