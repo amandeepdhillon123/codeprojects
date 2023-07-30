@@ -5,6 +5,26 @@ const Login = () => {
   //   state for toogle hide and show
 
   const [passShow, setPassShow] = useState(false);
+
+  //   get value from input 
+
+const[inpval, setInpval] = useState({
+   
+    email:"",
+    password:""
+    
+})
+
+  // onchange function 
+  const setVal =(e)=>{
+    const{name,value } =e.target
+
+    setInpval(()=>{
+        return{
+            ...inpval,[name]:value
+        }
+    })
+ }
   return (
     <>
       <section>
@@ -24,6 +44,8 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                onChange={setVal}
+                value={inpval.email}
                 id="email"
                 placeholder="enter your email"
               />
@@ -36,6 +58,8 @@ const Login = () => {
                 <input
                   type={passShow ? "text" : "password"}
                   name="password"
+                  onChange={setVal}
+                  value={inpval.password}
                   id="password"
                   placeholder="enter your  password"
                 />
@@ -49,7 +73,7 @@ const Login = () => {
               </div>
             </div>
             {/* button  */}
-            <button className="btn">Login</button>
+            <button className="btn" onClick={loginuser}>Login</button>
             <p>Don't have an Account?  <NavLink to="/register">Sign Up</NavLink> </p>
           </form>
         </div>
