@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./mix.css";
+import { NavLink } from "react-router-dom";
 const Login = () => {
   //   state for toogle hide and show
 
@@ -49,7 +50,7 @@ const Login = () => {
             </div>
             {/* button  */}
             <button className="btn">Login</button>
-            <p>Don't have an Account? Sign Up</p>
+            <p>Don't have an Account?  <NavLink to="/register">Sign Up</NavLink> </p>
           </form>
         </div>
       </section>
