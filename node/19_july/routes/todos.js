@@ -21,3 +21,22 @@
 
 // module.exports = router;
 
+
+const express = require("express");
+
+const router = express.Router();
+
+
+// controller 
+
+const{createTodo}= require("../controllers/createTodo")
+
+
+
+
+// routes
+
+router.post("/createTodo", createTodo);
+
+
+module.exports= router;

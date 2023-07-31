@@ -87,12 +87,12 @@ const Port = process.env.Port || 4000;
 
 app.use(express.json());
 
-// const routes = require("./routes/todos");
+const routes = require("./routes/todos");
 
-// app.use("/app/v1", routes);
+app.use("/app/v1", routes);
 
-// const dbConnect = require("./config/database");
-// dbConnect();
+const dbConnect = require("./config/database");
+dbConnect();
 
 app.listen(Port, () => {
   console.log(`${Port} chl pda bhai ye`);
