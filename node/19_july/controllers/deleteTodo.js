@@ -1,29 +1,28 @@
 
 
 
-// const Todo = require("../models/Todo");
+const Todo = require("../models/Todo");
 
+exports.del = async(req,resp) =>{
+   try {
 
+    const {id} = req.params;
 
-// exports.deleteTodo =async(req,resp)=>{
+    const del = await Todo.findOneAndDelete({_id:id})
 
-//   try {
-//       const{id}= req.params;
-//         const del = await Todo.findOneAndDelete(id)
+    resp.status(200).json({
+      success:true,
+      message:"  successful deleted "
 
-//         resp.status(200).json({
-//           success:true,
-//           data:del,
-//           message:"server swuccesful"
-
-//         })
-//   } catch (error) {
-
-//     resp.status(500).json({
-//       success:true,
-//       message:"inernal seevre error",
-//       error:error.message
-//     })
+    })
     
-//   }
-// }
+   } catch (error) {
+      console.log(error);
+
+      resp.status(500).json({
+        success:false,
+        message:"inernal server error",
+        error:error.message
+      })
+   }
+}
