@@ -1,63 +1,29 @@
-// // const express  = require("express");
-// // const router = express.Router();
-
-// // //import controller
-// // const {createTodo} = require("../controllers/createTodo");
-// // const {getTodo, getTodoById} = require("../controllers/getTodo");
-// // const {updateTodo} = require("../controllers/updateTodo");
-// // const {deleteTodo} =  require("../controllers/deleteTodo");
-
-// // //define APi routes
-// // router.post("/createTodo", createTodo);
-// // router.get("/getTodos", getTodo);
-// // router.get("/getTodos/:id", getTodoById);
-// // router.put("/updateTodo/:id", updateTodo);
-// // router.delete("/deleteTodo/:id", deleteTodo);
-
-// // module.exports = router;
 
 
-// const express = require('express');
-
-// const router= express.Router();
-
-// // import controller 
-
-// const {createTodo} = require("../controllers/createTodo")
-// const {getTodo ,getTodoById} = require("../controllers/getTodo")
-// const {updateTodo}= require("../controllers/updateTodo")
-// const {del}=require("../controllers/deleteTodo")
-
-// // api router 
-
-// router.post("/createTodo",createTodo);
-// router.get("/getTodo",getTodo);
-// router.get("/getTodos/:id",getTodoById);
-// router.put("/update/:id",updateTodo)
-// router.delete("/del/:id",del)
-
-// module.exports = router;
 
 const express = require("express");
 
-const router= express.Router();
-
-// controller
-
-const{createTodo}=require("../controllers/createTodo")
-const{getTodo,getTodoByid}= require("../controllers/getTodo")
-const{update} = require("../controllers/updateTodo")
-const{deleteTodo}=require("../controllers/deleteTodo")
+const router = express.Router();
 
 
+// controller 
 
-// mapping controller
+const{createTodo}= require("../controllers/createTodo")
 
-router.post('/createTodo', createTodo)
+const {getTodo,getTodoByid}= require('../controllers/getTodo')
+
+const{updateTodo}= require("../controllers/updateTodo")
+
+const {del}= require("../controllers/deleteTodo")
+
+
+// routes
+
+router.post("/createTodo", createTodo);
 router.get("/getTodo",getTodo)
-router.get("/getTodos/:id",getTodoByid)
-router.put("/update/:id",update)
-router.delete("/delete/:id",deleteTodo)
+router.get('/getTodoByid/:id',getTodoByid)
 
-module.exports = router;
+router.put("/update/:id",updateTodo)
+router.delete("/del/:id",del)
 
+module.exports= router;

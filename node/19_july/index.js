@@ -1,6 +1,3 @@
-
-
-
 // const express = require("express");
 // const app = express();
 
@@ -17,7 +14,6 @@
 // //mount the todo API routes
 // app.use("/api/v1", todoRoutes);
 
-
 // //start server
 // app.listen(3000, () => {
 //     console.log(`Server started successfully at ${PORT}`);
@@ -31,7 +27,6 @@
 // app.get("/", (req,res) => {
 //     res.send(`<h1> This is HOMEPAGE baby</h1>`);
 // })
-
 
 // const express = require("express");
 
@@ -53,40 +48,56 @@
 // const dbConnect=require('./config/database')
 // dbConnect();
 
-
-
 // app.get("/",(req,resp)=>{
 //     resp.send("<h1>hello Dosto</h1>")
 // })
 
+// const express= require("express");
 
-const express= require("express");
+// const app =express();
 
-const app =express();
+// app.use(express.json())
 
-app.use(express.json())
+// require("dotenv").config();
 
+// const Port = process.env.Port || 3000;
+
+// const router = require("./routes/todos");
+
+// app.use("/api/v1",router)
+
+// const dbConnect= require("./config/database")
+
+// dbConnect();
+
+// app.listen(Port,()=>{
+//  console.log("port successful running")
+// })
+
+// app.get("/",(req,resp)=>{
+//     resp.send("hello ji kaise ho aap sbhi")
+// })
+
+const express = require("express");
+
+const app = express();
 require("dotenv").config();
 
-const Port = process.env.Port || 3000;
+const Port = process.env.Port || 4000;
 
-const router = require("./routes/todos");
+app.use(express.json());
 
-app.use("/api/v1",router)
+const routes = require("./routes/todos");
 
-const dbConnect= require("./config/database")
+app.use("/app/v1", routes);
 
+const dbConnect = require("./config/database");
 dbConnect();
 
-app.listen(Port,()=>{
- console.log("port successful running")
-})
+app.listen(Port, () => {
+  console.log(`${Port} chl pda bhai ye`);
+});
 
-app.get("/",(req,resp)=>{
-    resp.send("hello ji kaise ho aap sbhi")
-})
-
-
-
-
-
+app.get("/", (req, resp) => {
+  resp.send("hello ji kais eho aap sbhi ");
+});

@@ -1,54 +1,30 @@
 
 
-// const Todo =require("../models/Todo");
+const Todo = require("../models/Todo");
 
-// exports.createTodo =async(req,resp)=>{
+exports.createTodo = async (req, resp) => {
+  console.log(req.body);
+  try {
+    const { titl, descriptio } = req.body;
 
-//     try {
-//         const {title,description} = req.body;
+    const response = await Todo.create({
+      title: titl,
+      description: descriptio,
+    });
 
-//     const response = await Todo.create({title,description})
+    // console.log(response)
 
-//     resp.status(200).json({
-//         success:true,
-//         data:response,
-//         message:"entry successfule"
-
-//     })
-        
-//     } catch (error) {
-
-//         console.log(err);
-//         resp.status(500).json({
-//           success:false,
-//           data:"unuccessful",
-//           message:err.message,
-//         })
-        
-//     }
-// }
-
-const Todo= require("../models/Todo")
-
-exports.createTodo= async(req,resp)=>{
-     try {
-        const{title,description} = req.body
-
-        const response = await Todo.create({title,description})
-
-     resp.status(200).json({
-        success:true,
-        data:response,
-        message:"entry succesful"
-     })
-
-     } catch (error) {
-        console.log("error aaggya create toodo mein");
-        resp.status(500).json({
-            success:false,
-            message:"internal server error",
-            error:error.message,
-        })
-        
-     }
-}
+    resp.status(200).json({
+      data: response,
+      success: true,
+      message: "entry successful",
+    });
+  } catch (error) {
+    console.log(error);
+    resp.status(500).json({
+      message: "ineternal server error",
+      success: false,
+      error: error.message,
+    });
+  }
+};

@@ -1,111 +1,56 @@
 
 
 
-// const Todo = require("../models/Todo")
 
 
-// exports.getTodo = async(req,resp)=>
-// {
-//     try {
-//          const todos = await Todo.find({}) 
+const Todo = require("../models/Todo");
 
-//          resp.status(200).json({
-//             success:true,
-//             data:todos,
-//             message:"Entire dasta is fetched"
-//          })
+exports.getTodo = async (req, resp) => {
+  try {
+    // const { id } = req.params;
 
-//     } 
-    
-//     catch (err) {
-//         console.log(err)
-//         resp.status(500).json({
-//             success:false,
-//             error:err.message,
-//             message:"Server error"
-//         })
-        
-//     }
-// }
+    const response = await Todo.find({});
 
-// exports.getTodoById = async(req,resp)=>{
 
-//    try {
-//     const id= req.params.id;
+    resp.status(200).json({
+      data: response,
+      success: true,
+      message: "find successfull",
+    });
+  } catch (error) {
 
-//     const todos = await Todo.findById({_id:id})
+    console.log(error)
+    resp.status(500).json({
+      success: false,
+      message: "inertnal server error",
+      error: error.message,
+    });
+  }
+};
 
-//     if(!todos)
-//     {
-//         return resp.status(404).json({
-//             success:false,
-//             message:"no data find of this given id"
-//         })
-//     }
-//     else
-//     {
-//         return resp.status(200).json({
-//             success:true,
-//             data:todos,
-//             message:`${id} fetched data sucessful`
-//         })
-//     }
-    
-//    } catch (error) {
-//        console.log(error);
-//        resp.status(500).json({
-//         success:false,
-//         error:error.message,
-//         message:"koni mila bhai",
 
-//        })
-//    }
-// }
 
-const Todo = require("../models/Todo")
-
-exports.getTodo =async(req,resp)=>{
+exports.getTodoByid = async (req, resp) => {
     try {
-
-        const response = await Todo.find({})
-
-        resp.status(200).json({
-            success:true,
-            data:response,
-            message:"get todo successful"
-
-        })
-        
+      const { id } = req.params;
+  
+      const response = await Todo.findById({_id:id});
+  
+    
+  
+      resp.status(200).json({
+        data: response,
+        success: true,
+        message: "find successfull",
+      });
     } catch (error) {
-        resp.status(500).json({
-            success:false,
-            error:error.message,
-            message:"inernal server error",
-        })
+  
+      console.log(error)
+      resp.status(500).json({
+        success: false,
+        message: "inertnal server error",
+        error: error.message,
+      });
     }
-}
-
-
-
-
-exports.getTodoByid = async(req,resp)=>{
-    try {
-          const {id} = req.params;
-
-          const response = await Todo.findById({_id:id})
-
-          resp.status(200).json({
-            success:true,
-            data:response,
-            message:"successful",
-
-          })
-    } catch (error) {
-        
-        resp.status(500).json({
-            success:false,
-            message:"inernal server error",
-            error:error.message,
-        })
-    }
-}
+  };
+  

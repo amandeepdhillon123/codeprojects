@@ -1,53 +1,28 @@
 
 
-// const Todo= require("../models/Todo");
+const Todo = require("../models/Todo")
 
-// exports.updateTodo = async(req,resp)=>{
-      
-//     try {
-//         const {id} = req.params;
-//        const{title,description} = req.body;
-
-//        const update =await Todo.findByIdAndUpdate({_id:id},{title,description,updatedAt:Date.now()})
-
-//        resp.status(200).json({
-//              success:true,
-//               data:update,
-//               message:"succeessfull updated"
-//        })
-        
-//     } catch (error) {
-
-//         console.log("gyi bhains paani mein")
-//         resp.status(500).json({
-//             success:false,
-//             error:error.message,
-//             message:"nehi hooa koi joogad"
-//         })
-//     }
-// }
-
-
-const Todo = require("../models/Todo");
-
-exports.update = async(req,resp)=>{
+exports.updateTodo = async(req,resp)=>{
      try {
-         const{id} = req.params;
-         const{title,description} =req.body;
 
-         const update = await Todo.findByIdAndUpdate({_id:id},{title,description,updatedAt:Date.now()})
+          const{id}=req.params;
+          const{titl,descriptio}= req.body;
 
-         resp.status(200).json({
-            success:true,
-            data:update,
-            message:"server success"
+          const response = await Todo.findByIdAndUpdate({_id:id},{title:titl,description:descriptio,updatedAt:Date.now()})
 
-         })
+          console.log(response)
+
+          resp.status(200).json({
+               data:response,
+               succes:true,
+               message:"entry succesful"
+          })
+          
      } catch (error) {
           resp.status(500).json({
-            success:false,
-            error:error.message,
-            message:"inertnal sever error",
+               message:"internal sever error",
+               error: error.message,
+               success:false
           })
      }
 }
