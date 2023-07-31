@@ -33,12 +33,16 @@ const{createTodo}= require("../controllers/createTodo")
 
 const {getTodo,getTodoByid}= require('../controllers/getTodo')
 
+const{updateTodo}= require("../controllers/updateTodo")
+
 
 // routes
 
 router.post("/createTodo", createTodo);
 router.get("/getTodo",getTodo)
 router.get('/getTodoByid/:id',getTodoByid)
+
+router.put("/update/:id",updateTodo)
 
 
 module.exports= router;
