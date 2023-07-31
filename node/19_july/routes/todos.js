@@ -31,12 +31,14 @@ const router = express.Router();
 
 const{createTodo}= require("../controllers/createTodo")
 
-
+const {getTodo,getTodoByid}= require('../controllers/getTodo')
 
 
 // routes
 
 router.post("/createTodo", createTodo);
+router.get("/getTodo",getTodo)
+router.get('/getTodoByid/:id',getTodoByid)
 
 
 module.exports= router;
