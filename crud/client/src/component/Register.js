@@ -2,28 +2,63 @@ import React, { useState } from "react";
 
 import { NavLink } from "react-router-dom";
 const Register = () => {
+  const [inpval, setINP] = useState({
+    name: "",
+    email: "",
+    age: "",
+    mobile: "",
+    work: "",
+    add: "",
+    desc: "",
+  });
+
+  const setdata = (e) => {
+    console.log(e.target.value);
+    const { name, value } = e.target;
+    setINP((preval) => {
+      return {
+        ...preval,
+        [name]: value,
+      };
+    });
+  };
+
+ 
+ 
 
 
-    const [inpval, setINP] = useState({
-        name: "",
-        email: "",
-        age: "",
-        mobile: "",
-        work: "",
-        add: "",
-        desc: ""
-    })
 
-    const setdata = (e) => {
-        console.log(e.target.value);
-        const { name, value } = e.target;
-        setINP((preval) => {
-            return {
-                ...preval,
-                [name]: value
-            }
-        })
-    }
+
+
+  const addinpdata = async(e) => {
+    e.preventDefault();
+    const { name, email, age, mobile, work, add, desc } = inpval;
+    const resp = await fetch("http://localhost:4000/register",{
+        method:"Post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+     
+          name, email, age, mobile, work, add, desc 
+         
+        }),
+
+    });
+
+    const data = await resp.json();
+    if (resp.status === 422 || !data) {
+      console.log("error ");
+      alert("error");
+
+  } else {
+      // history.push("/")
+      // setUdata(data)
+      alert("data added")
+      console.log("data added");
+
+  }
+  };
   return (
     <div className="container">
       <NavLink to="/">Home</NavLink>
@@ -124,7 +159,9 @@ const Register = () => {
               rows="5"
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" onClick={addinpdata} class="btn btn-primary">
+            Submit
+          </button>
         </div>
       </form>
     </div>

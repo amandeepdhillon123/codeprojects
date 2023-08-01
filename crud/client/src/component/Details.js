@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect ,useState} from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -7,10 +7,55 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import {useParams} from "react-router-dom"
 const Details = () => {
+
+  const [getuserdata, setUserdata] = useState([]);
+  console.log(getuserdata.data)
+  
+  const {id} = useParams("")
+
+
+
+  const Getdata = async() => {
+   
+   
+    const resp = await fetch(`http://localhost:4000/getuser/${id}`,{
+        method:"GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+       
+
+    });
+
+    const data = await resp.json();
+    if (resp.status === 422 || !data) {
+      console.log("error ");
+      alert("error");
+
+  } else {
+    setUserdata(data)
+      // history.push("/")
+      // setUdata(data)
+      // alert("data added")
+      console.log(" get Data");
+
+  }
+
+ 
+  };
+
+  useEffect(()=>{
+    Getdata()
+  },[])
   return (
+
+
     <div className="container mt-3">
         <h1 style={{ fontWeight: 400 }}>Welcome Bhagat singh</h1>
+          
+         
           <Card sx={{ maxWidth: 600 }}>
             <CardContent>
             <div className="add_btn">
