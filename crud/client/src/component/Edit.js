@@ -1,32 +1,102 @@
-import React, { useState } from "react";
-
+import React, { useContext, useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { updatedata } from "./Context/ContextProvider";
 const Edit = () => {
+  // const [getuserdata, setUserdata] = useState([]);
+  // console.log(getuserdata.data)
 
+  const { updata, setUPdata } = useContext(updatedata);
 
-    const [inpval, setINP] = useState({
-        name: "",
-        email: "",
-        age: "",
-        mobile: "",
-        work: "",
-        add: "",
-        desc: ""
-    })
+  const navigate = useNavigate();
 
-    const setdata = (e) => {
-        console.log(e.target.value);
-        const { name, value } = e.target;
-        setINP((preval) => {
-            return {
-                ...preval,
-                [name]: value
-            }
-        })
+  const [inpval, setINP] = useState({
+    name: "",
+    email: "",
+    age: "",
+    mobile: "",
+    work: "",
+    add: "",
+    desc: "",
+  });
+
+  console.log(inpval);
+
+  const setdata = (e) => {
+    console.log(e.target.value);
+    const { name, value } = e.target;
+    setINP((preval) => {
+      return {
+        ...preval,
+        [name]: value,
+      };
+    });
+  };
+
+  const { id } = useParams("");
+  const Getdata = async () => {
+    const resp = await fetch(`http://localhost:4000/getuser/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await resp.json();
+    if (resp.status === 422 || !data) {
+      console.log("error ");
+      alert("error");
+    } else {
+      setINP(data.data);
+      // history.push("/")
+      // navigate.goback("/")
+      // setUPdata(data.data)
+      // alert("data added")
+      console.log(" get Data");
     }
+  };
+
+  useEffect(() => {
+    Getdata();
+  }, []);
+
+  // update user
+
+  const updateuser = async (e) => {
+    e.preventDefault();
+    const { name, email, age, mobile, work, add, desc } = inpval;
+    const resp2 = await fetch(`http://localhost:4000/updateuser/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        age,
+        mobile,
+        work,
+        add,
+        desc,
+      }),
+    });
+
+    const data2 = await resp2.json();
+    console.log(data2);
+    if (resp2.status === 422 || !data2) {
+      console.log("error ");
+      alert("fill the data");
+    } else {
+      // history.push("/")
+      navigate("/");
+      setUPdata(data2.data);
+      alert("data updated");
+      console.log("data added");
+    }
+  };
   return (
     <div className="container">
-      <NavLink to="/">Home2</NavLink>
+      {/* <NavLink to="/">Home2</NavLink> */}
 
       {/* form  */}
       <form className="mt-4">
@@ -124,7 +194,9 @@ const Edit = () => {
               rows="5"
             ></textarea>
           </div>
-          <button type="submit"  class="btn btn-primary">Submit</button>
+          <button type="submit" onClick={updateuser} class="btn btn-primary">
+            Update
+          </button>
         </div>
       </form>
     </div>
