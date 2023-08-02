@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { adddata } from "./Context/ContextProvider";
+
 const Register = () => {
+  const { udata, setUdata } = useContext(adddata);
+
+  const navigate = useNavigate();
   const [inpval, setINP] = useState({
     name: "",
     email: "",
@@ -23,45 +28,39 @@ const Register = () => {
     });
   };
 
- 
- 
-
-
-
-
-
-  const addinpdata = async(e) => {
+  const addinpdata = async (e) => {
     e.preventDefault();
     const { name, email, age, mobile, work, add, desc } = inpval;
-    const resp = await fetch("http://localhost:4000/register",{
-        method:"Post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-     
-          name, email, age, mobile, work, add, desc 
-         
-        }),
-
+    const resp = await fetch("http://localhost:4000/register", {
+      method: "Post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        age,
+        mobile,
+        work,
+        add,
+        desc,
+      }),
     });
 
     const data = await resp.json();
     if (resp.status === 422 || !data) {
       console.log("error ");
       alert("error");
-
-  } else {
-      // history.push("/")
-      // setUdata(data)
-      alert("data added")
+    } else {
+      navigate("/");
+      // setUdata(data.data)
+      alert("data added");
       console.log("data added");
-
-  }
+    }
   };
   return (
     <div className="container">
-      <NavLink to="/">Home</NavLink>
+      {/* <NavLink to="/">Home</NavLink> */}
 
       {/* form  */}
       <form className="mt-4">
