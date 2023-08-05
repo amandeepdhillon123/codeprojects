@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main li{
+   list-style-type: none; 
+} 
+
+.main li a{
+  text-decoration: none;
+ 
+}

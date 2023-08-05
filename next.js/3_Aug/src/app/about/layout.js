@@ -1,18 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-import "./login.css"
+import "./about.css"
 const Layout = ({children}) => {
   return (
     <div>
         <ul className='main'>
            <li>
-               <Link href="/login">login</Link>        
+               <Link href="/about">about</Link>        
             </li>
             <li>
-               <Link href="/login">Student</Link>        
+               <Link href="/about/aboutCollege">Student</Link>        
             </li>
             <li>
-               <Link href="/login">Teacher</Link>        
+               <Link href="/about/aboutStudent">Teacher</Link>        
             </li>
         </ul>
        {children}
