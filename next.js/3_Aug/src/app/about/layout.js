@@ -1,28 +1,28 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
-import "./login.css"
+import "./about.css"
 import { usePathname } from 'next/navigation'
 const Layout = ({children}) => {
-    const pathname = usePathname()
+
+    const pathname = usePathname();
   return (
     <div>
         {
-             pathname !=="/login/loginStudent" ?
+            pathname !=="/about/aboutCollege" ?
             <ul className='main'>
             <li>
-                <Link href="/login">login</Link>        
+                <Link href="/about">about</Link>        
              </li>
              <li>
-                <Link href="/login">Student</Link>        
+                <Link href="/about/aboutCollege">College</Link>        
              </li>
              <li>
-                <Link href="/login">Teacher</Link>        
+                <Link href="/about/aboutStudent">Student</Link>        
              </li>
-         </ul> 
-         : null
+         </ul> : null 
         }
-      
+       
        {children}
     </div>
   )
