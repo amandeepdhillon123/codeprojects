@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-
+import Spiner from "../../components/Spiner/Spiner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Card } from "react-bootstrap";
 import Select from "react-select";
 
 const Edit = () => {
+    const [showspin,setShowSpin] = useState(true);
   // state for  input values
   const [inputdata, setInputData] = useState({
     fname: "",
@@ -96,11 +97,15 @@ const Edit = () => {
     if (image) {
       setPreview(URL.createObjectURL(image));
     }
+    setTimeout(()=>{
+        setShowSpin(false)
+    },1200)
   }, [image]);
 
   return (
     <>
-      <div className="container">
+    {
+        showspin ? <Spiner/> : <div className="container">
         <h2 className="text-center mt-1">Update your Details</h2>
         <Card className="shadow mt-3 p-3">
           {/*  image */}
@@ -227,6 +232,8 @@ const Edit = () => {
         </Card>
         <ToastContainer />
       </div>
+    }
+      
     </>
   );
 };
