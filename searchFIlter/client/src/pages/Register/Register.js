@@ -100,7 +100,7 @@ const Register = () => {
     }
 
     setTimeout(() => {
-      setShowSpin(false);
+       setShowSpin(false);
     }, 1200);
   }, [image]);
 
