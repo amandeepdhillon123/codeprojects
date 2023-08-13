@@ -21,7 +21,7 @@ router.get("/test", auth, (req,res) =>{
 router.get("/student", auth, isStudent, (req,res) => {
     res.json({
         success:true,
-        message:'Welcome to the Protected route for Students',
+        message:'Welcome  to the Protected route for Students',
     });
 } );
 
