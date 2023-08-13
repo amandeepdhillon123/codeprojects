@@ -13,14 +13,26 @@ const server = http.createServer((req,resp)=>{
 
     if(path === '/' || path === "/home")
     {
+          resp.writeHead(200,{
+            "Content-Type" :"text/html",
+             "my-Header" :" hello world"
+          })
         resp.end(address.replace('{{%CONTENT%}}',"this is home page"))
     }
     
     else if( path === "/about")
     {
+        resp.writeHead(200,{
+            "Content-Type" :"text/html",
+             "my-Header" :" hello world"
+          })
         resp.end(address.replace('{{%CONTENT%}}','this is about page'))
     }else{
-        resp.end(address.replace('{{{%CONTENT%}}',"page not found"))
+        resp.writeHead(404,{
+       
+             "my-Header" :" hello world"
+          })
+        resp.end(address.replace('{{%CONTENT%}}',"page not found"))
     }
 
  
