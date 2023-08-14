@@ -7,15 +7,27 @@ const server = http.createServer((req,resp)=>{
      const path = req.url
 
      if(path ==="/" , path ==="/home")
-     {
+     {    
+        resp.writeHead(200,{
+            'Content-Type':'text/html',
+            "My-Header":"custom headers"
+        })
          resp.end(html.replace("{{%content%}}","this is home page"))
     //   resp.end(html)
     }
      else if(path ==="/about")
      {
+        resp.writeHead(200,{
+            'Content-Type':'text/html',
+            "My-Header":"custom headers"
+        })
          resp.end(html.replace("{{%content%}}","this is about page"))
      }
      else{
+        resp.writeHead(404,{
+            'Content-Type':'text/html',
+            "My-Header":"custom headers"
+        })
          resp.end("page no fount")
      }
     // resp.end("hello ji")
