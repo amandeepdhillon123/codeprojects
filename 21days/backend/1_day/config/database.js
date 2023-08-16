@@ -13,7 +13,7 @@ const dbConnect =()=>{
     .catch((error)=> {
           console.log(" db connection unsuccessful")
           console.error(error.message);
-          process.exit(1);
+          process. exit(1);
     })
 
 
