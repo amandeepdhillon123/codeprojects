@@ -18,6 +18,7 @@ const todoSchema = new mongoose.Schema({
     },
     updateAt:{
          type:Date,
+         
          required:true,
          default:Date.now(),
     }
