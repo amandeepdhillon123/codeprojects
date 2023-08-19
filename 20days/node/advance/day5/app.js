@@ -2,6 +2,7 @@ const fs = require("fs");
 const http = require("http");
 const html = fs.readFileSync("./file/index.html", "utf-8");
 const PORT = 5500;
+let replaceHtml= require("./module/replaceHtml")
 const url = require("url");
 // console.log(url)
 
@@ -21,19 +22,18 @@ let productDetailshtml = fs.readFileSync("./file/productDetails.html", "utf-8");
 //   return output;
 // });
 
-function replaceHtml(template, product) {
-  let output = template.replace("{{%name%}}", product.name);
+// function replaceHtml(template, product) {
+//   let output = template.replace("{{%name%}}", product.name);
 
-  output = output.replace("{{%username%}}", product.username);
-  output = output.replace("{{%email%}}", product.email);
-  output = output.replace("{{%phone%}}", product.phone);
-  output = output.replace("{{%website%}}", product.website);
-  output = output.replace("{{%ID%}}", product.id);
-  return output;
-}
+//   output = output.replace("{{%username%}}", product.username);
+//   output = output.replace("{{%email%}}", product.email);
+//   output = output.replace("{{%phone%}}", product.phone);
+//   output = output.replace("{{%website%}}", product.website);
+//   output = output.replace("{{%ID%}}", product.id);
+//   return output;
+// }
 
-http
-  .createServer((req, resp) => {
+http.createServer((req, resp) => {
     let { query, pathname: path } = url.parse(req.url, true);
     console.log(query.id, path);
     //    path =req.url;
@@ -52,9 +52,10 @@ http
 
         resp.end(response);
       } else {
-        let element=products[query.id]
-        let details =replaceHtml(productDetailshtml,element)
-        resp.end(html.replace("{{%content%}}",details))
+        let element = products[query.id];
+        console.log(element)
+        let details = replaceHtml(productDetailshtml, element);
+        resp.end(html.replace("{{%content%}}", details));
       }
 
       // console.log(response)
