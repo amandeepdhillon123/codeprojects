@@ -6,61 +6,70 @@ const Register = () => {
   const [passShow, setPassShow] = useState(false);
   const [cpassShow, setCPassShow] = useState(false);
 
-//   get value from input 
+  //   get value from input
 
-const[inpval, setInpval] = useState({
-    fname:"",
-    email:"",
-    password:"",
-    cpassword:"",
-})
-    // onchange function 
- const setVal =(e)=>{
-    const{name,value } =e.target
+  const [inpval, setInpval] = useState({
+    fname: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  });
+  // onchange function
+  const setVal = (e) => {
+    const { name, value } = e.target;
 
-    setInpval(()=>{
-        return{
-            ...inpval,[name]:value
-        }
-    })
- }
+    setInpval(() => {
+      return {
+        ...inpval,
+        [name]: value,
+      };
+    });
+  };
 
+  //    validation on button
+  const addUserdata = async (e) => {
+    e.preventDefault();
 
-//    validation on button 
-   const addUserdata = async(e)=>{
-     e.preventDefault();
-     
-     const{fname,email,password,cpassword} =inpval;
+    const { fname, email, password, cpassword } = inpval;
 
-      if(fname ===""){
-        alert("plaese enter your name")
-      }
-      else if(email === ""){
-        alert("enter valid email")
-      }
-      else if(!email.includes*"@")
-      {
-        alert("enter valid email")
-      }
-      else if(password.length <6)
-      {
-         alert("plesae eneter valid password")
-      }
-      else if(cpassword.length <6)
-      {
-        alert("plesae enter your cpassword")
-      }
-      else if(password !== cpassword)
-      {
-        alert("password and confirm password not match")
-      }
-      else{
-        alert("user registeration successfully done")
-      }
-      console.log(inpval)
-   }
+    if (fname === "") {
+      alert("plaese enter your name");
+    } else if (email === "") {
+      alert("enter valid email");
+    } else if (!email.includes * "@") {
+      alert("enter valid email");
+    } else if (password.length < 6) {
+      alert("plesae eneter valid password");
+    } else if (cpassword.length < 6) {
+      alert("plesae enter your cpassword");
+    } else if (password !== cpassword) {
+      alert("password and confirm password not match");
+    } else {
+      // alert("user registeration successfully done")
+      const data = await fetch("/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fname,
+          email,
+          password,
+          cpassword,
+        }),
+      });
+      const resp = await data.json();
+      console.log(resp);
 
- 
+      if(resp.status === 201){
+        alert("user registeration done")
+
+        setInpval({...inpval,fname:"",email:"",password:"",cpassword:""})
+      }
+    }
+    console.log(inpval);
+  };
+
   return (
     <>
       <section>
@@ -93,7 +102,6 @@ const[inpval, setInpval] = useState({
             <div className="form_input">
               <label htmlFor="email">Email</label>
               <input
-
                 type="email"
                 name="email"
                 id="email"
@@ -148,7 +156,9 @@ const[inpval, setInpval] = useState({
               </div>
             </div>
             {/* button  */}
-            <button className="btn" onClick={addUserdata}>Sign Up</button>
+            <button className="btn" onClick={addUserdata}>
+              Sign Up
+            </button>
             <p>
               Already have an account? <NavLink to="/">Log In</NavLink>
             </p>

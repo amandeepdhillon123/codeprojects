@@ -25,6 +25,55 @@ const[inpval, setInpval] = useState({
         }
     })
  }
+
+
+ //    validation on button 
+ const loginuser = async(e)=>{
+    e.preventDefault();
+    
+    const{email,password} =inpval;
+
+     if(email === ""){
+       alert("enter valid email")
+     }
+     else if(!email.includes*"@")
+     {
+       alert("enter valid email")
+     }
+     else if(password.length <6)
+     {
+        alert("plesae eneter valid password")
+     }
+    
+     else{
+       alert("user login successfully done")
+
+       // alert("user registeration successfully done")
+      const data = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+         
+          email,
+          password,
+         
+        }),
+      });
+      const resp =  await data.json();
+      console.log(resp);
+
+      // if(resp.status === 201){
+      //   alert("login successful done")
+
+      //   setInpval({...inpval, email:"",password:""})
+      // }
+    }
+    console.log(inpval);
+  
+  }
+
   return (
     <>
       <section>
