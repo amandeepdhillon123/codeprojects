@@ -61,7 +61,7 @@ const[inpval, setInpval] = useState({
          
         }),
       });
-      const resp =  await data.json();
+      const resp =   await  data.json();
       console.log(resp);
 
       // if(resp.status === 201){
