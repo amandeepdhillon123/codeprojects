@@ -7,7 +7,7 @@ import Projects from "./pages/Projects/Projects";
 import Education from "./pages/Education/Education";
 import WorkExp from "./pages/WorkExp/WorkExp";
 import Contact from "./pages/Contact/Contact";
-
+import ScrollToTop from "react-scroll-to-top";
 function App() {
   return (
     <>
@@ -27,6 +27,10 @@ function App() {
             <h6 className="text-center">Made by amandeep 😍 amandeep &copy; 2023</h6>
          
         </div>
+        <ScrollToTop 
+        smooth 
+        color="#f29f67"
+        style={{backgroundColor:'#1e1e2c',borderRadius:"80px"}} />
    
     </>
   );

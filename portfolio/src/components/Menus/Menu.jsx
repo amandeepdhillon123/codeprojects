@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "../../assets/ama.jpg";
 import "./Menu.css";
+import { Link } from "react-scroll";
 import {
   FcAbout,
   FcBiomass,
@@ -23,70 +24,107 @@ function Menu({ toggle }) {
           <div className="nav-items">
             <div className="nav-item">
               <div className="nav-link">
-                <FcHome />
-                Home
+                {/* scroo */}
+                <Link to="home"  smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcHome />
+                  Home
+                </Link>
               </div>
               <div className="nav-link">
-                <FcAbout />
-                About
+                <Link to="about"  smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcAbout />
+                  About
+                </Link>
               </div>
               <div className="nav-link">
-                <FcReadingEbook />
-                Education
+                <Link to="education" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcReadingEbook />
+                  Education
+                </Link>
               </div>
               <div className="nav-link">
-                <FcBiotech />
-                Tech Stack
+                <Link to="tech" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcBiotech />
+                  Tech Stack
+                </Link>
               </div>
               <div className="nav-link">
-                <FcVideoProjector />
-                Projects
+                <Link to="project" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcVideoProjector />
+                  Projects
+                </Link>
               </div>
               <div className="nav-link">
-                <FcPortraitMode />
-                Work experiance
+                <Link to="work" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcPortraitMode />
+                  Work experiance
+                </Link>
               </div>
-              
-          
-             
+
               {/* <div className="nav-link">
                 <FcVoicePresentation />
                 Testimonials
               </div> */}
               <div className="nav-link">
-                <FcBusinessContact />
-                Contact
+                <Link to="contact" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcBusinessContact />
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
         </>
       ) : (
         <>
-          <div className="nav-items">
+         <div className="nav-items">
             <div className="nav-item">
               <div className="nav-link">
-                <FcHome title="Home" />
+                {/* scroo */}
+                <Link to="home"  smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcHome title="Home" />
+                  
+                </Link>
               </div>
               <div className="nav-link">
-                <FcAbout title="About" />
+                <Link to="about"  smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcAbout title=" About" />
+                 
+                </Link>
               </div>
               <div className="nav-link">
-                <FcPortraitMode title="Experiance" />
+                <Link to="education" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcReadingEbook  title="Education" />
+                  
+                </Link>
               </div>
               <div className="nav-link">
-                <FcBiotech title="TeachStack" />
+                <Link to="tech" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcBiotech  title="Tech Stack"/>
+                  
+                </Link>
               </div>
               <div className="nav-link">
-                <FcReadingEbook title="Education" />
+                <Link to="project" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcVideoProjector title="Projects" />
+                  
+                </Link>
               </div>
               <div className="nav-link">
-                <FcVideoProjector title="Projects" />
+                <Link to="work" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcPortraitMode title=" Work experiance"/>
+                 
+                </Link>
               </div>
+
+              {/* <div className="nav-link">
+                <FcVoicePresentation />
+                Testimonials
+              </div> */}
               <div className="nav-link">
-                <FcVoicePresentation title="Testimonials" />
-              </div>
-              <div className="nav-link">
-                <FcBusinessContact title="Contact" />
+                <Link to="contact" smooth={true} spy={true} offset={-100} duration={100}>
+                  <FcBusinessContact title="   Contact" />
+                
+                </Link>
               </div>
             </div>
           </div>
