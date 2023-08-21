@@ -5,6 +5,7 @@ import About from "./pages/About/About";
 import Techstack from "./pages/Techstack/Techstack";
 import Projects from "./pages/Projects/Projects";
 import Education from "./pages/Education/Education";
+import WorkExp from "./pages/WorkExp/WorkExp";
 
 function App() {
   return (
@@ -12,10 +13,12 @@ function App() {
       <Layout />
       <div className="container">
         <About />
-        <Techstack />
         <Education/>
+        <Techstack />
+        
 
       <Projects/>
+      <WorkExp/>
       </div>
    
     </>

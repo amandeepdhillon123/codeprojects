@@ -10,7 +10,7 @@ import {
   FcPortraitMode,
   FcReadingEbook,
   FcVideoProjector,
-  FcVoicePresentation,
+  // FcVoicePresentation,
 } from "react-icons/fc";
 function Menu({ toggle }) {
   return (
@@ -31,25 +31,28 @@ function Menu({ toggle }) {
                 About
               </div>
               <div className="nav-link">
-                <FcPortraitMode />
-                Work experiance
+                <FcReadingEbook />
+                Education
               </div>
               <div className="nav-link">
                 <FcBiotech />
                 Tech Stack
               </div>
               <div className="nav-link">
-                <FcReadingEbook />
-                Education
-              </div>
-              <div className="nav-link">
                 <FcVideoProjector />
                 Projects
               </div>
               <div className="nav-link">
+                <FcPortraitMode />
+                Work experiance
+              </div>
+              
+          
+             
+              {/* <div className="nav-link">
                 <FcVoicePresentation />
                 Testimonials
-              </div>
+              </div> */}
               <div className="nav-link">
                 <FcBusinessContact />
                 Contact
