@@ -6,6 +6,7 @@ import Techstack from "./pages/Techstack/Techstack";
 import Projects from "./pages/Projects/Projects";
 import Education from "./pages/Education/Education";
 import WorkExp from "./pages/WorkExp/WorkExp";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -19,7 +20,13 @@ function App() {
 
       <Projects/>
       <WorkExp/>
+      <Contact/>
       </div>
+      <div className="footer pb-3 ms-3">
+         
+            <h6 className="text-center">Made by amandeep 😍 amandeep &copy; 2023</h6>
+         
+        </div>
    
     </>
   );
