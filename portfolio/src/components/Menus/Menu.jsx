@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Img from "../../assets/ama.jpg";
 import "./Menu.css";
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 import { Link } from "react-scroll";
+
+// import Aos from "aos";
+// import 'aos/dist/aos.css'
+
+
 import {
   FcAbout,
   FcBiomass,
@@ -14,13 +21,22 @@ import {
   // FcVoicePresentation,
 } from "react-icons/fc";
 function Menu({ toggle }) {
+
+    // useEffect(()=>{
+    //   Aos.init({duration:2000})
+    // })
   return (
     <>
       {toggle ? (
         <>
-          <div className="navbar-profile-pic">
+         <Zoom>
+         <div className="navbar-profile-pic" >
             <img src={Img} alt="pic" />
           </div>
+         </Zoom>
+       
+       
+           <Fade left>
           <div className="nav-items">
             <div className="nav-item">
               <div className="nav-link">
@@ -73,9 +89,11 @@ function Menu({ toggle }) {
               </div>
             </div>
           </div>
+          </Fade>
         </>
       ) : (
         <>
+        <Fade left>
          <div className="nav-items">
             <div className="nav-item">
               <div className="nav-link">
@@ -128,6 +146,7 @@ function Menu({ toggle }) {
               </div>
             </div>
           </div>
+          </Fade>
         </>
       )}
     </>

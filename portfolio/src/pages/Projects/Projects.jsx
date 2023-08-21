@@ -1,5 +1,6 @@
 import React from "react";
 import "./Projects.css";
+import Spin from 'react-reveal/Spin';
 const Projects = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Projects = () => {
           👉 here are my Top projects with live link and source code
         </p>
         <div className="row" id="ads">
+          <Spin>
           <div className="col-md-4">
             <div className="card rounded">
               <div className="card-image">
@@ -38,7 +40,9 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </Spin>
 
+          <Spin>
           <div className="col-md-4">
             <div className="card rounded">
               <div className="card-image">
@@ -65,7 +69,9 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </Spin>
 
+          <Spin>
           <div className="col-md-4">
             <div className="card rounded">
               <div className="card-image">
@@ -83,7 +89,7 @@ const Projects = () => {
                 <span className="card-detail-badge">MongoDB</span>
               </div>
               <div className="card-body text-center">
-                <div className="ad-title m-auto">
+                <div className="ad-title m-auto ">
                   <h5 className="text-uppercase">shopping website</h5>
                 </div>
                 <a href="#" className="ad-btn">
@@ -92,6 +98,9 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </Spin>
+
+         
         </div>
       </div>
     </>

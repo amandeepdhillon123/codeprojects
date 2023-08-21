@@ -9,7 +9,7 @@ import WorkExp from "./pages/WorkExp/WorkExp";
 import Contact from "./pages/Contact/Contact";
 import ScrollToTop from "react-scroll-to-top";
 import { useTheme } from "./context/ThemeContext";
-
+import Tada from 'react-reveal/Tada'
 
 function App() {
   const [theme] = useTheme();
@@ -26,11 +26,14 @@ function App() {
           <WorkExp />
           <Contact />
         </div>
+        <Tada>
         <div className="footer pb-3 ms-3">
           <h6 className="text-center">
-            Made by amandeep 😍 amandeep &copy; 2023
+            Made by😍 amandeep &copy; 2023
           </h6>
         </div>
+        </Tada>
+        
       </div>
       <ScrollToTop
         smooth
