@@ -11,9 +11,7 @@ const Education = () => {
            Education
         </h2>
         <hr />
-    
-   </div>
-   <VerticalTimeline>
+        <VerticalTimeline>
    <VerticalTimelineElement
     className="vertical-timeline-element--work"
     contentStyle={{ background: 'white', color: 'black' }}
@@ -27,6 +25,9 @@ const Education = () => {
     
   </VerticalTimelineElement>
         </VerticalTimeline>
+    
+   </div>
+  
    </>
   )
 }

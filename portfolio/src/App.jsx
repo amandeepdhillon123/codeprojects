@@ -12,8 +12,9 @@ function App() {
       <Layout />
       <div className="container">
         <About />
-        <Education/>
         <Techstack />
+        <Education/>
+
       <Projects/>
       </div>
    
