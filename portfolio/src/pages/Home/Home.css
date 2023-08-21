@@ -17,6 +17,24 @@
 .home-buttons {
   margin-top: 20px;
 }
+.theme-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background-color: #1e1e1e;
+  margin-top: 20px;
+  text-align: center;
+  position: fixed;
+  cursor: pointer;
+  z-index: 10;
+  right: 0;
+  /* color: white; */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  /* top: 10px; */
+}
 
 .home-buttons .btn-hire {
   background-color: #3b8ff3;
