@@ -10,9 +10,9 @@ todoItems.map(function(elem){
     console.log(elem);
     var tr =  document.createElement("tr");
 
-    var td1 = document.createElement("td");
+    var td1 =  document.createElement("td");
     td1.innerText=elem.itemName;
-    var td2 = document.createElement("td");
+    var td2 =  document.createElement("td");
     td2.innerText=elem. itemQty;
     var td3 = document.createElement("td");
     td3.innerText=elem.itemPrior;
