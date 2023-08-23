@@ -9,7 +9,7 @@ const app = express();
     }
     else if(req.query.age < 18)
     {
-      resp.send("  you are not eligible for drivivng")
+      resp.send("   you are not eligible for drivivng")
     }
     else{
         next();
