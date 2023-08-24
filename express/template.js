@@ -2,7 +2,7 @@ const express= require('expree')
 
 const path= require('path');
 
-const app= express();
+const  app= express();
 const pubPath=path.join(__dirname,'views')
 
 app.set('view engine','ejs')
