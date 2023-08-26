@@ -2,7 +2,7 @@
 
 const express = require("express");
 
-const router = express.Router();
+const router =  express.Router();
 
 const {createSign,login}= require("../controller/auth");
 const{auth,isStudent,isAdmin}= require("../middleware/middle")
