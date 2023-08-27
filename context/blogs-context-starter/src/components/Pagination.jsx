@@ -22,7 +22,7 @@ const Pagination = () => {
         { page < totalPages && 
                 (<button 
                 className='rounded-md border-2 px-4 py-1'
-                onClick={() = >handlePageChange(page+1) }>
+                 onClick={() = >handlePageChange(page+1) }>
                 Next
             </button>)
         }
