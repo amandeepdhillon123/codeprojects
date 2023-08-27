@@ -31,7 +31,7 @@ const Pagination = () => {
        
 
          <p className=' font-bold text-sm'>
-            Page {page} of {totalPages}
+             Page {page} of {totalPages}
         </p>
       </div>
     </div>
