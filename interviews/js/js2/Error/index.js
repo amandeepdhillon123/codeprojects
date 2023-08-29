@@ -35,4 +35,28 @@
 //       }
 //       console.log("User age is valid");
 //     }
+
+
+// 1. Use Try Catch and Handle Errors Appropriately
+try {
+      // Code that may throw an error
+    } catch (error) {
+      // Error handling and recovery actions
+    }
+    // 2. Use Descriptive Error Messages
+    throw new Error("Cannot divide by zero");
+    // 3. Avoid Swallowing Errors
+    try {
+      // Code that may throw an error
+    } catch (error) {
+      // Do not leave the catch blank
+    }
+    // 4. Log Errors
+    try {
+      // Code that may throw an error
+    } catch (error) {
+      console.error("An error occurred:", error);
+      // Log the error with a logging library 
+    }
+    
     
