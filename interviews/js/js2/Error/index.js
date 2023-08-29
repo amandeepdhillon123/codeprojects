@@ -60,3 +60,14 @@ try {
     }
     
     
+
+    // Syntax Error
+// console.log("Hello, World!" 
+// // Missing closing parenthesis );
+// // Reference Error
+// console.log(myVariable); 
+// // myVariable is not defined
+// // Type Error
+// const number = 42;
+// console.log(number.toUpperCase()); 
+// // number.toUpperCase is not a function
