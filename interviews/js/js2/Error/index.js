@@ -24,3 +24,15 @@
 //       console.log("User age is valid");
 //     }
     
+
+
+// function validateUserAge(age) {
+//       if (typeof age !== "number") {
+//         throw new Error("Age must be a number");
+//       }
+//       if (age < 18) {
+//         throw new Error("User must be at least 18 years old");
+//       }
+//       console.log("User age is valid");
+//     }
+    
