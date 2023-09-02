@@ -27,7 +27,7 @@ const data =[
      {name:"amandeep", email:"aman@gmail.com"},
      {name:"amandeep", email:"aman@gmail.com"},
 
-      {name:"amandeep", email:"aman@gmail.com"},
+       { name:"amandeep", email:"aman@gmail.com"},
        {name:"amandeep", email:"aman@gmail.com"},
        {name:"amandeep", email:"aman@gmail.com"},
        {name:"amandeep", email:"aman@gmail.com"},
