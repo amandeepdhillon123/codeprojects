@@ -23,7 +23,7 @@ let b= 0;
 let waitin = async function show(a){
     try {
 
-     let b= 20;
+      let b= 20;
 
      let sum = await (a+ b)
 
