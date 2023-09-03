@@ -94,26 +94,39 @@
 // array.sort();
 // console.log(array); 
 // // Output: [1, 2, 3, 4, 5]
-// //reverse the array
+// //reverse the array
 // array.reverse();
 // console.log(array); 
 // // Output: [5, 4, 3, 2, 1]
 
 
 // const fruits = ['apple', 'banana', 'orange'];
-// // Array destructuring
+// // Array destructuring
 // const [firstFruit, secondFruit, thirdFruit] = fruits;
-// // Output
+// // Output
 // console.log(firstFruit); // Output: "apple"
 // console.log(secondFruit); // Output: "banana"
 // console.log(thirdFruit); // Output: "orange"
 
 
-const name =["amandeep","ram","shyam"];
+// const name =["amandeep","ram","shyam"];
 
-const [name1,name2,name3]= name;
-console.log(name1)
+// const [name1,name2,name3]= name;
+// console.log(name1)
 
+// function sum(){
+//     // console.log(arguments)
+//     // console.log(arguments.length)
+
+//     console.log(arguments[0])
+// }
+// sum(1,2,3,4)
+
+
+const str = "Hello";
+console.log(str); // Output: Hello
+console.log(str.length); // Output: 5
+console.log(str[0]); // Output: H
 
 
 
