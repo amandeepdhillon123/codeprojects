@@ -76,10 +76,10 @@
 // }
 
 
-display(1, 2, 3, 4, 5);
-function display( a, b, ...restArguments) {
-// console.log(first); // Output: 1
-// console.log(second); // Output: 2
- console.log(restArguments); // Output: [3, 4, 5]
-}
+// display(1, 2, 3, 4, 5);
+// function display( a, b, ...restArguments) {
+// // console.log(first); // Output: 1
+// // console.log(second); // Output: 2
+//  console.log(restArguments); // Output: [3, 4, 5]
+// }
 
