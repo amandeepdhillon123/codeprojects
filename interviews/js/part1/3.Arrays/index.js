@@ -123,10 +123,24 @@
 // sum(1,2,3,4)
 
 
-const str = "Hello";
-console.log(str); // Output: Hello
-console.log(str.length); // Output: 5
-console.log(str[0]); // Output: H
+// const str = "Hello";
+// console.log(str); // Output: Hello
+// console.log(str.length); // Output: 5
+// console.log(str[0]); // Output: H
+
+let arrayLike = {0:'a', 1:"b", 2:"c",length:3}
+// var array1 = Array.from(arrayLike);
+// console.log(array1)
+
+// var array2 = [...arrayLike];
+// console.log(array2); 
+
+
+var array3 = Array.prototype.slice.call(arrayLike);
+console.log(array3); 
+
+
+
 
 
 
