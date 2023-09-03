@@ -13,7 +13,7 @@
 // console.log(a); 
 
 
-const array = [1, 2, 3, 4, 5];
+// const array = [1, 2, 3, 4, 5];
 
 // let c= array.find((num)=>
 //     num % 2 === 0
@@ -21,8 +21,16 @@ const array = [1, 2, 3, 4, 5];
 // )
 // console.log(c)
 
-let d= array.filter((num) =>{
-    return num % 2 ===0
-})
+// let d= array.filter((num) =>{
+//     return num % 2 ===0
+// })
 
-console.log(d)
+// console.log(d)
+
+
+
+const array = ["a", "b", "c", "d", "e"];
+
+let e= array.slice(1,4)
+
+console.log(e)
