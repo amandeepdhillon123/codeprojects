@@ -40,11 +40,27 @@
 // array1.push(3, 4);
 // console.log(array1); 
 // Output: [1, 2, 3, 4]
-let array2 = [5, 6];
-// Using concat()
-console.log(array2.concat(7, 8));
-// Output: [5, 6, 7, 8]
-console.log(array2); 
+// let array2 = [5, 6];
+// // Using concat()
+// console.log(array2.concat(7, 8));
+// // Output: [5, 6, 7, 8]
+// console.log(array2); 
 //original array is not modified
 // Output: [5, 6] 
+
+// / Using pop()
+// let arr1 = [1, 2, 3, 4];
+// let popped = arr1.pop();
+// console.log(popped); 
+// // Output: 4
+// console.log(arr1); 
+// // Output: [1, 2, 3]
+// // Using shift()
+// let arr2 = [1, 2, 3, 4];
+// let shifted = arr2.shift();
+// console.log(shifted); 
+// // Output: 1
+// console.log(arr2); 
+// // Output: [2, 3, 4]
+
 
