@@ -100,6 +100,16 @@
 // // Output: [5, 4, 3, 2, 1]
 
 
+// const fruits = ['apple', 'banana', 'orange'];
+// // Array destructuring
+// const [firstFruit, secondFruit, thirdFruit] = fruits;
+// // Output
+// console.log(firstFruit); // Output: "apple"
+// console.log(secondFruit); // Output: "banana"
+// console.log(thirdFruit); // Output: "orange"
+
+
+
 
 
 
