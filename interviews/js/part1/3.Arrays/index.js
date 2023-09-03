@@ -63,15 +63,35 @@
 // console.log(arr2); 
 // // Output: [2, 3, 4]
 
-let letters = ['a', 'b', 'c'];
-letters.splice(1, 0, 'x', 'y');
-console.log(letters); 
+// let letters = ['a', 'b', 'c'];
+// letters.splice(1, 0, 'x', 'y');
+// console.log(letters); 
 
 // letters.splice(1, 1);
 // console.log(letters); 
 
-letters.splice(2, 1, 'q');
-console.log(letters); 
+// letters.splice(2, 1, 'q');
+// console.log(letters); 
+
+// let arr =[1,2,3];
+
+// let mapArr = arr.map((e)=> e * 2)
+// console.log(mapArr)
+
+// let arr =[1,2,3,4,5];
+// let arr2= []
+// arr.forEach((e)=> {
+//    if(e > 2)
+//    {
+//     arr2.push(e)
+//    }
+
+// })
+
+// console.log(arr2)
+
+
+
 
 
 
