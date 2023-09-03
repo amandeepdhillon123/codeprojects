@@ -90,6 +90,14 @@
 
 // console.log(arr2)
 
+//sort the array
+// array.sort();
+// console.log(array); 
+// // Output: [1, 2, 3, 4, 5]
+// //reverse the array
+// array.reverse();
+// console.log(array); 
+// // Output: [5, 4, 3, 2, 1]
 
 
 
