@@ -109,6 +109,11 @@
 // console.log(thirdFruit); // Output: "orange"
 
 
+const name =["amandeep","ram","shyam"];
+
+const [name1,name2,name3]= name;
+console.log(name1)
+
 
 
 
