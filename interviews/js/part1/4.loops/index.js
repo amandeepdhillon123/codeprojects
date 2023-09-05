@@ -52,15 +52,24 @@
 //     console.log(val)
 // }
 
-let persons ={
+// let persons ={
+//     name:"amandeep",
+//     role:"developer"
+// }
+
+// for( let key in persons)
+// {
+//     console.log(key,persons[key])
+// }.
+
+let person ={
     name:"amandeep",
     role:"developer"
 }
 
-for( let key in persons)
-{
-    console.log(key,persons[key])
-}
+Object.values(person).forEach(value => {
+    return console.log(value)
+})
     
 
 
