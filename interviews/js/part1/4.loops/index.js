@@ -44,6 +44,13 @@
 //     }
 //     //Output: 1 2 4 5
 //     
+
+
+let array= [1,2,3,4]
+
+for(let val  of array) {
+    console.log(val)
+}
     
 
 
