@@ -46,10 +46,20 @@
 //     
 
 
-let array= [1,2,3,4]
+// let array= [1,2,3,4]
 
-for(let val  of array) {
-    console.log(val)
+// for(let val  of array) {
+//     console.log(val)
+// }
+
+let persons ={
+    name:"amandeep",
+    role:"developer"
+}
+
+for( let key in persons)
+{
+    console.log(key,persons[key])
 }
     
 
