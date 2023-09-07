@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import {Fun} from "./components/Fun"
 import Class from './components/Class'
+import JS from './components/Js'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,6 +13,7 @@ function App() {
      <h1>hello</h1>
      <Class/>
      <Fun/>
+     <JS/>
      </>
   )
 }
