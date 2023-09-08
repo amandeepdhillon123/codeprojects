@@ -40,12 +40,18 @@
 // }
 // display(add(5,4))
 
-function hof(func){
-    func();
-}
-hof(sayHello)
+// function hof(func){
+//     func();
+// }
+// hof(sayHello)
 
-function sayHello(){
-    console.log("Hello")
+// function sayHello(){
+//     console.log("Hello")
+// }
+
+function add(a, b){
+    console.log(a,b)
 }
+
+add(3,4)
     
