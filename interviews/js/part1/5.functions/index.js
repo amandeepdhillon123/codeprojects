@@ -29,3 +29,14 @@
 
 // const add =(x,y)=> x+ y;
 // console.log(add(5,6))
+
+// function add(x,y){
+//     return x * y
+// }
+
+// function display(operation){
+    
+//     console.log(operation);
+// }
+// display(add(5,4))
+    
