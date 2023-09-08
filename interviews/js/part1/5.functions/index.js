@@ -49,9 +49,31 @@
 //     console.log("Hello")
 // }
 
-function add(a, b){
-    console.log(a,b)
-}
+// function add(a, b){
+//     console.log(a,b)
+// }
 
-add(3,4)
+// add(3,4)
+
+// function add(a,b){
+//     console.log(a + b)
+// }
+
+// add(3,5)
+
+// var person = {
+//     name: "Happy",
+//     role: "Developer"
+//     };
+//     function greet(person) {
+//     console.log(person.name + 
+//     " " + person.role);
+//     }
+//     greet(person); 
+    
+// sum(1,2,3)
+// function sum(){
+//     console.log(arguments[0])
+// }
+
     
