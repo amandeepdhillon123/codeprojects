@@ -39,4 +39,13 @@
 //     console.log(operation);
 // }
 // display(add(5,4))
+
+function hof(func){
+    func();
+}
+hof(sayHello)
+
+function sayHello(){
+    console.log("Hello")
+}
     
