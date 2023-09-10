@@ -7,7 +7,9 @@ const page = () => {
     <div>
         <h1>page</h1>
         <Link href="/">Home  page</Link> <br /> <br />
-        <button onClick={()=> router.push('/')}>GO to home page</button>
+        <button onClick={()=> router.push('/')}>GO to home page</button> <br /> <br />
+        <button onClick={()=> router.push('/about/aboutcollege')}>Go to aboutcollege</button> <br /> <br />
+        <button onClick={()=> router.push('/about/aboutstudent')}>Go to aboutstudent</button> <br /> <br />
     </div>
   )
 }
