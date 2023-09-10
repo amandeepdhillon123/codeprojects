@@ -5,6 +5,7 @@ import './App.css'
 import Input from './components/Input'
 import Toggle from './components/Toggle'
 import Form from './components/Form'
+import Conditon from './components/Conditon'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,7 +13,8 @@ function App() {
      <>
      {/* <Input/>
      <Toggle/> */}
-     <Form/>
+     {/* <Form/> */}
+     <Conditon/>
      </>
   )
 }
