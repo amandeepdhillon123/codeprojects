@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 const Input = () => {
   const [data,setData]= useState("get data from input")
-  const [print,printData] = useState(null)
+  const [print,printData] = useState(false)
   
    function getData(e){
         console.log(e.target.value)
         setData(e.target.value)
-        printData("")
+        printData(false)
     }   
   return (
     <div>
