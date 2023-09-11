@@ -21,7 +21,7 @@ export class Update extends Component {
     return (
       <div>
         <h1>{this.state.name}</h1>
-        <button onClick={()=> this.setState({name:this.state.name + 1})}>change</button>
+        <button onClick={()=> this.setState({n:this.state.count+ 1})}>change</button>
       </div>
     )
   }
