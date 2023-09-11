@@ -4,13 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import APP from "./component/Construct"
 import Render from './component/Render'
+import Mount from "./component/DidMount"
 function App() {
   const [count, setCount] = useState(0)
 
   return (
      <>
    {/* <APP/> */}
-   <Render name="amandee"/>
+   {/* <Render name="amandee"/> */}
+   <Mount/>
+
+
      </>
   )
 }
