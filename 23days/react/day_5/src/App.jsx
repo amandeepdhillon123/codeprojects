@@ -5,6 +5,7 @@ import './App.css'
 import Update from './component/Update'
 import Should from './component/Should'
 import Un from './component/Un'
+import Effect from './component/Effect'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,8 +13,9 @@ function App() {
      <>
      <h1>compnent di update</h1>
      {/* <Update/> */}
-     <Un/>
+     {/* <Un/> */}
      {/* <Should/> */}
+     <Effect/>
      </>
   )
 }
