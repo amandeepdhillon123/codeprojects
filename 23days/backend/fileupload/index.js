@@ -5,18 +5,22 @@ const app= express();
 
 require("dotenv").config();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000 ;
 
 app.use(express.json());
 
-const fileUpload = require("express-fileupload")
+const fileupload = require("express-fileupload")
 
-app.use(fileUpload({
+app.use(fileupload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
 }))
 
-const db= require("./config/database")
+const dataBase= require("./config/database")
+dataBase.dbConnect();
+
+const cloudinary= require("./config/cloudinary")
+cloudinary.cloudinaryConnect()
 
 const Upload= require("./routes/FileUpload")
 
