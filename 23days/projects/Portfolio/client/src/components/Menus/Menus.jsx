@@ -1,5 +1,5 @@
 import React from "react";
-import IMG from "../../../public/aman.jpg";
+import IMG from "../../assets/images/aman.jpg";
 import "./Menus.css";
 import { FcHome,FcAbout, FcPortraitMode,FcBiotech,FcReadingEbook, FcVideoProjector, FcBusinessContact,} from "react-icons/fc";
 const Menus = ({ toggle }) => {
