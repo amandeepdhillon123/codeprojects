@@ -19,6 +19,8 @@ const OTPSchema = new mongoose.Schema({
     }
 })
 
+//  a function ssent to emails
+
  async function sendVerificationEmail(email,otp){
     try {
    const mailResponse=await mailSender(email,"verification Email from Edtech",otp);
@@ -31,7 +33,7 @@ const OTPSchema = new mongoose.Schema({
     }
  }
 
-OTPSchema.pre("save",async function(){
+OTPSchema.pre("save",async function(next){
 
     await sendVerificationEmail(this.email,this.otp)
     next();
