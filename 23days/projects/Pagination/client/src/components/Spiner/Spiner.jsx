@@ -1,8 +1,14 @@
 import React from 'react'
-
+import Spinner from 'react-bootstrap/Spinner';
 const Spiner = () => {
   return (
-    <div>Spiner</div>
+        <>
+          <div className='d-flex justify-content-center align-items-center' style={{widht:'100%', height:"50vh"}}> 
+          
+          <Spinner animation="border" variant="danger" />&nbsp; Loading...
+          
+          </div>
+        </>
   )
 }
 
