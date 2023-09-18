@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import "./register.css";
 import Card from "react-bootstrap/Card";
@@ -12,7 +12,11 @@ import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spiner from "../../components/Spiner/Spiner"
+// Api call
+import {registerfunc} from "../../services/Apis"
 
+import { useNavigate } from "react-router-dom";
+import { addData } from "../../components/context/ContextProvider";
 const Register = () => {
   const [showspin,setShowSpin] =useState(true)
   //  getdata input
@@ -30,7 +34,11 @@ const Register = () => {
   const [status, setStatus] = useState("Active");
   const [image, setImage] = useState("");
   const [preview, setPreview] = useState();
+  
+  const navigate= useNavigate();
 
+  // usecontext 
+  const {useradd, setUseradd} = useContext(addData);
   // react select
   const options = [
     { value: "Active", label: "Active" },
@@ -60,7 +68,7 @@ const Register = () => {
   };
 
   //  submit user data
-  const submitUserData = (e) => {
+  const submitUserData = async(e) => {
     e.preventDefault();
 
     const { fname, lname, email, mobile, gender, location } = inputdata;
@@ -86,7 +94,44 @@ const Register = () => {
     } else if (location === "") {
       toast.error("location is required");
     } else {
-      toast.success("Registeration successful done !");
+      // toast.success("Registeration successful done !");
+      console.log(image);
+
+      const data = new FormData();
+      data.append("fname",fname)
+      data.append("lname",lname)
+      data.append("email",email)
+      data.append("mobile",mobile)
+      data.append("gender",gender)
+      data.append("status",status)
+      data.append("user_profile",image)
+      data.append("location",location)
+
+      const config = {
+        "Content-Type":"multipart/form-data"
+      }
+
+      const response = await registerfunc(data,config);
+      // console.log(response)
+       
+      if(response.status === 200){
+        setInputData({
+          ...inputdata,
+          fname:"",
+          lname: "",
+          email: "",
+          mobile: "",
+          gender: "",
+          location: ""
+        });
+        setStatus("");
+        setImage("");
+        setUseradd(response.data)
+        navigate("/");
+      }else{
+        toast.error("Error!")
+      }
+
     }
   };
 
@@ -193,7 +238,7 @@ const Register = () => {
 
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Select Your Status</Form.Label>
-              <Select options={options} onChange={setStatusValue} value={status} />
+              <Select options={options} onChange={setStatusValue}/>
             </Form.Group>
             {/* select your profile */}
 

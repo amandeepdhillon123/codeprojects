@@ -5,10 +5,12 @@ const app= express();
 const cors = require("cors")
 const PORT =6010;
 const dbConnect = require("./config/database");
+const router = require("./Routes/route")
 
-app.get("/",(req,resp)=>{
-    resp.status(201).json("server starts")
-})
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/v1',router)
 
 //  databse connected
 dbConnect()
