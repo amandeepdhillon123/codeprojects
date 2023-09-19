@@ -30,10 +30,20 @@
 // console.log(x !== y)
 
 
-let x= true;
-let y = false ;
+// let x= true;
+// let y = false ;
 
-console.log( x && y);
-console.log( x || y);
+// console.log( x && y);
+// console.log( x || y);
 
-console.log(!x);
+// console.log(!x);
+
+// let a = 5;
+
+// // let b = -5;
+// console.log(a++)
+// b= a;
+// console.log(b)
+    let conditon=true;
+let result = conditon ? "yes": "no" ;
+console.log(result)
