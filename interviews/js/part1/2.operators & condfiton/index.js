@@ -12,7 +12,19 @@
 
 // assignment 
 
-let x= 4;
+// let x= 4;
 
-x += 5;
-console.log(x)
+// x += 5;
+// console.log(x)
+
+// comparison operatro 
+
+let x= 5;
+let y= 6;
+
+console.log(x > y)
+console.log(x < y)
+console.log(x >= y)
+console.log(x <= y)
+console.log(x === y)
+console.log(x !== y)
