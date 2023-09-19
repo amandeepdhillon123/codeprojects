@@ -69,9 +69,17 @@
 // const mergedArray = [...array1, ...array2];
 // console.log(mergedArray); 
 
-const num =[1,2,3,4,5];
-sum(...num);
-function sum(a,b,c,d,e){
-    console.log(a + b + c + d + e)
+// const num =[1,2,3,4,5];
+// sum(...num);
+// function sum(a,b,c,d,e){
+//     console.log(a + b + c + d + e)
+// }
+
+
+display(1, 2, 3, 4, 5);
+function display( a, b, ...restArguments) {
+// console.log(first); // Output: 1
+// console.log(second); // Output: 2
+ console.log(restArguments); // Output: [3, 4, 5]
 }
 
