@@ -51,9 +51,27 @@
 // let result = true &&  func();
 // console.log(result)
 
-let x = 5;
-if (x > 10) { console.log("1");
-} else if (x < 5) { console.log("2");
-} else { console.log("3");
+// let x = 5;
+// if (x > 10) { console.log("1");
+// } else if (x < 5) { console.log("2");
+// } else { console.log("3");
+// }
+
+// const array =[1,2,3]
+// console.log(...array)
+
+// const originalArray = [1, 2, 3];
+// const copiedArray = [...originalArray];
+
+
+// const array1 = [1, 2, 3];
+// const array2 = [4, 5];
+// const mergedArray = [...array1, ...array2];
+// console.log(mergedArray); 
+
+const num =[1,2,3,4,5];
+sum(...num);
+function sum(a,b,c,d,e){
+    console.log(a + b + c + d + e)
 }
 
