@@ -44,6 +44,9 @@
 // console.log(a++)
 // b= a;
 // console.log(b)
-    let conditon=true;
-let result = conditon ? "yes": "no" ;
+//     let conditon=true;
+// let result = conditon ? "yes": "no" ;
+// console.log(result)
+
+let result = true &&  func();
 console.log(result)
