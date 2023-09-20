@@ -1,5 +1,4 @@
-const data =(req,resp)=>{
-    resp.write("<h2>hello deep</h2>")
-    resp.end();
+const data ={
+    name:"ram", surname:"dhilon"
 }
 module.exports= data
