@@ -158,7 +158,7 @@ exports.signup= async(req,res) =>{
     try {
       hashedPassword= await bcrypt.hash(password,10)
       
-    } catch (error) {
+    }  catch (error) {
        return res.status(500).json
     }
     
