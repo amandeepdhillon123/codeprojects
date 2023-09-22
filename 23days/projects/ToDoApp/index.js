@@ -1,11 +1,10 @@
-  
-
-  const express = require("express");
+   
+   const express = require("express");
   const app= express();
 
   require("dotenv").config();
 
-  const PORT = process.env.PORT || 5004 ;
+  const PORT = 5000 ;
 
   app.use(express.json());
 
@@ -13,9 +12,11 @@
 
   app.use("/api/v1",todoRoutes)
 
-  app.listen(PORT,()=>{
-    console.log(`server started successfully at ${PORT}`)
-  })
+  
 
   const dbConnect= require("./config/database")
   dbConnect();
+
+  app.listen(PORT,()=>{
+    console.log(`server started successfully at ${PORT}`)
+  })
