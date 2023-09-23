@@ -1,11 +1,11 @@
 
-const mognoose = require("mognoose");
+const mongo = require("mongoose");
 require("dotenv").config();
 
 const dbConnect =()=>{
-    mognoose.connect(process.env.MONOGDB_URL,{
-        useNewUrlPArser:true,
-        useUnifiedTopology:true
+    mongo.connect(process.env.MONGODB_URL,{
+        useNewUrlParser:true,
+        useUnifiedTopology:true,
     })
     
     .then(()=> console.log("Db connection successful"))
