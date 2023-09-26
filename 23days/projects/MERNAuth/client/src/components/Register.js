@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./mix.css";
 import { NavLink } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
   //    for pass hide and show
 
@@ -19,61 +19,79 @@ const Register = () => {
     cpassword: "",
   });
 
-  console.log(inpval)
+  console.log(inpval);
 
   const setVal = (e) => {
-    console.log(e.target.value)
-    const {name,value}= e.target;
+    console.log(e.target.value);
+    const { name, value } = e.target;
 
-    setInpval(()=>{
-       return {
-        ...inpval,[name]:value
-       }
-    })
+    setInpval(() => {
+      return {
+        ...inpval,
+        [name]: value,
+      };
+    });
   };
 
-  const addUserdata = async(e)=>{
-     e.preventDefault();
-     const { fname, email, password, cpassword } = inpval;
-     if (fname === "") {
+  const addUserdata = async (e) => {
+    e.preventDefault();
+    const { fname, email, password, cpassword } = inpval;
+    if (fname === "") {
       toast.warning("first name is required!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else if (email === "") {
+    } else if (email === "") {
       toast.error("email is required!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else if (!email.includes("@")) {
+    } else if (!email.includes("@")) {
       toast.warning("includes @ in your email!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else if (password === "") {
+    } else if (password === "") {
       toast.error("password is required!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else if (password.length < 6) {
+    } else if (password.length < 6) {
       toast.error("password must be 6 char!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else if (cpassword === "") {
+    } else if (cpassword === "") {
       toast.error("confirm password is required!", {
-          position: "top-center"
+        position: "top-center",
       });
-  }
-  else if (cpassword.length < 6) {
+    } else if (cpassword.length < 6) {
       toast.error("confirm password must be 6 char!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else if (password !== cpassword) {
+    } else if (password !== cpassword) {
       toast.error("password  and Confirm password are not matching!", {
-          position: "top-center"
+        position: "top-center",
       });
-  } else{
-    console.log("user registration succesfully done");
-  }
-     
-  
-  }
+    } else {
+      // console.log("user registration succesfully done");
+      const data = await fetch("/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            fname, email, password, cpassword
+        })
+    });
+
+    const res = await data.json();
+    console.log(res.status);
+
+    if (res.status === 200) {
+        toast.success("Registration Successfully done 😃!", {
+            position: "top-center"
+        });
+        setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "" });
+    }
+      
+    }
+  };
   return (
     <>
       <section>
@@ -107,7 +125,6 @@ const Register = () => {
               <label htmlFor="email">Email</label>
               <input
                 type="email"
-
                 onChange={setVal}
                 value={inpval.email}
                 name="email"
@@ -165,7 +182,9 @@ const Register = () => {
 
             {/* for login button  */}
 
-            <button className="btn" onClick={addUserdata}>Sign Up</button>
+            <button className="btn" onClick={addUserdata}>
+              Sign Up
+            </button>
             <p>
               Already have an account? <NavLink to="/">Log In</NavLink>
             </p>

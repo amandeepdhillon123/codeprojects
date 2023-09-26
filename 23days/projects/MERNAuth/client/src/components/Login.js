@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./mix.css";
@@ -15,10 +15,11 @@ const Login = () => {
    
   });
 
+  const navigate = useNavigate()
   // console.log(inpval)
 
   const setVal = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     const {name,value}= e.target;
 
     setInpval(()=>{
@@ -28,7 +29,8 @@ const Login = () => {
     })
   };
 
-  const loginuser =(e) =>{
+  const loginuser =async(e) =>{
+    e.preventDefault();
     const { email, password } = inpval;
 
     if (email === "") {
@@ -49,7 +51,28 @@ const Login = () => {
         });
     } 
     else{
-        console.log("user log in successfully")
+        // console.log("user log in successfully")
+        const data = await fetch("/login",{
+          method:"POST",
+          headers:{
+              "Content-Type":"application/json"
+          },
+          body:JSON.stringify({
+               email, password
+          })
+      });
+
+      const res = await data.json();
+       console.log(res);
+
+      if(res.status == 200){
+      
+          localStorage.setItem("usersdatatoken",res.user.tokens);
+          navigate("/dash")
+          setInpval({...inpval,email:"",password:""});
+          
+      }
+  
     }
 
   }
