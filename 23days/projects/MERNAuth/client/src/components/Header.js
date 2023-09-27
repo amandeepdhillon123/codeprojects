@@ -53,7 +53,7 @@ const Header = () => {
   };
 
   const goError = () => {
-    Navigate("*");
+    navigate("*");
   };
   return (
     <>
@@ -98,8 +98,8 @@ const Header = () => {
 
                 <MenuItem
                   onClick={() => {
-                    logoutuser();
-                    handleClose();
+                    logoutuser()
+                    handleClose()
                   }}
                 >
                   Logout
@@ -108,8 +108,8 @@ const Header = () => {
             ) : (
               <MenuItem
                 onClick={() => {
-                  goError();
-                  handleClose();
+                  goError()
+                  handleClose()
                 }}
               >
                 Profile

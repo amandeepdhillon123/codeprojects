@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { LoginContext } from "./ContextProvider/Context";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import img from "../assest/img/man.png"
 const Dashboard = () => {
   const { logindata, setLoginData } = useContext(LoginContext);
   const [data, setData] = useState(false);
@@ -52,7 +53,7 @@ const Dashboard = () => {
           }}
         >
           <img
-            src="https://w0.peakpx.com/wallpaper/639/974/HD-wallpaper-bhagat-singh-bhagatsingh-dom-domfighter-domwarrior-warrior-thumbnail.jpg"
+            src={img}
             style={{ width: "200px", marginTop: 20 }}
             alt=""
           />

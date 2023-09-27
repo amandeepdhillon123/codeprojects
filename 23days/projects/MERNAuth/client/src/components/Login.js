@@ -1,82 +1,76 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./mix.css";
 const Login = () => {
+  //  Show pass
+  const [passShow, setPassShow] = useState(false);
 
-    //  Show pass
-   const[passShow,setPassShow] = useState(false)
-
-   const [inpval, setInpval] = useState({
-   
+  const [inpval, setInpval] = useState({
     email: "",
     password: "",
-   
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // console.log(inpval)
 
   const setVal = (e) => {
     // console.log(e.target.value)
-    const {name,value}= e.target;
+    const { name, value } = e.target;
 
-    setInpval(()=>{
-       return {
-        ...inpval,[name]:value
-       }
-    })
+    setInpval(() => {
+      return {
+        ...inpval,
+        [name]: value,
+      };
+    });
   };
 
-  const loginuser =async(e) =>{
+  const loginuser = async (e) => {
     e.preventDefault();
     const { email, password } = inpval;
 
     if (email === "") {
-        toast.error("email is required!", {
-            position: "top-center"
-        });
+      toast.error("email is required!", {
+        position: "top-center",
+      });
     } else if (!email.includes("@")) {
-        toast.warning("includes @ in your email!", {
-            position: "top-center"
-        });
+      toast.warning("includes @ in your email!", {
+        position: "top-center",
+      });
     } else if (password === "") {
-        toast.error("password is required!", {
-            position: "top-center"
-        });
+      toast.error("password is required!", {
+        position: "top-center",
+      });
     } else if (password.length < 6) {
-        toast.error("password must be 6 char!", {
-            position: "top-center"
-        });
-    } 
-    else{
-        // console.log("user log in successfully")
-        const data = await fetch("/login",{
-          method:"POST",
-          headers:{
-              "Content-Type":"application/json"
-          },
-          body:JSON.stringify({
-               email, password
-          })
+      toast.error("password must be 6 char!", {
+        position: "top-center",
+      });
+    } else {
+      // console.log("user log in successfully")
+      const data = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
       });
 
       const res = await data.json();
-       console.log(res);
+      //  console.log(res);
 
-      if(res.status === 200){
-      
-          localStorage.setItem("usersdatatoken",res.result.token);
-          navigate("/dash")
-          setInpval({...inpval,email:"",password:""});
-          
+      if (res.status === 200) {
+        localStorage.setItem("usersdatatoken", res.result.token);
+        navigate("/dash");
+        setInpval({ ...inpval, email: "", password: "" });
       }
-  
     }
+  };
 
-  }
-    
   return (
     <>
       <section>
@@ -93,9 +87,8 @@ const Login = () => {
             <div className="form_input">
               <label htmlFor="email">Email</label>
               <input
-             
-                 value={inpval.email}
-                 onChange={setVal}
+                value={inpval.email}
+                onChange={setVal}
                 type="email"
                 name="email"
                 id="email"
@@ -107,8 +100,7 @@ const Login = () => {
               <label htmlFor="password">Password</label>
               <div className="two">
                 <input
-
-                  type={!passShow ? "password" :"text"}
+                  type={!passShow ? "password" : "text"}
                   name="password"
                   onChange={setVal}
                   value={inpval.password}
@@ -116,18 +108,24 @@ const Login = () => {
                   placeholder="Enter your Password"
                 />
                 {/* for hide and shown  */}
-                  
-                  <div className="showpass" onClick={()=> setPassShow(!passShow)}>
-                       {!passShow ? "Show" :"Hide"} 
-                  </div>
+
+                <div
+                  className="showpass"
+                  onClick={() => setPassShow(!passShow)}
+                >
+                  {!passShow ? "Show" : "Hide"}
+                </div>
               </div>
             </div>
 
             {/* for login button  */}
 
-            <button className="btn"  onClick={loginuser}>login</button>
-            <p>Don't have an Account? <NavLink to="/register"> Sign Up</NavLink>  </p>
-        
+            <button className="btn" onClick={loginuser}>
+              login
+            </button>
+            <p>
+              Don't have an Account? <NavLink to="/register"> Sign Up</NavLink>{" "}
+            </p>
           </form>
           <ToastContainer />
         </div>
