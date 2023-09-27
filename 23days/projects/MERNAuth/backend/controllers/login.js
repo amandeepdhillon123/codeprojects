@@ -22,60 +22,40 @@ exports.login = async (req, resp) => {
         message: "user is not registered",
       });
     }
-    // const payload = {
-    //   email: user.email,
-    //   id: user._id,
+
+    const token = await user.generateAuthtoken();
+
+    resp.cookie("usercookie", token, {
+      expires: new Date(Date.now() + 9000000),
+      httpOnly: true,
+    });
+
+    const result = {
+      user,
+      token,
+    };
+    resp.status(200).json({ status: 200, result });
+
+    // const options = {
+    //   expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    //   httpOnly: true,
     // };
 
-    // if (await bcrypt.compare(password, user.password)) {
-    //   let token = jwt.sign(payload, process.env.JWT_SECRET, {
-    //     expiresIn: "200",
-    //   });
-
-    //   // await token.save()
-      
-    //   // return token23;
-
-    //   user = user.toObject();
-    //   user.tokens= user.tokens.concat({token:token});
-    const token = await user.generateAuthtoken();
-     
-        
-    resp.cookie("usercookie",token,{
-      expires:new Date(Date.now()+9000000),
-      httpOnly:true
-  });
-
-  const result = {
-      user,
-      token
-  }
-  resp.status(201).json({status:201,result})
-
-
-     
-   
-
-      // const options = {
-      //   expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-      //   httpOnly: true,
-      // };
-
-      // resp.cookie("token", token, options).status(200).json({
-      //   success: true,
-      //      status:200,
-      //   token,
-      //   // user,
-      //   message: "User Logged in successfully",
-      // });
+    // resp.cookie("token", token, options).status(200).json({
+    //   success: true,
+    //      status:200,
+    //   token,
+    //   // user,
+    //   message: "User Logged in successfully",
+    // });
     // console.log(user)
-        // resp.status(200).json({
-        //   success: true,
-        //   status:200,
-        //   token,
-        //   user,
-        //   message: "user loggedin successful",
-        // });
+    // resp.status(200).json({
+    //   success: true,
+    //   status:200,
+    //   token,
+    //   user,
+    //   message: "user loggedin successful",
+    // });
     // } else {
     //   return resp.status(403).json({
     //     success: false,
@@ -91,5 +71,3 @@ exports.login = async (req, resp) => {
     });
   }
 };
-
-
