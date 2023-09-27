@@ -65,9 +65,9 @@ const Login = () => {
       const res = await data.json();
        console.log(res);
 
-      if(res.status == 200){
+      if(res.status === 200){
       
-          localStorage.setItem("usersdatatoken",res.user.tokens);
+          localStorage.setItem("usersdatatoken",res.result.token);
           navigate("/dash")
           setInpval({...inpval,email:"",password:""});
           
