@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
   //    for pass hide and show
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const [passShow, setPassShow] = useState(false);
   // for confirm
   const [cpassShow, setCPassShow] = useState(false);
@@ -20,7 +20,7 @@ const Register = () => {
     cpassword: "",
   });
 
-  console.log(inpval);
+  // console.log(inpval);
 
   const setVal = (e) => {
     console.log(e.target.value);
@@ -74,24 +74,32 @@ const Register = () => {
       const data = await fetch("/register", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            fname, email, password, cpassword
-        })
-    });
+          fname,
+          email,
+          password,
+          cpassword,
+        }),
+      });
 
-    const res = await data.json();
-    console.log(res.status);
+      const res = await data.json();
+      // console.log(res.status);
 
-    if (res.status === 200) {
+      if (res.status === 200) {
         toast.success("Registration Successfully done 😃!", {
-            position: "top-center"
+          position: "top-center",
         });
-        navigate("/")
-        setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "" });
-    }
-      
+        navigate("/");
+        setInpval({
+          ...inpval,
+          fname: "",
+          email: "",
+          password: "",
+          cpassword: "",
+        });
+      }
     }
   };
   return (
