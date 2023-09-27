@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./mix.css";
+import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
   //    for pass hide and show
-
+  const navigate =useNavigate()
   const [passShow, setPassShow] = useState(false);
   // for confirm
   const [cpassShow, setCPassShow] = useState(false);
@@ -87,6 +88,7 @@ const Register = () => {
         toast.success("Registration Successfully done 😃!", {
             position: "top-center"
         });
+        navigate("/")
         setInpval({ ...inpval, fname: "", email: "", password: "", cpassword: "" });
     }
       

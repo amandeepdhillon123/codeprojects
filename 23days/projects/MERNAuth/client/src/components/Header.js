@@ -8,8 +8,8 @@ import { LoginContext } from "./ContextProvider/Context";
 const Header = () => {
   const { logindata, setLoginData } = useContext(LoginContext);
   // console.log(logindata)
-  
-   const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -19,44 +19,42 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-    // log out functionlaity
+  // log out functionlaity
 
-    const logoutuser =async()=>{
+  const logoutuser = async () => {
+    let token = localStorage.getItem("usersdatatoken");
 
-      let token = localStorage.getItem("usersdatatoken");
+    const res = await fetch("/logout", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+        Accept: "application/json",
+      },
+      credentials: "include",
+    });
 
-      const res = await fetch("/logout", {
-          method: "GET",
-          headers: {
-              "Content-Type": "application/json",
-              "Authorization": token,
-              Accept: "application/json"
-          },
-          credentials: "include"
-      });
+    const data = await res.json();
+    // console.log(data);
 
-      const data = await res.json();
-      console.log(data);
-
-      if (data.status == 201) {
-          console.log("use logout");
-          localStorage.removeItem("usersdatatoken");
-          setLoginData(false)
-          navigate("/");
-      } else {
-          console.log("error");
-      }
-
+    if (data.status == 201) {
+      console.log("use logout");
+      localStorage.removeItem("usersdatatoken");
+      setLoginData(false);
+      navigate("/");
+    } else {
+      console.log("error");
     }
+  };
 
-  //  
+  //
   const goDash = () => {
-    navigate("/dash")
-}
+    navigate("/dash");
+  };
 
-const goError = () => {
-    Navigate("*")
-}
+  const goError = () => {
+    Navigate("*");
+  };
   return (
     <>
       <header>
@@ -89,26 +87,33 @@ const goError = () => {
           >
             {logindata.ValidUser ? (
               <>
-                <MenuItem onClick={ () =>{
-                    goDash()
-                  handleClose()
-                }
-                  }>Profile</MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    goDash();
+                    handleClose();
+                  }}
+                >
+                  Profile
+                </MenuItem>
 
-                <MenuItem onClick={()=>{
-                    logoutuser()
-                     handleClose()
-                }
-                  
-                  }>Logout</MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    logoutuser();
+                    handleClose();
+                  }}
+                >
+                  Logout
+                </MenuItem>
               </>
             ) : (
-              <MenuItem onClick={
-                 ()=> {
-                  goError()
-                  handleClose()
-                 }
-                }>Profile</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  goError();
+                  handleClose();
+                }}
+              >
+                Profile
+              </MenuItem>
             )}
           </Menu>
         </nav>
