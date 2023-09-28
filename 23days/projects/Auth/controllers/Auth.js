@@ -59,7 +59,7 @@ exports.login = async (req, resp) => {
     let user = await User.findOne({ email });
     if (!user) {
       return resp.status(401).json({
-        success: false,
+         success: false,
         message: "user is not registered",
       });
     }
