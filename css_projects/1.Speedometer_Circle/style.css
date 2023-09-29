@@ -10,7 +10,7 @@ body{
        justify-content: center;
      align-items: center;
       min-height: 100vh;
-     background: radial-gradient(#444,#222);
+      : radial-gradient(#444,#222);
 
 }
 .card{
