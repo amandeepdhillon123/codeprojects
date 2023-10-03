@@ -5,9 +5,7 @@
 .container{
     overflow: auto;
 }
-[title]:hover:after {
-    visibility: visible;
-}
+
   
 .left_view h3{
     font-size: 21px;

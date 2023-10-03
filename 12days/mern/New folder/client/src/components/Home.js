@@ -1,5 +1,8 @@
 import React from 'react'
-
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AddIcon from '@mui/icons-material/Add';
 const Home = () => {
   return (
     <div className='mt-5'>
@@ -7,7 +10,7 @@ const Home = () => {
 
             {/* create add btn  */}
             <div className='add_btn mt-2'>
-                 <button className='btn btn-primary'>add data</button>
+                 <button className='btn btn-primary'><AddIcon /> add data</button>
             </div>
 
             {/* create tables */}
@@ -31,9 +34,9 @@ const Home = () => {
                     <td>@mdo</td>
                     <td>1255</td>
                     <td className='d-flex justify-content-between'>
-                        <button className='btn btn-success' title='read'><i class="fas fa-eye"></i></button>
-                        <button className='btn btn-primary' title='update'><i class="fas fa-pen"></i></button>
-                        <button className='btn btn-danger' title='delete'><i class="fas fa-trash"></i></button>
+                        <button className='btn btn-success' title='read'><RemoveRedEyeIcon/></button>
+                        <button className='btn btn-primary' title='update'><EditIcon/></button>
+                        <button className='btn btn-danger' title='delete'><DeleteIcon/></button>
                     </td>
                 </tr>
                 <tr>
@@ -43,9 +46,9 @@ const Home = () => {
                     <td>@mdo</td>
                     <td>1255</td>
                     <td className='d-flex justify-content-between'>
-                        <button className='btn btn-success' title='read'><i class="fas fa-eye"></i></button>
-                        <button className='btn btn-primary' title='update'><i class="fas fa-pen"></i></button>
-                        <button className='btn btn-danger' title='delete'><i class="fas fa-trash"></i></button>
+                        <button className='btn btn-success' title='read'><RemoveRedEyeIcon/></button>
+                        <button className='btn btn-primary' title='update'><EditIcon/></button>
+                        <button className='btn btn-danger' title='delete'><DeleteIcon/></button>
                     </td>
                 </tr>
                     
