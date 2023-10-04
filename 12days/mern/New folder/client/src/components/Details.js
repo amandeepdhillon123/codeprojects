@@ -8,15 +8,15 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useParams } from 'react-router-dom';
-
+import { useParams ,NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Details = () => {
-
+   
    const [getuserData,setuserData] =useState([]);
    
-   // console.log(getuserData)
+   console.log(getuserData)
      const {id} = useParams("")
-
+    const navigate =useNavigate();
    //   console.log(id)
    const Getdata =async() =>{
        const resp = await fetch(`/getuser/${id}`,{
@@ -40,6 +40,30 @@ const Details = () => {
         Getdata();
    },[])
 
+   //   delete 
+
+const deleteuser = async (id) => {
+   const res2 = await fetch(`/deleteuser/${id}`, {
+     method: "DELETE",
+     headers: {
+       "Content-Type": "application/json",
+     },
+   });
+
+   const deletedata = await res2.json();
+   console.log(deletedata);
+
+   if (res2.status === 500 || !deletedata) {
+     console.log("error");
+   } else {
+   //   console.log("user deleted");
+   //   setDLTdata(deletedata);
+   navigate("/")
+     
+   }
+ };
+
+
   return (
     <div className='container mt-3'>
             <h1 style={{fontWeight:400}}>Welcome to {getuserData.name}</h1>
@@ -48,8 +72,8 @@ const Details = () => {
                     
                     <CardContent>
                         <div className='add_btn'>
-                            <button className='btn btn-primary mx-2' title='update'><EditIcon/></button>
-                            <button className='btn btn-danger mx-2' title='delete '><DeleteIcon/></button>
+                          <NavLink to ={`/edit/${getuserData._id}`}><button className='btn btn-primary mx-2' title='update'><EditIcon/></button></NavLink>  
+                            <button className='btn btn-danger mx-2' title='delete ' onClick={()=> deleteuser(getuserData._id)}><DeleteIcon/></button>
                         </div>
                         <div className="row">
                          
@@ -64,7 +88,8 @@ const Details = () => {
                           
                          
                           <p className='mt-4'><PhoneIphoneIcon/> Mobile : <span>{getuserData.mobile}</span></p>
-
+                          
+                          <p className='mt-3'><LocationOnIcon/> Location: <span> {getuserData.add}</span></p>
                           <p className='mt-3'> Description: <span> {getuserData.desc}</span></p>
 
                        </div>

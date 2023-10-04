@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { adddata } from "./Context/ContextProvider";
 const Register = () => {
+
+   const{udata,setUdata} = useContext(adddata)
   const navigate= useNavigate()
   const [inpval, setINP] = useState({
     name: "",
@@ -14,7 +17,7 @@ const Register = () => {
     desc: "",
   });
 
-  console.log(inpval);
+  // console.log(inpval);
 
   const setData = (e) => {
     // console.log(e.target.value)
@@ -73,13 +76,22 @@ const Register = () => {
             });
 
             const finalData = await fetchData.json();
-            console.log(finalData)
+            // console.log(finalData)
 
             if( fetchData.status === 200)
             {
                toast.success("successful registered")
                navigate("/")
+               setUdata(finalData.data)
+              
              
+            }
+            else if( fetchData.status === 500)
+            {
+               toast.warning("user is already exisy")
+            }
+            else{
+              navigate("/")
             }
             }
 

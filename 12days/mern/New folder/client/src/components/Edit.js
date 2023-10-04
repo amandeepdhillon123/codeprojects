@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
-
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { updatedata } from './Context/ContextProvider'
 const Edit = () => {
+
+  const {updata, setUPdata} =useContext(updatedata)
+  const navigate = useNavigate()
     const [inpval,setINP] = useState({
         name:"",
         email:'',
@@ -12,7 +17,7 @@ const Edit = () => {
         desc:""   
       })
 
-      console.log(inpval)
+      // console.log(inpval)
   
   const setData =(e)=>{
       // console.log(e.target.value)
@@ -22,10 +27,72 @@ const Edit = () => {
               ...preVal,[name]:value
           }
       })
+
+    }   
+        //  get id 
+        const {id} = useParams("")
+        // console.log(id)
+      const Getdata =async() =>{
+        const resp = await fetch(`/getuser/${id}`,{
+          method:"GET",
+          headers:{
+             "Content-Type":"application/json"
+          },
+        });
+        
+         const data = await resp.json();
+        //  console.log("amandeep",data)
+         if(resp.status === 500 || !data)
+         {
+          alert("error in details")
+         }
+         else{
+          setINP(data.data)
+         
+
+          // console.log("data")
+         }
+    }
+
+    useEffect(()=>{
+       Getdata()
+    },[])
+ 
+    //  update user
+
+    const updateuser = async(e) =>{
+      e.preventDefault();
+      const {name,email,age,mobile, work, add, desc} = inpval;
+
+      const resp2 =await fetch(`/updateuser/${id}`,{
+         method:"PUT",
+         headers:{
+          "Content-Type" :"application/json"
+         },
+         body:JSON.stringify({
+          name,email,age,mobile, work, add, desc
+         })
+      })
+
+      const data2 =await resp2.json();
+      // console.log(data2)
+      if(resp2.status === 500 || !data2){
+        alert("fill the data")
+      }
+      
+      else{
+        // alert("data added")
+        navigate("/")
+        setUPdata(data2.data)
+        
+        
+      }
+
+    }
     
 
 
-  }
+  
   return (
     <div>
       <form className="mt-5">
@@ -145,8 +212,8 @@ const Edit = () => {
               rows="5"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className="btn btn-primary" onClick={updateuser}>
+            Update
           </button>
         </div>
       </form>
