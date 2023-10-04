@@ -1,32 +1,92 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
-    const [inpval,setINP] = useState({
-          name:"",
-          email:'',
-          age:"",
-          mobile:"",
-          work:"", 
-          add:"",
-          desc:""   
-        })
+  const navigate= useNavigate()
+  const [inpval, setINP] = useState({
+    name: "",
+    email: "",
+    age: "",
+    mobile: "",
+    work: "",
+    add: "",
+    desc: "",
+  });
 
-        console.log(inpval)
-    
-    const setData =(e)=>{
-        // console.log(e.target.value)
-        const {name,value} =e.target;
-        setINP((preVal)=>{
-            return {
-                ...preVal,[name]:value
+  console.log(inpval);
+
+  const setData = (e) => {
+    // console.log(e.target.value)
+    const { name, value } = e.target;
+    setINP((preVal) => {
+      return {
+        ...preVal,
+        [name]: value,
+      };
+    });
+  };
+
+//    for api calling
+
+           const addinpData = async(e)=>{
+            e.preventDefault();
+
+            const {name,email,age,mobile,work,add,desc} =inpval;
+         
+            // validaton in input fields 
+            if(name === ""){
+              toast.warning("name is required!")
+            }else if(email === ""){
+              toast.error("email is required!")
+            }else if(!email.includes("@")){
+              toast.warning("include @ in your gmail")
+            } else if(age ===""){
+              toast.warning("age is required!")
             }
-        })
-      
+            else if(mobile ===""){
+              toast.error("mobile no. is required!")
+            }
+            else if(mobile.length < 10){
+              toast.error("mobile no. is required!")
+            }
+            else if(work === ""){
+              toast.error("work is required!")
+            }
+            else if(add === ""){
+              toast.error("address is required!")
+            }
+            else if(desc === ""){
+              toast.error("description is required!")
+            }
+            else{
+              
+              const  fetchData = await fetch("/register",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    name,email,age,mobile,work,add,desc
 
+                })
+            });
 
-    }
+            const finalData = await fetchData.json();
+            console.log(finalData)
+
+            if( fetchData.status === 200)
+            {
+               toast.success("successful registered")
+               navigate("/")
+             
+            }
+            }
+
+               
+           }
   return (
-    <div>
+    <div className="container">
       <form className="mt-5">
         <div className="row">
           <div className="mb-3 col-lg-6 col-md-6 col-12">
@@ -144,11 +204,12 @@ const Register = () => {
               rows="5"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" onClick={addinpData}>
             Submit
           </button>
         </div>
       </form>
+       <ToastContainer position="top-center" />
     </div>
   );
 };
