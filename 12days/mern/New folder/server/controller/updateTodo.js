@@ -5,7 +5,7 @@ exports.update = async(req,resp)=>{
     try {
          const {id} = req.params;
 
-         const update = await Todo.findByIdAndUpdate(id,re.body,{new:true})
+         const update = await Todo.findByIdAndUpdate(id,req.body,{new:true})
 
         //   retrun response
         resp.status(200).json({

@@ -37,7 +37,7 @@ exports.getTodoById = async(req,resp) =>{
          resp.status(200).json({
               success:true,
               data:response,
-              data:response,
+           
               message:"successfully"
          })
     } catch (error) {

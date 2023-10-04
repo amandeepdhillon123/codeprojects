@@ -17,6 +17,7 @@ const TodoSchema = new mongoose.Schema({
     },
     mobile:{
         type:Number,
+        minLength:10
 
     },
     work:{
