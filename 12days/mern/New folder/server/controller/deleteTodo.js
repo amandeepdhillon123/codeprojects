@@ -13,7 +13,7 @@ exports.deleteTodo = async (req, resp) => {
       message: "deleted successfull",
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     resp.status(500).json({
       success: true,
       message: "interanl server error",
