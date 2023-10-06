@@ -33,7 +33,7 @@ exports.sendOTP = async (req, resp) => {
 
     console.log("OTP generated: ", otp);
 
-    // check unit or not
+    // check unique or not
     let result = await OTP.findOne({ otp: otp });
 
     while (result) {
@@ -43,7 +43,7 @@ exports.sendOTP = async (req, resp) => {
         specialChars: false,
       });
       result = await OTP.findOne({ otp: otp });
-    }
+    } 
     const otpPayload = { email, otp };
     //    create an entry into db
     const otpBody = await OTP.create(otpPayload);
@@ -58,6 +58,10 @@ exports.sendOTP = async (req, resp) => {
     });
   } catch (error) {
     console.log(error);
+        return resp.status(500).json({
+            success:false,
+            message:error.message,
+        })
   }
 };
 
@@ -120,7 +124,7 @@ exports.signUp = async (req, resp) => {
       // otp not foumd
       return resp.status(400).json({
         success: false,
-        message: "OTP Found",
+        message: "OTP not Found",
       });
     } else if (otp !== recentOtp.otp) {
       //    invalid otp
