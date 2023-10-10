@@ -25,7 +25,7 @@
     display: inline-block;
     margin: 0;
 }
- #container .p3{
+  #container .p3{
      border: 1px solid red;
      text-align: center;
     display:  block;
