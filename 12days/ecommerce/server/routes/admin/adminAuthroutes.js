@@ -10,7 +10,7 @@ router.post("/register",adminUpload.single("admin_profile"),Register)
 
 
 
-
+module.exports =router
 
 
 

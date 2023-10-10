@@ -1,8 +1,6 @@
-
 const mongoose = require("mongoose");
-const validator =require("validator");
-
-const adminSchema =new mongoose.Schema({
+const validator =require("validator")
+const adminSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -12,9 +10,9 @@ const adminSchema =new mongoose.Schema({
         required:true,
         unique:true,
         validate(value){
-            if(validator.isEmail(value)){
-                throw new Error("not valid email")
-            }
+           if(!validator.isEmail(value)){
+              throw new Error("not valid Email")
+           }
         }
     },
     profile:{
@@ -30,15 +28,15 @@ const adminSchema =new mongoose.Schema({
     },
     password:{
         type:String,
-        required:true,
+        required:true
     },
     tokens:[{
         token:{
             type:String,
-            required:true,
+            required:true
         }
     }]
+
+    
 })
-
-
-module.exports =mongoose.model("admins", adminSchema)
+ module.exports = mongoose.model("admins",adminSchema)
