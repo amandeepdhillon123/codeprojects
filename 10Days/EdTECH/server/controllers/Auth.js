@@ -3,6 +3,8 @@ const OTP = require("../models/OTP");
 const otpGenerator = require("otp-generator");
 const bcrypt = require("bcrypt");
 const jwt=  require("jsonwebtoken")
+const Profile= require("../models/Profile");
+const mailsender = require("../utils/mailSender");
 require("dotenv").config()
 
 
@@ -254,4 +256,57 @@ exports.login= async(req,resp) =>{
             message:"login failure, plesae try again"
         })
     }
+}
+
+// password change 
+
+exports.changePassword =async(req,resp) =>{
+
+    // get data 
+    const userDetails =await User.findById(req.user.id)
+
+    // get olf password newpasswrod and confiel new password 
+    const{oldPassword, newPassword, confirmNewPassword} = req.body;
+     
+    // validate old password 
+
+    const isPasswordMatch= await bcrypt.compare(oldPassword, userDetails.password);
+
+    if(!isPasswordMatch){
+        // if old passwrod does not match . retrun 404 error 
+        return resp.status(401).json({success:false, message:"The passwrod is incorrect"})
+    }
+
+    // match new and confirm password 
+     
+    if(newPassword !== confirmNewPassword){
+        return resp.status(400).json({
+            success:false,
+            message:"The password and confirm passwrod doen not match"
+        })
+    }
+
+    // update password 
+
+    const encryptedPassword = await bcrypt.hash(newPassword,10)
+
+    const updatedUserDetails =await User.findByIdandUpdate(
+        req.user.id,
+        {
+          password:encryptedPassword 
+        },
+        {new:true}
+    );
+
+    // send notification 
+
+    try {
+         const emailResponse = await mailsender(
+            updatedUserDetails.email,
+            passwordUpdated()
+         )
+    } catch (error) {
+        
+    }
+
 }
