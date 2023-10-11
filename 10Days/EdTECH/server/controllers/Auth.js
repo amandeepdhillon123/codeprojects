@@ -185,4 +185,73 @@ exports.signUp = async(req,resp) =>{
 
 // login 
 
-e
+exports.login= async(req,resp) =>{
+    try {
+        //  fetch data from reqbody
+         
+        const {email,password } = req.body;
+
+        // vaildation data 
+
+        if(!email || !password){
+            return resp.status(403).json({
+             success:false,
+             message:"All fields are required, please try again"
+            })
+        }
+
+        // check user exist or not 
+
+        const user =  await User.findOne({email}).populate("additonalDetails")
+        
+        if(!user){
+            return resp.status(401).json({
+                successfalse,
+                message:"USer is not registered ,please signup first"
+            })
+        }
+
+        // generate JWT after password matching 
+
+        if(await bcrypt.compare(password, user.password)){
+            const payload={
+                email:user.email,
+                id:user_id,
+                accountType:user.accountType
+            }
+
+            const token = jwt.sign(payload, process.env.JWT_SECRET,{
+                 expiresIn:"2h"
+            })
+
+            user.token =token;
+            user.password =undefined
+
+            // create cookie and send response 
+
+            const options= {
+                expires: new Date(Date.now) + 3*24*60*60*1000,
+                httpOnly,
+            }
+
+            resp.cookie("token",token, options).status(200).json({
+                success:true,
+                token,
+                user,
+                message:"Logged in successfully",
+            })
+        }
+        else{
+             return resp.status(401).json({
+                successfalse,
+                message:"Passwrod is incorrect"
+             })
+        }
+    } catch (error) {
+        console.log(error);
+        return resp.status(500).json({
+            success:false,
+            message:"login failure, plesae try again"
+        })
+    }
+}
