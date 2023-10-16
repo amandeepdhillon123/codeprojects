@@ -10,7 +10,7 @@ app.set('view engine','ejs')
 
 app.get('',(req,resp) =>{
 
-    resp.sendFile(`${pubPath}/index.html`)
+     resp.sendFile(`${pubPath}/index.html`)
 })
 
 app.get('/profile',(req,resp) =>{
