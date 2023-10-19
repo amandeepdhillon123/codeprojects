@@ -31,3 +31,19 @@
 //   exa()
 
 // let name;
+
+// let oddnumbe = [1,2,3]
+// oddnumbe.push(3);
+// console.log(oddnumbe)
+
+// let value = null;
+// console.log(value)
+
+// let string ="42"
+// let num = 42;
+// let boolean = true;
+// let num =nulll
+
+// console.log( boolean == 1)
+
+
