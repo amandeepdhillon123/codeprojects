@@ -1,6 +1,6 @@
 
 import Ram from "../components/Ram"
-
+import Shya from "../components/Shya"
 import {useState} from "react"
 function Student(){
 
@@ -10,15 +10,19 @@ function Student(){
         alert("jai ho")
     }
     return (
-        <>
-         <Ram  
-         name ={name}
-         other={{name:"amandeep" , surName:"Dhillon"}}
+        // <>
+        //  <Ram  
+        //  name ={name}
+        //  other={{name:"amandeep" , surName:"Dhillon"}}
           
-         ram={ram}
+        //  ram={ram}
          
-         />
-         <button onClick={()=> setname("ram")}>update nbame</button>
+        //  />
+        //  <button onClick={()=> setname("ram")}>update nbame</button>
+        // </>
+
+        <>
+        <Shya name ={"amandeep"}/>
         </>
     )
 }
