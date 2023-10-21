@@ -1,8 +1,8 @@
-
+import {useState} from "react"
 
 function Ram({name,other,ram}){
 //   console.log(props)
-
+  const[data,setData] = useState("ram")
 console.log(name)
     return (
         <>
