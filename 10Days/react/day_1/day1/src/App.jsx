@@ -5,6 +5,8 @@ import Event from "./components/Event"
 import Num from "./components/Num"
 import Data from "./components/Data"
 import Student from "./components/Student"
+import Input from "./components/Input"
+import Ram  from "./components/Toggle"
 export function App(){
   return(
     <> 
@@ -18,7 +20,11 @@ export function App(){
 
       {/* <Data/> */}
 
-      <Student/>
+      {/* <Student/> */}
+
+      {/* <Input/> */}
+
+      <Ram/>
     </>
   )
 }
