@@ -2,18 +2,30 @@ import React from "react";
 import {useState} from "react"
 function Num(){
 
-    const [data,setData] = useState("anil")
+    const [data,setData] = useState(0)
     
-    function ram(){
+    function inc(){
         
-        setData("ram")
+        setData(data + 1)
     }
+
+    function dec(){
+        
+        setData(data - 1)
+    }
+    function reset(){
+        
+        setData(0)
+    }
+   
    
     return(
         <>
 
         <h1>{data}</h1>
-        <button onClick={()=> ram()}> click me</button>
+        <button onClick={()=> inc()}>inc</button>
+        <button onClick={()=> dec()}>dec</button>
+        <button onClick={()=> reset()}>reset</button>
         </>
     )
 }
