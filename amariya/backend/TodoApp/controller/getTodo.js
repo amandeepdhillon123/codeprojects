@@ -31,7 +31,7 @@ exports.getSingle =async(req,resp)=>{
 
         resp.status(200).json({
             success:true,
-            data:response,
+            data:todo,
             message:"get data successful"
         })
     } catch (error) {

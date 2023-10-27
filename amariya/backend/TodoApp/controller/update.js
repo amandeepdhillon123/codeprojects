@@ -2,7 +2,7 @@
 
 const User = require("../models/todo");
 
-const update =async(req,resp)=>{
+exports.update =async(req,resp)=>{
     try {
         const {id} = req.params;
 
