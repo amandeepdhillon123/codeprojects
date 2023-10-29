@@ -17,8 +17,20 @@
 // };
 // console.log(add(5,3))
 
-const add = function sum(a,b){
-    return a + b
-}
+// const add = function sum(a,b){
+//     return a + b
+// }
 
-console.log(add(5,3));
+// console.log(add(5,3));
+
+
+// function add(x,y){
+//     return x + y
+// }
+
+// console.log(add(5,6))
+// const add =(x , y) =>{
+//     return x + y
+// }
+
+// console.log(add(5 , 6))
