@@ -16,9 +16,22 @@
 // }
 // while (k > 1);
 
-let a = 0 ;
-do{
-    console.log(a)
-    a++;
+// let a = 0 ;
+// do{
+//     console.log(a)
+//     a++;
+// }
+// while(a > 1)
+
+for( var i=1 ; i<5; i++){
+   if(i ===3){
+    break;
+   }
+console.log(i)
 }
-while(a > 1)
+for( var i=1 ; i<5; i++){
+    if(i ===3){
+     continue;
+    }
+ console.log(i)
+ }
