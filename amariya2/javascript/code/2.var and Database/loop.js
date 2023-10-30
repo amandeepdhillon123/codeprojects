@@ -23,15 +23,30 @@
 // }
 // while(a > 1)
 
-for( var i=1 ; i<5; i++){
-   if(i ===3){
-    break;
-   }
-console.log(i)
+// for( var i=1 ; i<5; i++){
+//    if(i ===3){
+//     break;
+//    }
+// console.log(i)
+// }
+// for( var i=1 ; i<5; i++){
+//     if(i ===3){
+//      continue;
+//     }
+//  console.log(i)
+//  }
+
+//  var arr= [1,2,3,4,"amandeep"];
+
+//  for( let val of arr){
+//     console.log(val)
+//  }
+
+let obj ={
+    name:"amandeep",
+    surname:"dhillon"
 }
-for( var i=1 ; i<5; i++){
-    if(i ===3){
-     continue;
-    }
- console.log(i)
- }
+
+for(let key in obj){
+  console.log(obj[key])
+}
