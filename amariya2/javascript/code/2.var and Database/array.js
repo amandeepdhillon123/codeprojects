@@ -90,14 +90,22 @@
 
 sum(1,2,3)
 function sum(){
-    console.log(arguments);
-    console.log(arguments.length);
-    console.log(arguments[0])
+
+    arrayLike =arguments
+//     array1=Array.from(arguments)
+//    console.log(array1)
+
+// array2 =[...arrayLike]
+// console.log(array2)
+
+// const arr3 =Array.prototype.slice.call(arrayLike);
+
+// console.log(arr3)
 }
 
 
-const str ="hello";
+// const str ="hello";
 
-console.log(str);
-console.log(str.length);
+// console.log(str);
+// console.log(str.length);
 
