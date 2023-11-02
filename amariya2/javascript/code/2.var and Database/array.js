@@ -19,7 +19,22 @@
 
 // console.log(d)
 
-const array =["a","b","c","d"];
+// const array =["a","b","c","d"];
 
-let e =array.slice(1,4);
-console.log(e)
+// let e =array.slice(1,4);
+// console.log(e)
+
+// let array =[1,2];
+
+// array.push(3,4);
+
+
+// console.log(array)
+
+let arr1=[5,6];
+
+let arr2 = [7,8];
+
+let array3 =arr1.concat(arr2)
+
+console.log(array3)
