@@ -58,12 +58,21 @@
 // console.log(letter)
 
 
-let arr1 =[1,2,3];
+// let arr1 =[1,2,3];
 
-let mapArray =arr1.map((e)=>{
-    return e * 2
+// let mapArray =arr1.map((e)=>{
+//     return e * 2
+// })
+
+// console.log(mapArray);
+
+
+let arr2 = [1,2,3];
+
+arr2.forEach((e)=>{
+    console.log( e * 2)
 })
 
-console.log(mapArray);
+// console.log(arr2)
 
 
