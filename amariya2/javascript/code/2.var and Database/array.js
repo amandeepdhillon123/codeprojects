@@ -80,12 +80,24 @@
 // arr.reverse()
 // console.log(arr)
 
-const fruits =["apple","bnana","orange"];
+// const fruits =["apple","bnana","orange"];
 
-const [a,b,c] =fruits;
+// const [a,b,c] =fruits;
 
 // console.log(a)
 // console.log(b)
 // console.log(c)
 
+sum(1,2,3)
+function sum(){
+    console.log(arguments);
+    console.log(arguments.length);
+    console.log(arguments[0])
+}
+
+
+const str ="hello";
+
+console.log(str);
+console.log(str.length);
 
