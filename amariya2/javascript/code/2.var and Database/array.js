@@ -75,9 +75,17 @@
 
 // console.log(arr2)
 
-let arr =[1,2,4,7,8,5]
-arr.sort()
-arr.reverse()
-console.log(arr)
+// let arr =[1,2,4,7,8,5]
+// arr.sort()
+// arr.reverse()
+// console.log(arr)
+
+const fruits =["apple","bnana","orange"];
+
+const [a,b,c] =fruits;
+
+// console.log(a)
+// console.log(b)
+// console.log(c)
 
 
