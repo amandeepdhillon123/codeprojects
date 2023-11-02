@@ -67,12 +67,17 @@
 // console.log(mapArray);
 
 
-let arr2 = [1,2,3];
+// let arr2 = [1,2,3];
 
-arr2.forEach((e)=>{
-    console.log( e * 2)
-})
+// arr2.forEach((e)=>{
+//     console.log( e * 2)
+// })
 
 // console.log(arr2)
+
+let arr =[1,2,4,7,8,5]
+arr.sort()
+arr.reverse()
+console.log(arr)
 
 
