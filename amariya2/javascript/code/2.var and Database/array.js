@@ -47,12 +47,23 @@
 // console.log(pop)
 
 
-let letter =["a","b","c"];
+// let letter =["a","b","c"];
 
 // letter.splice(1, 0,"x","y");
 
 // letter.splice(1,1)
 
-letter.splice(2,1,"a,mamdee")
+// letter.splice(2,1,"a,mamdee")
 
-console.log(letter)
+// console.log(letter)
+
+
+let arr1 =[1,2,3];
+
+let mapArray =arr1.map((e)=>{
+    return e * 2
+})
+
+console.log(mapArray);
+
+
