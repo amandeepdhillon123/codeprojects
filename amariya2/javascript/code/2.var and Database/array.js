@@ -40,8 +40,19 @@
 // console.log(array3)
 
 
-let arr1 =[1,2,3,4,5];
+// let arr1 =[1,2,3,4,5];
 
-let pop =arr1.pop();
+// let pop =arr1.pop();
 
-console.log(pop)
+// console.log(pop)
+
+
+let letter =["a","b","c"];
+
+// letter.splice(1, 0,"x","y");
+
+// letter.splice(1,1)
+
+letter.splice(2,1,"a,mamdee")
+
+console.log(letter)
