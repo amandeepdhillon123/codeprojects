@@ -54,3 +54,23 @@
 // console.log(c)
 
 
+// 
+
+const a = "ram";
+
+// console.log(a)
+
+// let x= 4;
+// let y = 6;
+// let z = x+ y;
+
+// console.log(z)
+
+
+// let conditon = true ;
+
+// let result = conditon ? "yes": "no";
+
+// console.log(result);
+
+
