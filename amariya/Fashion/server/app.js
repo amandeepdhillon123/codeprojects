@@ -18,6 +18,13 @@ app.get("/",(req,resp)=>{
     resp.status(200).json("server starts")
 })
 
+const cloudinary = require("./Cloudinary/cloudinary");
+cloudinary.cloudinaryConnect();
+
+
+
+
+
 // data base connection 
 
 // dbConnect()
