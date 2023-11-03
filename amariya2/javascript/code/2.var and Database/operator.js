@@ -21,8 +21,8 @@
 
 // conparision operatro 
 
-let x =5;
-let y= 3;
+// let x =5;
+// let y= 3;
 // console.log(x > y)
 
 // console.log(x < y)
@@ -32,5 +32,14 @@ let y= 3;
 // console.log(x === y)
 // console.log(x !== y)
 // console.log(x !== y)
+
+
+// logical operator
+
+let x= true;
+let y = false;
+
+console.log(x && y);
+console.log(x || y);
 
 
