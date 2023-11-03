@@ -74,3 +74,26 @@ const a = "ram";
 // console.log(result);
 
 
+// let result = false && someFunction();
+
+// console.log(result);
+
+// let result2 = true || someFunction();
+
+// let result3 = 1|| 2;
+
+// console.log(result3)
+
+
+let str ="amandeep";
+
+switch(str){
+    // case str :
+    //     console.log("jaat")
+    //     break;
+ 
+        
+    default:
+        console.log("ram") ;     
+
+}
