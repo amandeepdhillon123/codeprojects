@@ -36,10 +36,21 @@
 
 // logical operator
 
-let x= true;
-let y = false;
+// let x= true;
+// let y = false;
 
-console.log(x && y);
-console.log(x || y);
+// console.log(x && y);
+// console.log(x || y);
+
+// console.log(!x)
+
+// string operastro 
+
+// let a = " hello "
+
+// let b =" amandeep";
+
+// var c =(a + b);
+// console.log(c)
 
 
