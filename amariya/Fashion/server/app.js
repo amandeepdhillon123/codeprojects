@@ -6,8 +6,13 @@ const cors = require("cors")
 const PORT = 4009;
 const dbConnect = require("./db/conn")
 
+
 app.use(express.json());
 app.use(cors())
+
+//   admon routes 
+const adminAuthroutes = require("./routes/admin/adminAuthRoutes");
+app.use("/adminauth/api",adminAuthroutes);
 
 app.get("/",(req,resp)=>{
     resp.status(200).json("server starts")
