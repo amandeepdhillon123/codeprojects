@@ -85,15 +85,60 @@ const a = "ram";
 // console.log(result3)
 
 
-let str ="amandeep";
+// let str ="amandeep";
 
-switch(str){
-    // case str :
-    //     console.log("jaat")
-    //     break;
+// switch(str){
+//     // case str :
+//     //     console.log("jaat")
+//     //     break;
  
         
-    default:
-        console.log("ram") ;     
+//     default:
+//         console.log("ram") ;     
 
+// }
+
+// const dayOfWeek = "Tuesday";
+// switch (dayOfWeek) {
+//  case "Monday":
+// console.log("Start ");
+// break;
+//  case "Tuesday":
+    
+// case "Sunday":
+//  console.log("Weekend!");
+// break;
+// default:
+//     console.log("Invalid");
+// }
+
+//   spread opeartor 
+// const array =[1,2,3];
+
+// console.log(...array);
+
+
+// copying an array 
+
+// const originalArray =[1,2,3];
+// const copiedArray =[...originalArray]
+
+// console.log(copiedArray)
+
+// merginf array 
+// const arr1 = [1,2,3];
+// const arr2 = [4,5,6];
+// const mergedArray =[...arr1, ...arr2];
+// console.log(mergedArray);
+
+// passing multiple argumens 
+const number =[1,2,3,4,5];
+sum(...number)
+
+function sum(a,b,c,d,e,){
+    console.log(a+b+c+d+e)
 }
+
+
+
+
