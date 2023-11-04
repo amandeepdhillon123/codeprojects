@@ -33,19 +33,37 @@
 // console.log(person.greet())
 
 
-let num= 20;
-let str = "hell stirng";
-let bool = true;
-let obj = { key :"value"};
-let arr =[1,2,3];
-let fun =function(){};
+// let num= 20;
+// let str = "hell stirng";
+// let bool = true;
+// let obj = { key :"value"};
+// let arr =[1,2,3];
+// let fun =function(){};
 
-console.log(typeof(num))
-console.log(typeof(str))
-console.log(typeof(bool))
-console.log(typeof(obj))
-console.log(typeof(arr))
-console.log(typeof(fun))
+// console.log(typeof(num))
+// console.log(typeof(str))
+// console.log(typeof(bool))
+// console.log(typeof(obj))
+// console.log(typeof(arr))
+// console.log(typeof(fun))
+
+
+// coercion 
+
+
+let str = "42";
+let number = 43;
+let boolean = true;
+let nullValue =null;
+
+console.log(str + number);
+
+console.log(number + boolean);
+console.log(number === str);
+
+console.log(boolean == 1);
+console.log(boolean + nullValue)
+
 
 
 
