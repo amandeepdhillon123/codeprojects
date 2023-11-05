@@ -1,39 +1,117 @@
-const adminDB= require("../../model/admin/adminModel")
-const cloudinary= require("cloudinary").v2;
+require("dotenv").config()
+const cloudinary = require("../../Cloudinary/cloudinary");
+const adminDB = require("../../model/admin/adminModel");
+const bcrypt = require("bcrypt");
+
+// register
+exports.Register = async (req, resp) => {
+  try {
+    const { name, email, password, confirmpassword, mobile } = req.body;
+
+    if (
+      !name ||
+      !email ||
+      !password ||
+      !confirmpassword ||
+      !mobile ||
+      !req.file
+    ) {
+      resp.status(400).json({
+        success: false,
+        messsage: "all fields are required",
+        error: error.message,
+      });
+    }
+
+    const file = req.file?.path;
+
+    // cloudinary setup
+    async function uploadCcloudainry(file, folder) {
+      options = { folder };
+
+      return await cloudinary.uploader.upload(file, options);
+    }
+    const response = await uploadCcloudainry(file, "fashion");
+
+    const preuser = await adminDB.findOne({ email: email });
+    const mobileverification = await adminDB.findOne({ mobile: mobile });
+
+    if (preuser) {
+      resp.status(400).json({ error: "This Admin is Already Exist" });
+    } else if (mobileverification) {
+      resp.status(400).json({ error: "This Mobile is Already Exist" });
+    } else if (password !== confirmpassword) {
+      resp
+        .status(400)
+        .json({ error: "password and confirm password not match" });
+    } else {
+      // const hashPassword =await  bcrypt.hash(password,10)
+
+      const adminData = new adminDB({
+        name,
+        email,
+        mobile,
+        // password: hashPassword,
+        password,
+        profile: response.secure_url,
+      });
+
+      console.log("admindata", adminData);
+
+      await adminData.save();
+      resp.status(200).json(adminData);
+    }
+
+    resp.status(200).json({
+      success: true,
+
+      message: "registered successfully",
+    });
+  } catch (error) {
+    resp.status(400).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
 
 
+// login 
 
-exports.Register = async(req,resp)=>{
+exports.Login = async(req,res)=>{
+   
+
+    try {
+        const {email,password} = req.body; 
     
-      try {
-        const {name,email, mobile,password, confirmpassword} = req.body;
-
-        if(!name || !email || !mobile || !password || !confirmpassword || !req.file)
-        {
-            resp.status(400).json({error:"All fields are required"})
+        if(!email || !password){
+            res.status(400).json({error:"all field require"})
         }
 
-        async function uploadFileToCloudinary(file, folder) {
-            const options = {folder};
-      
-        
-          
-            return await cloudinary.uploader.upload(file, options);
+        const adminValid = await adminDB.findOne({email:email});
+        if(adminValid){
+            const isMatch = await bcrypt.compare(password,adminValid.password);
+
+            if(!isMatch){
+                res.status(400).json({error:"Invalid Details"})
+            }else{
+
+                // token generate
+                const token = await adminValid.generateAuthToken();
+              
+                const result = {
+                    adminValid,
+                    token
+                }
+                res.status(200).json(result)
+            }
+        }else{
+            res.status(400).json({error:"invalid details"})
         }
-        const file =req.file?.path;
-
-        const response = await uploadFileToCloudinary(file, "fashion");
-
-       console.log("ram ",response)
-         
-      
-    
-    
     } catch (error) {
-         resp.status(400).json({
-             success:false,
-             error:error.message
-         })
-      }
-    
+        res.status(400).json({
+            error:error.message
+        })
+        
+    }
 }
