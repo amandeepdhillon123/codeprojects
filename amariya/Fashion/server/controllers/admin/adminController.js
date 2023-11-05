@@ -1,4 +1,4 @@
-require("dotenv").config()
+require("dotenv").config();
 const cloudinary = require("../../Cloudinary/cloudinary");
 const adminDB = require("../../model/admin/adminModel");
 const bcrypt = require("bcrypt");
@@ -75,43 +75,65 @@ exports.Register = async (req, resp) => {
   }
 };
 
+// login
 
-// login 
+exports.Login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-exports.Login = async(req,res)=>{
-   
+    if (!email || !password) {
+      res.status(400).json({ error: "all field require" });
+    }
 
+    const adminValid = await adminDB.findOne({ email: email });
+    if (adminValid) {
+      const isMatch = await bcrypt.compare(password, adminValid.password);
+
+      if (!isMatch) {
+        res.status(400).json({ error: "Invalid Details" });
+      } else {
+        // token generate
+        const token = await adminValid.generateAuthToken();
+
+        const result = {
+          adminValid,
+          token,
+        };
+        res.status(200).json(result);
+      }
+    } else {
+      res.status(400).json({ error: "invalid details" });
+    }
+  } catch (error) {
+    res.status(400).json({
+      error: error.message,
+    });
+  }
+};
+
+// admin verify
+exports.AdminVerify = async (req, res) => {
+  try {
+    const VerifyAdmin = await adminDB.findOne({ _id: req.userId });
+    res.status(200).json(VerifyAdmin);
+  } catch (error) {
+    res.status(400).json({ error: "invalid Details" });
+  }
+};
+
+
+// admin logout
+
+exports.Logout = async(req,res)=>{
     try {
-        const {email,password} = req.body; 
-    
-        if(!email || !password){
-            res.status(400).json({error:"all field require"})
-        }
+        req.rootUser.tokens = req.rootUser.tokens.filter((currentElement)=>{
+            return currentElement.token !== req.token
+        });
 
-        const adminValid = await adminDB.findOne({email:email});
-        if(adminValid){
-            const isMatch = await bcrypt.compare(password,adminValid.password);
-
-            if(!isMatch){
-                res.status(400).json({error:"Invalid Details"})
-            }else{
-
-                // token generate
-                const token = await adminValid.generateAuthToken();
-              
-                const result = {
-                    adminValid,
-                    token
-                }
-                res.status(200).json(result)
-            }
-        }else{
-            res.status(400).json({error:"invalid details"})
-        }
+        req.rootUser.save();
+        res.status(200).json({message:"admin Succesfully Logout"})
     } catch (error) {
-        res.status(400).json({
-            error:error.message
-        })
+        res.status(400).json(error)
         
     }
 }
