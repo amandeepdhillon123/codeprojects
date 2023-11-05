@@ -14,9 +14,18 @@ app.use(cors())
 const adminAuthroutes = require("./routes/admin/adminAuthRoutes");
 app.use("/adminauth/api",adminAuthroutes);
 
+// product routes 
+
+const productroutes =require("./routes/product/productroutes");
+app.use("/product/api",productroutes)
+
+
+
 app.get("/",(req,resp)=>{
     resp.status(200).json("server starts")
 })
+
+
 
 
 
