@@ -132,11 +132,18 @@ const a = "ram";
 // console.log(mergedArray);
 
 // passing multiple argumens 
-const number =[1,2,3,4,5];
-sum(...number)
+// const number =[1,2,3,4,5];
+// sum(...number)
 
-function sum(a,b,c,d,e,){
-    console.log(a+b+c+d+e)
+// function sum(a,b,c,d,e,){
+//     console.log(a+b+c+d+e)
+// }
+
+  display(1,2,3,4,5)
+function display(a,b, ...rest){
+    console.log(a);
+    console.log(b);
+    console.log(rest[0]);
 }
 
 
