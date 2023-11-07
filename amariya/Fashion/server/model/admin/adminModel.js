@@ -41,7 +41,7 @@
                     }
                 }
             ]
-        })
+        }) 
        
 
 module.exports = mongoose.model("admins", adminSchema);
