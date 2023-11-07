@@ -4,76 +4,158 @@ const adminDB = require("../../model/admin/adminModel");
 const bcrypt = require("bcrypt");
 
 // register
+
 exports.Register = async (req, resp) => {
   try {
-    const { name, email, password, confirmpassword, mobile } = req.body;
+    // fetch data
+    const { name, email, password, confirmpassword, mobile} = req.body;
 
+    //  validation
     if (
-      !name ||
-      !email ||
-      !password ||
-      !confirmpassword ||
-      !mobile ||
-      !req.file
+            !name ||
+            !email ||
+            !password ||
+            !confirmpassword ||
+            !mobile ||
+            !req.file
+      
     ) {
       resp.status(400).json({
         success: false,
-        messsage: "all fields are required",
-        error: error.message,
+        message: "all fields are required",
+       
       });
     }
 
+    //  image path get
     const file = req.file?.path;
 
     // cloudinary setup
-    async function uploadCcloudainry(file, folder) {
+    async function uploadCloundinary(file, folder) {
       options = { folder };
-
       return await cloudinary.uploader.upload(file, options);
     }
-    const response = await uploadCcloudainry(file, "fashion");
+    const response = await uploadCloundinary(file, "fashion");
 
+    // check user, mobile , password match
     const preuser = await adminDB.findOne({ email: email });
+
     const mobileverification = await adminDB.findOne({ mobile: mobile });
-
     if (preuser) {
-      resp.status(400).json({ error: "This Admin is Already Exist" });
+      resp.status(400).json({
+        success: false,
+        message: "User is already exist",
+      });
     } else if (mobileverification) {
-      resp.status(400).json({ error: "This Mobile is Already Exist" });
+      resp.status(400).json({
+        success: false,
+        message: "mobile number is already exist",
+      });
     } else if (password !== confirmpassword) {
-      resp
-        .status(400)
-        .json({ error: "password and confirm password not match" });
+      resp.status(400).json({
+        success: false,
+        message: "mobile number is already exist",
+      });
     } else {
-      // const hashPassword =await  bcrypt.hash(password,10)
+      // passwor hashing
+      const hashpassword = await bcrypt.hash(password, 10);
 
+      // save in to db
       const adminData = new adminDB({
         name,
         email,
-        mobile,
-        // password: hashPassword,
-        password,
+        password: hashpassword,
         profile: response.secure_url,
+        mobile,
       });
 
-      console.log("admindata", adminData);
-
-      await adminData.save();
-      resp.status(200).json(adminData);
+      adminData.save();
+      resp.status(200).json(adminData)
     }
-
     resp.status(200).json({
-      success: true,
-
-      message: "registered successfully",
+    
+      successs: true,
+      message: "successful registeration",
     });
   } catch (error) {
     resp.status(400).json({
       success: false,
+      message: "registeration failed",
       error: error.message,
     });
   }
 };
+
+// exports.Register = async (req, resp) => {
+//   try {
+//     const { name, email, password, confirmpassword, mobile } = req.body;
+
+//     if (
+//       !name ||
+//       !email ||
+//       !password ||
+//       !confirmpassword ||
+//       !mobile ||
+//       !req.file
+//     ) {
+//       resp.status(400).json({
+//         success: false,
+//         messsage: "all fields are required",
+//         error: error.message,
+//       });
+//     }
+
+//     const file = req.file?.path;
+
+//     // cloudinary setup
+//     async function uploadCcloudainry(file, folder) {
+//       options = { folder };
+
+//       return await cloudinary.uploader.upload(file, options);
+//     }
+//     const response = await uploadCcloudainry(file, "fashion");
+
+//     const preuser = await adminDB.findOne({ email: email });
+//     const mobileverification = await adminDB.findOne({ mobile: mobile });
+
+//     if (preuser) {
+//       resp.status(400).json({ error: "This Admin is Already Exist" });
+//     } else if (mobileverification) {
+//       resp.status(400).json({ error: "This Mobile is Already Exist" });
+//     } else if (password !== confirmpassword) {
+//       resp
+//         .status(400)
+//         .json({ error: "password and confirm password not match" });
+//     } else {
+//       // const hashPassword =await  bcrypt.hash(password,10)
+
+//       const adminData = new adminDB({
+//         name,
+//         email,
+//         mobile,
+//         // password: hashPassword,
+//         password,
+//         profile: response.secure_url,
+//       });
+
+//       console.log("admindata", adminData);
+
+//       await adminData.save();
+//       resp.status(200).json(adminData);
+//     }
+
+//     resp.status(200).json({
+//       success: true,
+
+//       message: "registered successfully",
+//     });
+//   } catch (error) {
+//     resp.status(400).json({
+//       success: false,
+//       error: error.message,
+//     });
+//   }
+// };
 
 // login
 
@@ -121,19 +203,17 @@ exports.AdminVerify = async (req, res) => {
   }
 };
 
-
 // admin logout
 
-exports.Logout = async(req,res)=>{
-    try {
-        req.rootUser.tokens = req.rootUser.tokens.filter((currentElement)=>{
-            return currentElement.token !== req.token
-        });
+exports.Logout = async (req, res) => {
+  try {
+    req.rootUser.tokens = req.rootUser.tokens.filter((currentElement) => {
+      return currentElement.token !== req.token;
+    });
 
-        req.rootUser.save();
-        res.status(200).json({message:"admin Succesfully Logout"})
-    } catch (error) {
-        res.status(400).json(error)
-        
-    }
-}
+    req.rootUser.save();
+    res.status(200).json({ message: "admin Succesfully Logout" });
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
