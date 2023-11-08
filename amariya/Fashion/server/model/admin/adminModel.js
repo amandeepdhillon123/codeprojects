@@ -43,13 +43,14 @@ const adminSchema = new mongoose.Schema({
   ],
 });
 
-const payload = {
-  _id: this._id,
-  email: this.email,
-};
+
 adminSchema.methods.generatertoken = async function () {
   try {
-    let newtoken = jwt.sign(payload, process.env.JWT_SECRET, {
+    const payload = {
+      _id: this._id,
+      email: this.email,
+    };
+    let newtoken = jwt.sign({_id:this._id}, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
 

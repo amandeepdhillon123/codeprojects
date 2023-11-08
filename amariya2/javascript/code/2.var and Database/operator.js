@@ -139,12 +139,12 @@ const a = "ram";
 //     console.log(a+b+c+d+e)
 // }
 
-  display(1,2,3,4,5)
-function display(a,b, ...rest){
-    console.log(a);
-    console.log(b);
-    console.log(rest[0]);
-}
+//   display(1,2,3,4,5)
+// function display(a,b, ...rest){
+//     console.log(a);
+//     console.log(b);
+//     console.log(rest[0]);
+// }
 
 
 

@@ -88,38 +88,35 @@ exports.Register = async (req, resp) => {
 exports.Login = async (req, resp) => {
   try {
     // fetch data
-    const {email, password} = req.body;
+    const { email, password } = req.body;
 
     // validation
-    if(!email || !password){
-      resp.status(400).json("all fields are required")
+    if (!email || !password) {
+      resp.status(400).json("all fields are required");
     }
     // check user exist or not
-    const adminValid = await adminDB.findOne({email:email})
-    if(adminValid){
-          // compare password 
-      const isMatch =  bcrypt.compare(password,adminValid.password);
+    const adminValid = await adminDB.findOne({ email: email });
+    if (adminValid) {
+      // compare password
+      const isMatch = bcrypt.compare(password, adminValid.password);
 
-      if(!isMatch){
-        resp.status(400).json("invalid details")
+      if (!isMatch) {
+        resp.status(400).json("invalid details");
+      } else {
+        // generate token
+        const token = await adminValid.generatertoken();
+        console.log(token);
+
+        const result = {
+          adminValid,
+          token,
+        };
+
+        resp.status(200).json(result);
       }
-      else{
-             // generate token
-             const token = await adminValid.generatertoken();
-             console.log(token)
-
-             const result ={
-              adminValid, token
-             }
-
-             resp.status(200).json(result);
-      }
-    }
-    else{
+    } else {
       resp.status(400).json({ error: "invalid details" });
     }
-   
- 
   } catch (error) {
     resp.status(400).json({
       success: false,
@@ -127,14 +124,13 @@ exports.Login = async (req, resp) => {
       error: error.message,
     });
   }
-
-
 };
 
 // admin verify
 exports.AdminVerify = async (req, res) => {
   try {
     const VerifyAdmin = await adminDB.findOne({ _id: req.userId });
+    // console.log(VerifyAdmin)
     res.status(200).json(VerifyAdmin);
   } catch (error) {
     res.status(400).json({ error: "invalid Details" });
@@ -145,6 +141,8 @@ exports.AdminVerify = async (req, res) => {
 
 exports.Logout = async (req, res) => {
   try {
+
+    // console.log(req.rootUser.tokens)
     req.rootUser.tokens = req.rootUser.tokens.filter((currentElement) => {
       return currentElement.token !== req.token;
     });
