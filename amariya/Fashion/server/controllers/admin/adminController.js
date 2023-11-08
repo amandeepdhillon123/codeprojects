@@ -141,6 +141,8 @@ exports.AdminVerify = async (req, res) => {
 
 exports.Logout = async (req, res) => {
   try {
+
+    // console.log(req.rootUser.tokens)
     req.rootUser.tokens = req.rootUser.tokens.filter((currentElement) => {
       return currentElement.token !== req.token;
     });
