@@ -1,26 +1,31 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 8013;
+const app= express();
 const cors = require("cors")
-const dbConnect= require("./db/conn")
+const PORT = process.env.PORT || 8013;
+const dbConnect = require("./db/conn");
 
-app.use(express());
-app.use(cors());
 
-// admin routes 
+// databse connection 
+dbConnect();
 
-const adminAuthroutes = require("./routes/admin/adminAuthRoute");
-app.use('/adminauth/api',adminAuthroutes)
 
-// data base connected 
+// middlerwares
+app.use(cors())
+app.use(express.json())
 
-dbConnect()
-app.get("/",(req,resp)=>{
-    resp.send("successfull sent");
-})
+
+
+// start server 
 app.listen(PORT,()=>{
-    console.log(`server starts at ${PORT}`);
+    console.log(`server starts at port no. ${PORT}`)
 })
 
+// default server 
+app.get("/", (req, res) => {
+	return res.json({
+		success:true,
+		message:'Your server is up and running....'
+	});
+});
 
