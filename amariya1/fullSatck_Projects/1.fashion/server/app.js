@@ -6,6 +6,10 @@ const PORT = process.env.PORT || 8013;
 const dbConnect = require("./db/conn");
 
 
+
+const adminAuthroutes = require("./routes/admin/adminAuthroutes")
+
+
 // databse connection 
 dbConnect();
 
@@ -13,6 +17,10 @@ dbConnect();
 // middlerwares
 app.use(cors())
 app.use(express.json())
+
+
+// routes 
+app.use("/adminauth/api",adminAuthroutes)
 
 
 
