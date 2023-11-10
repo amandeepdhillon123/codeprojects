@@ -3,7 +3,7 @@ const route = express.Router();
 const adminUpload =require("../../multerConfig/admin/adminStorageConfig")
 const adminAuthController=require("../../middlewares/admin/adminauthentication")
 // Import the Controllers 
-const {Register,LogIn ,getAdmin} = require("../../controllers/admin/adminController")
+const {Register,LogIn ,getAdmin,Logout} = require("../../controllers/admin/adminController")
 
 
 // admin routes for register
@@ -14,6 +14,10 @@ route.post("/login",LogIn)
 
 // adminverify
 route.get("/adminverify",adminAuthController,getAdmin)
+
+// logout
+
+route.get("/logout",adminAuthController,Logout)
 
 
 

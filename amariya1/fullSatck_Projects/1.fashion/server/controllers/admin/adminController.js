@@ -3,11 +3,11 @@ const adminDB = require("../../model/admin/adminModel");
 const clodinary = require("../../Cloudinary/cloudinary");
 const bcrypt = require("bcrypt");
 
-// ---------------->>>>>>> register controller <<<------------------------
+// ---------------->>>>>>> admin register controller <<<------------------------
 
 exports.Register = async (req, res) => {
   try {
-    console.log(req.body)
+    // console.log(req.body)
     //  fetch data from req body
     const { name, email, password, confirmpassword, mobile } = req.body;
 
@@ -20,7 +20,7 @@ exports.Register = async (req, res) => {
       !mobile ||
       !req.file
     ) {
-      req.status(400).josn({
+      res.status(400).json({
         success: false,
         message: "all fields are required",
       });
@@ -41,17 +41,17 @@ exports.Register = async (req, res) => {
 
     const mobileverification = await adminDB.findOne({ mobile: mobile });
     if (preuser) {
-      req.status(400).josn({
+      res.status(400).json({
         success: false,
         message: "User is already exist",
       });
     } else if (mobileverification) {
-      req.status(400).josn({
+      res.status(400).json({
         success: false,
         message: "mobile is already exist",
       });
     } else if (password !== confirmpassword) {
-      req.status(400).josn({
+      res.status(400).json({
         success: false,
         message: "password and confirm password not match",
       });
@@ -84,7 +84,7 @@ exports.Register = async (req, res) => {
   }
 };
 
-// ---------------->>>>>>>>>> login <<<<<<<<<<<<<<----*****************************************
+// ---------------->>>>>>>>>> admin login controller <<<<<<<<<<<<<<----*****************************************
 
 // login controller
 exports.LogIn = async (req, res) => {
@@ -96,7 +96,7 @@ exports.LogIn = async (req, res) => {
 
     // Check if all necessary fields are provided
     if (!email || !password) {
-      req.status(400).josn({
+      res.status(400).json({
         success: false,
         message: "All fields are required",
       });
@@ -133,7 +133,7 @@ exports.LogIn = async (req, res) => {
         });
 
         //    resp send successfully
-        res.status(200).json(result);
+        // res.status(200).json(result);
       }
     } else {
       res.status(400).json({ error: "invalid details" });
@@ -152,7 +152,7 @@ exports.LogIn = async (req, res) => {
 
 
 
-// -------------------->>>>>>>> admin atuhentication <<<<<<<<---------------------------------
+// -------------------->>>>>>>> admin atuhentication controller <<<<<<<<---------------------------------
  
 exports.getAdmin =async(req,res)=>{
     try {
@@ -165,12 +165,21 @@ exports.getAdmin =async(req,res)=>{
 
 
 
-// ------------------------->>>>>>>>> logout <<<<<<<<<<--------------------------------
+// ------------------------->>>>>>>>> admin logout controller <<<<<<<<<<--------------------------------
 
-exports.logout =async()=>{
+exports.Logout =async(req,res)=>{
     try {
-        
+        //   console.log(req.rootUser.tokens)
+
+        console.log(req.token)
+        req.rootUser.tokens = req.rootUser.tokens.filter((currentElement) => {
+            return currentElement.token !== req.token;
+        })
+
+        req.rootUser.save();
+        res.status(200).json({message:"admin successfullly logout"})
     } catch (error) {
-        
+        res.status(400).json(error)
     }
 }
+
