@@ -3,7 +3,8 @@ const adminDB = require("../../model/admin/adminModel");
 const clodinary = require("../../Cloudinary/cloudinary");
 const bcrypt = require("bcrypt");
 
-// register
+// ---------------->>>>>>> register controller <<<------------------------
+
 exports.Register = async (req, res) => {
   try {
     console.log(req.body)
@@ -152,3 +153,24 @@ exports.LogIn = async (req, res) => {
 
 
 // -------------------->>>>>>>> admin atuhentication <<<<<<<<---------------------------------
+ 
+exports.getAdmin =async(req,res)=>{
+    try {
+        const VerifyAdmin = await adminDB.findOne({_id:req.userId});
+        res.status(200).json(VerifyAdmin)
+    } catch (error) {
+        res.status(400).json({error:"invalid Details"})
+    }
+}
+
+
+
+// ------------------------->>>>>>>>> logout <<<<<<<<<<--------------------------------
+
+exports.logout =async()=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+}
