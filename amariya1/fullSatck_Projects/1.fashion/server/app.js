@@ -8,7 +8,7 @@ const dbConnect = require("./db/conn");
 
 
 const adminAuthroutes = require("./routes/admin/adminAuthroutes")
-
+const productAuthroutes = require("./routes/products/productroutes")
 
 // databse connection 
 dbConnect();
@@ -21,6 +21,7 @@ app.use(express.json())
 
 // routes 
 app.use("/adminauth/api",adminAuthroutes)
+app.use("/product/api", productAuthroutes)
 
 
 

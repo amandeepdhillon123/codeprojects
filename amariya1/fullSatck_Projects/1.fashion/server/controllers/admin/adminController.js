@@ -34,7 +34,7 @@ exports.Register = async (req, res) => {
       const options = { folder };
       return await clodinary.uploader.upload(file, options);
     }
-    const upload = await uploadToCloudinary(file, "fashion");
+    const upload = await uploadToCloudinary(file, "fashion/admin_image");
 
     // check user and mobile exist or not , password and confirm match or not
     const preuser = await adminDB.findOne({ email: email });

@@ -1,7 +1,9 @@
 const express = require("express");
 const route = express.Router();
 const adminUpload =require("../../multerConfig/admin/adminStorageConfig")
-const adminAuthController=require("../../middlewares/admin/adminauthentication")
+const adminAuthenticate=require("../../middlewares/admin/adminauthentication")
+
+
 // Import the Controllers 
 const {Register,LogIn ,getAdmin,Logout} = require("../../controllers/admin/adminController")
 
@@ -13,11 +15,11 @@ route.post("/register",adminUpload.single("admin_profile"),Register)
 route.post("/login",LogIn)
 
 // adminverify
-route.get("/adminverify",adminAuthController,getAdmin)
+route.get("/adminverify",adminAuthenticate,getAdmin)
 
 // logout
 
-route.get("/logout",adminAuthController,Logout)
+route.get("/logout",adminAuthenticate,Logout)
 
 
 
