@@ -28,6 +28,7 @@ const userAuthenticate = async (req, res, next) => {
       req.token = token;
       req.rootUser = rootUser;
       req.userId = rootUser._id;
+      req.userMainId = rootUser.id
     } catch (err) {
       //verification - issue
       return res.status(401).json({
