@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
     ],
 
     //  for forgotpasswrod
-    varifytoken:{
+    verifytoken:{
         type:String
     }
 },{timestamps:true});
