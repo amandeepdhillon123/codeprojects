@@ -21,6 +21,11 @@ app.use("/product/api", productAuthroutes)
 const userAuthroutes = require("./routes/user/userRoutes");
 app.use("/userauth/api",userAuthroutes)
 
+// cart routes 
+const cartAuthroutes = require("./routes/cart/cartsRoutes")
+app.use("/carts/api",cartAuthroutes)
+
+
 // databse connection 
 dbConnect();
 
