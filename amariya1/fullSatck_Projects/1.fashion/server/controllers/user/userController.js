@@ -2,7 +2,12 @@ require("dotenv").config();
 const cloudinary = require("../../Cloudinary/cloudinary");
 const userDB = require("../../model/user/userModel");
 const bcrypt = require("bcrypt");
-
+const jwt = require("jsonwebtoken");
+const fs =require("fs");
+const ejs = require("ejs");
+const path =require("path");
+const {transporter} = require("../../helper")
+const SECRET_KEY="sdfgsjkdfhhfgffgh"
 //--------------------->>> register user controller <<<<<<<------------------
 
 exports.userRegister = async (req, res) => {
@@ -181,4 +186,148 @@ exports.Logout =async(req,res)=>{
 }
 
 
-// ---------------------------->>>>>>      <<<<<<<<-----------------------------------------
+// ---------------------------->>>>>> user forgot password     <<<<<<<<-----------------------------------------
+
+ exports.forgotpassword =async(req,res)=>{
+   try {
+      // console.log(req.body)
+      
+      // extract data from req body
+      const {email} = req.body;
+
+      // check required data provided or not
+      if(!email){
+        res.status(400).json({
+          success:false,
+          message:"Please enter a valid email"
+        })
+      }
+      // check user valid or not
+      const userfind = await userDB.findOne({email:email});
+      
+      // if user undefinde send response
+      if(userfind){
+           // create token
+           const token = jwt.sign({_id:userfind._id},process.env.JWT_SECRET_KEY,{
+             expiresIn:"1d"
+           })
+
+            //  store in the user db
+        const setusertoken = await userDB.findByIdAndUpdate({_id:userfind._id},{verifytoken:token},{new:true})
+      
+      // join email path
+      const emailTemplatepath = path.join(__dirname,"../../EmailTemplate/ForgotTemplate.ejs")
+      const emailtemplateread = fs.readFileSync(emailTemplatepath,"utf8");
+      // console.log(emailtemplateread)
+
+      const data ={
+         passwordresetlink:`http://localhost:3001/resetpassword/${userfind.id}/${setusertoken.verifytoken}`,
+         logo:"https://cdn-icons-png.flaticon.com/128/732/732200.png"
+      }
+      
+        // set dynamic data value in ejs 
+
+        const renderTemplate = ejs.render(emailtemplateread,data)
+       if(setusertoken){
+        const mailOptions ={
+          from:"amandeep24397@gmail.com",
+          to:email,
+          subject:"Sending Email for password Reset",
+          html:renderTemplate
+        }
+    
+          transporter.sendMail(mailOptions,(error,info)=>{
+            if(error){
+              console.log("error",error)
+              res.status(400).json({error:"email not send"})
+          }else{
+              // console.log("email sent",info.response)
+              res.status(200).json({message:"Email sent Sucessfully"})
+          }
+          })
+        
+       }
+      }
+      else{
+        res.status(400).json({
+          success:"false",
+          message:"This user is not exist"
+        })
+      }
+       } catch (error) {
+      res.status(400).json(error)
+   }
+ }
+
+
+//  ---------------->>>>>>>> forgotpasswordverify <<<<<<<-----------------
+
+exports.forgotpasswordverify =async(req,res)=>{
+  try {
+     console.log(req.params)
+
+    // extract data from req params
+    const {id,token} = req.params;
+
+    // check validuser exist or not
+    const validuser = await userDB.findOne({_id:id,verifytoken:token})
+    // console.log(validuser)
+    
+    // verify token 
+    const verifytoken = jwt.verify(token,process.env.JWT_SECRET_KEY)
+    
+    // console.log(verifytoken)
+    
+    // set validation
+    if(validuser && verifytoken._id){
+      res.status(200).json({message:"Valid User"})
+    }
+    else{
+      res.status(400).json({error:"user not exist"})
+    }
+
+  } catch (error) {
+     res.status(400).json(error)
+  }
+}
+
+
+// --------------------------->>>>>>>>> reset password <<<<<-------------
+
+exports.resetpassword =async(req,res)=>{
+  try {
+    // console.log(req.params)
+
+   // extract data from req params
+   const {id,token} = req.params;
+  const {password} = req.body;
+   // check validuser exist or not
+   const validuser = await userDB.findOne({_id:id,verifytoken:token})
+   // console.log(validuser)
+   
+   // verify token 
+   const verifytoken = jwt.verify(token,process.env.JWT_SECRET_KEY)
+   
+   // console.log(verifytoken)
+   
+   // set validation
+   if(validuser && verifytoken._id){
+    
+      // set password 
+      const newpassword = await bcrypt.hash(password,10)
+      
+      // update password into original 
+      const setnewpassword = await userDB.findByIdAndUpdate({_id:id},{password:newpassword});
+      
+      await setnewpassword.save();
+      
+      res.status(200).json({message:"Password succseefully updated"})
+   }
+   else{
+     res.status(400).json({error:"your session time out please generate newlink"})
+   }
+
+ } catch (error) {
+    res.status(400).json(error)
+ }
+}
