@@ -4,7 +4,7 @@ const userAuthenticate =require("../../middlewares/user/userAuthenticate")
 const userUpload =require("../../multerConfig/user/userStorageConfig")
 // ---------->>>>> import user controller <<<<<<<<<-------
 
-const {userRegister ,LogIn, userverify, Logout, forgotpassword} = require("../../controllers/user/userController");
+const {userRegister ,LogIn, userverify, Logout, forgotpassword,forgotpasswordverify, resetpassword} = require("../../controllers/user/userController");
 
 
 // user Auth routes
@@ -16,6 +16,13 @@ router.get("/logout", userAuthenticate, Logout)
 
 
 router.post("/forgotpassword",forgotpassword);
+
+// ---->> user verify for forgotpassword 
+router.get("/forgotpassword/:id/:token",forgotpasswordverify);
+
+// ---->>> update password
+router.put("/resetpassword/:id/:token",resetpassword)
+
 
 
 

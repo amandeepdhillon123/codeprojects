@@ -7,7 +7,7 @@ const fs =require("fs");
 const ejs = require("ejs");
 const path =require("path");
 const {transporter} = require("../../helper")
-
+const SECRET_KEY="sdfgsjkdfhhfgffgh"
 //--------------------->>> register user controller <<<<<<<------------------
 
 exports.userRegister = async (req, res) => {
@@ -208,12 +208,12 @@ exports.Logout =async(req,res)=>{
       // if user undefinde send response
       if(userfind){
            // create token
-           const token = jwt.sign({_id:userfind._id},process.env.USER_SECRET_KEY,{
-             expiresIn:"120s"
+           const token = jwt.sign({_id:userfind._id},process.env.JWT_SECRET_KEY,{
+             expiresIn:"1d"
            })
 
             //  store in the user db
-        const setusertoken = await userDB.findByIdAndUpdate({_id:userfind._id},{verifytoken:token})
+        const setusertoken = await userDB.findByIdAndUpdate({_id:userfind._id},{verifytoken:token},{new:true})
       
       // join email path
       const emailTemplatepath = path.join(__dirname,"../../EmailTemplate/ForgotTemplate.ejs")
@@ -241,7 +241,7 @@ exports.Logout =async(req,res)=>{
               console.log("error",error)
               res.status(400).json({error:"email not send"})
           }else{
-              console.log("email sent",info.response)
+              // console.log("email sent",info.response)
               res.status(200).json({message:"Email sent Sucessfully"})
           }
           })
@@ -254,10 +254,80 @@ exports.Logout =async(req,res)=>{
           message:"This user is not exist"
         })
       }
-     
-   
-    
-   } catch (error) {
+       } catch (error) {
       res.status(400).json(error)
    }
  }
+
+
+//  ---------------->>>>>>>> forgotpasswordverify <<<<<<<-----------------
+
+exports.forgotpasswordverify =async(req,res)=>{
+  try {
+     console.log(req.params)
+
+    // extract data from req params
+    const {id,token} = req.params;
+
+    // check validuser exist or not
+    const validuser = await userDB.findOne({_id:id,verifytoken:token})
+    // console.log(validuser)
+    
+    // verify token 
+    const verifytoken = jwt.verify(token,process.env.JWT_SECRET_KEY)
+    
+    // console.log(verifytoken)
+    
+    // set validation
+    if(validuser && verifytoken._id){
+      res.status(200).json({message:"Valid User"})
+    }
+    else{
+      res.status(400).json({error:"user not exist"})
+    }
+
+  } catch (error) {
+     res.status(400).json(error)
+  }
+}
+
+
+// --------------------------->>>>>>>>> reset password <<<<<-------------
+
+exports.resetpassword =async(req,res)=>{
+  try {
+    // console.log(req.params)
+
+   // extract data from req params
+   const {id,token} = req.params;
+  const {password} = req.body;
+   // check validuser exist or not
+   const validuser = await userDB.findOne({_id:id,verifytoken:token})
+   // console.log(validuser)
+   
+   // verify token 
+   const verifytoken = jwt.verify(token,process.env.JWT_SECRET_KEY)
+   
+   // console.log(verifytoken)
+   
+   // set validation
+   if(validuser && verifytoken._id){
+    
+      // set password 
+      const newpassword = await bcrypt.hash(password,10)
+      
+      // update password into original 
+      const setnewpassword = await userDB.findByIdAndUpdate({_id:id},{password:newpassword});
+      
+      await setnewpassword.save();
+      
+      res.status(200).json({message:"Password succseefully updated"})
+   }
+   else{
+     res.status(400).json({error:"your session time out please generate newlink"})
+   }
+
+ } catch (error) {
+    res.status(400).json(error)
+ }
+}
