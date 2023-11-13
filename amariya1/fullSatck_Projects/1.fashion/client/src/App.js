@@ -12,6 +12,8 @@ import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import ResetPassword from './pages/ForgotPassword/ResetPassword';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Shipping from './pages/shipping/Shipping';
+import Checkout from './pages/checkoutPage/Checkout';
 function App() {
   return (
     <>
@@ -26,8 +28,8 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/resetpassword/:id/:token' element={<ResetPassword/>}/>
-     
-
+        <Route path='/shipping' element={<Shipping/>}/>
+        <Route path='/checkout' element={<Checkout/>}/>
        
        </Routes>
        
