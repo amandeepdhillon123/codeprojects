@@ -8,6 +8,10 @@ import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
 import { Routes, Route } from 'react-router-dom';
 import Carts from './pages/carts/Carts';
 import UserProfile from './pages/userprofile/UserProfile';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
+import ResetPassword from './pages/ForgotPassword/ResetPassword';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 function App() {
   return (
     <>
@@ -18,6 +22,12 @@ function App() {
         <Route path='/productdetails/:id' element={<ProductDetailsPage/>}/>
         <Route path='/carts' element={<Carts/>}/>
         <Route path='/userprofile' element={<UserProfile/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+        <Route path='/resetpassword/:id/:token' element={<ResetPassword/>}/>
+     
+
        
        </Routes>
        
