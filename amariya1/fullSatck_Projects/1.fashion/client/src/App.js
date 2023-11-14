@@ -20,7 +20,7 @@ import AdminProductspage from './pages/Admin/AdminProductspage';
 import CommonLayoutAdmin from './pages/Admin/CommonLayoutAdmin';
 import AddProducts from './pages/Admin/AddProducts';
 import AddCategory from './pages/Admin/AddCategory';
-
+import Orders from './pages/Admin/Order';
 function App() {
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
                 <Route path='/admin/addcategory'element={ <Layout><AddCategory/></Layout>}/>
                 <Route path='/admin/addproducts'element={ <Layout><AddProducts/></Layout>}/>
                 <Route path='/admin/products'element={ <CommonLayoutAdmin><AdminProductspage/></CommonLayoutAdmin>}/>
-                
+                <Route path='/admin/orders'element={ <CommonLayoutAdmin><Orders/></CommonLayoutAdmin>}/>
                 <Route path='/admin/login'element={ <Layout><AdminLogin/></Layout>}/>
               
          {/*  user routes */}
