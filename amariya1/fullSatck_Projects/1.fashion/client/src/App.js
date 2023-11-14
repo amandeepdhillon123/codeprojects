@@ -16,6 +16,7 @@ import Shipping from './pages/shipping/Shipping';
 import Checkout from './pages/checkoutPage/Checkout';
 import AdminLogin from './pages/AdminLogin/AdminLogin';
 import AdminDashboard from './pages/Admin/AdminDashboard';
+import AdminProductspage from './pages/Admin/AdminProductspage';
 import CommonLayoutAdmin from './pages/Admin/CommonLayoutAdmin';
 function App() {
   return (
@@ -24,8 +25,10 @@ function App() {
       <Routes>
                 {/* admin routes */}
                 <Route path='/admin/dashboard'element={ <CommonLayoutAdmin><AdminDashboard/></CommonLayoutAdmin>}/>
+                <Route path='/admin/products'element={ <CommonLayoutAdmin><AdminProductspage/></CommonLayoutAdmin>}/>
+                
                 <Route path='/admin/login'element={ <Layout><AdminLogin/></Layout>}/>
-             
+              
          {/*  user routes */}
         <Route path='/'element={ <Layout><Home/></Layout>}/>
         <Route path='/products' element= {<Layout><ProductPage/></Layout>}/>
