@@ -2,6 +2,11 @@ import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Select from 'react-select'
 const AddProducts = () => {
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
   return (
     <>
         <div className="container">
@@ -16,7 +21,7 @@ const AddProducts = () => {
                                 <input type="text" name="productname"  placeholder='Products Name'/>
                             </div>
                             <div className="form_input">
-                            <Select options={categorystate}   placeholder="Product category" />
+                            <Select options={options}   placeholder="Product category" />
                             </div>
                             <div className="form_input">
                                 <input type="text" name="price"  placeholder='Price'/>
@@ -25,7 +30,7 @@ const AddProducts = () => {
                                 <input type="text" name="discount"  placeholder='discount'/>
                             </div>
                             <div className="form_input">
-                                <input type="file" name="productimage" onChange={handleProductImg}/>
+                                <input type="file" name="productimage" />
                             </div>
                             <div className="form_input">
                                 <input type="text" name="quantity"  placeholder='quantity'/>
