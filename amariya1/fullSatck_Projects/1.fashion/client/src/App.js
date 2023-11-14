@@ -14,26 +14,33 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Shipping from './pages/shipping/Shipping';
 import Checkout from './pages/checkoutPage/Checkout';
+import AdminLogin from './pages/AdminLogin/AdminLogin';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import CommonLayoutAdmin from './pages/Admin/CommonLayoutAdmin';
 function App() {
   return (
     <>
-     <Layout>
-       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/products' element={<ProductPage/>}/>
-        <Route path='/productdetails/:id' element={<ProductDetailsPage/>}/>
-        <Route path='/carts' element={<Carts/>}/>
-        <Route path='/userprofile' element={<UserProfile/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
-        <Route path='/resetpassword/:id/:token' element={<ResetPassword/>}/>
-        <Route path='/shipping' element={<Shipping/>}/>
-        <Route path='/checkout' element={<Checkout/>}/>
+   
+      <Routes>
+                {/* admin routes */}
+                <Route path='/admin/dashboard'element={ <CommonLayoutAdmin><AdminDashboard/></CommonLayoutAdmin>}/>
+                <Route path='/admin/login'element={ <Layout><AdminLogin/></Layout>}/>
+             
+         {/*  user routes */}
+        <Route path='/'element={ <Layout><Home/></Layout>}/>
+        <Route path='/products' element= {<Layout><ProductPage/></Layout>}/>
+        <Route path='/productdetails/:id' element={<Layout><ProductDetailsPage/></Layout>}/>
+        <Route path='/carts' element={<Layout><Carts/></Layout>}/>
+        <Route path='/userprofile' element={<Layout><UserProfile/></Layout>}/>
+        <Route path='/login' element={<Layout><Login/></Layout>}/>
+        <Route path='/register' element={<Layout><Register/></Layout>}/>
+        <Route path='/forgotpassword' element={<Layout><ForgotPassword/></Layout>}/>
+        <Route path='/resetpassword/:id/:token' element={<Layout><ResetPassword/></Layout>}/>
+        <Route path='/shipping' element={<Layout><Shipping/></Layout>}/>
+        <Route path='/checkout' element={<Layout><Checkout/></Layout>}/>
+      </Routes>
        
-       </Routes>
-       
-     </Layout>
+     
     </>
   );
 }
