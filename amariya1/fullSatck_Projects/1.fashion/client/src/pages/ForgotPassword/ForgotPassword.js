@@ -2,7 +2,26 @@ import React from 'react'
 
 const ForgotPassword = () => {
   return (
-    <div>ForgotPassword</div>
+     <>
+       <section style={{marginBottom:"10%"}}>
+                <div className="form_data">
+                    <div className="form_heading">
+                        <h1>ForgotPassword</h1>
+                    </div>
+
+                    <form>
+                        <div className="form_input">
+                            <label htmlFor="email">Email</label>
+                            <input type="email" name="email" id="email"  placeholder='Enter Your Email Address' />
+                        </div>
+
+                        <button className='btn' >Submit</button>
+                        
+                    </form>
+                </div>
+            </section>
+     
+     </>
   )
 }
 
